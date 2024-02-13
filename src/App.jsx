@@ -12,10 +12,12 @@ export default function App() {
   return (
     <>
       {/* START Navbar */}
-      <nav className="fixed h-[50px] w-full flex justify-between items-center px-5 shadow-lg">
+      <nav className="fixed bg-white h-[50px] w-full flex justify-between items-center px-5 drop-shadow-lg z-10">
         {/* Title */}
         <div>
-          <h1 className="text-lg font-semibold">Portofolio</h1>
+          <a href="#">
+            <h1 className="text-lg font-semibold">Portofolio</h1>
+          </a>
         </div>
 
         {/* Button Menu */}
@@ -25,30 +27,30 @@ export default function App() {
           </div>
           {/* Child Menu Mobile */}
           {toggleNav ? (
-            <div className="absolute bg-slate-100 h-[320px] w-[200px] left-[170px] rounded-lg shadow-lg">
+            <div className="absolute bg-slate-100 h-[330px] w-[200px] left-[170px] border border-slate-400 rounded-lg shadow-lg">
               <ul className="flex flex-col gap-5 px-5 py-5">
                 <li className="hover:bg-slate-200 hover:rounded-lg py-2">
-                  <a href="#" className="px-2 font-semibold text-slate-500">
+                  <a href="#services" className="px-2 font-semibold text-slate-500">
                     Services
                   </a>
                 </li>
                 <li className="hover:bg-slate-200 hover:rounded-lg py-2">
-                  <a href="#" className="px-2 font-semibold text-slate-500">
+                  <a href="#portofolio" className="px-2 font-semibold text-slate-500">
                     Portofolio
                   </a>
                 </li>
                 <li className="hover:bg-slate-200 hover:rounded-lg py-2">
-                  <a href="#" className="px-2 font-semibold text-slate-500">
+                  <a href="#skills" className="px-2 font-semibold text-slate-500">
                     Education & Skills
                   </a>
                 </li>
                 <li className="hover:bg-slate-200 hover:rounded-lg py-2">
-                  <a href="#" className="px-2 font-semibold text-slate-500">
+                  <a href="#contact" className="px-2 font-semibold text-slate-500">
                     Contact
                   </a>
                 </li>
-                <li className="hover:bg-slate-200 hover:rounded-lg py-2">
-                  <a href="#" className="px-2 font-semibold text-slate-500">
+                <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
+                  <a href="./src/resume.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                     Resume
                   </a>
                 </li>
@@ -250,9 +252,9 @@ export default function App() {
               <div className="relative top-1 w-[2px] h-[130px] bg-slate-400 before:absolute before:left-[-6px] before:w-[15px] before:h-[15px] before:bg-slate-400 before:rounded-full"></div>
               {/* Info */}
               <div className="flex flex-col gap-2">
-                <h1 className="font-bold">Gunadarma University</h1>
-                <p className="text-xs text-secondary">Bachelor&apos;s of Information System</p>
-                <h4 className="font-semibold text-sm mt-3">2019 - 2023</h4>
+                <h1 className="font-bold">SMA Plus PGRI Cibinong</h1>
+                <p className="text-xs text-secondary">Social Studies</p>
+                <h4 className="font-semibold text-sm mt-3">2017 - 2019</h4>
               </div>
             </div>
           </div>
@@ -263,14 +265,14 @@ export default function App() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quis voluptates provident dolorem amet in similique, soluta eius minus perspiciatis consectetur adipisicing elit.</p>
 
             <div className="py-5 px-4 flex justify-between items-start">
-              <ul className='list-disc'>
+              <ul className="list-disc">
                 <li>MySQL</li>
                 <li>PostgreSQL</li>
                 <li>SQL Server</li>
                 <li>Oracle</li>
               </ul>
 
-              <ul className='list-disc'>
+              <ul className="list-disc">
                 <li>HTML</li>
                 <li>CSS - TailwindCSS</li>
                 <li>PHP - Laravel</li>
@@ -278,7 +280,7 @@ export default function App() {
                 <li>Express JS</li>
               </ul>
 
-              <ul className='list-disc'>
+              <ul className="list-disc">
                 <li>Ms. Word</li>
                 <li>Ms. Excel</li>
               </ul>
@@ -288,6 +290,110 @@ export default function App() {
         </div>
       </section>
       {/* END Education & Skills */}
+
+      {/* START Contact & Address */}
+      <section className="px-5" id="contact">
+        <div className="flex flex-col items-start">
+          <h3 className="text-[11px] text-secondary tracking-[7px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3">FIND ME</h3>
+          <h1 className="font-bold text-lg">Contact & Address</h1>
+        </div>
+
+        <div>
+          {/* Form  */}
+          <div>
+            <form action="" className="my-5 flex flex-col gap-5">
+              {/* Name */}
+              <input type="text" className="h-[35px] w-full border border-slate-500 rounded-md px-5 placeholder:font-semibold placeholder:text-[14px]" placeholder="Name" />
+              {/* Email */}
+              <input type="email" className="h-[35px] w-full border border-slate-500 rounded-md px-5 placeholder:font-semibold placeholder:text-[14px]" placeholder="Email" />
+              {/* User Message */}
+              <textarea name="message" id="" cols="30" rows="10" className="h-[120px] w-full border border-slate-500 rounded-md px-5 py-2 placeholder:font-semibold placeholder:text-[14px]" placeholder="Write a message"></textarea>
+              {/* Button */}
+              <button className="text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg hover:bg-[#453ACE]">Send Message</button>
+            </form>
+          </div>
+
+          {/* Address & Contact */}
+          <div className="py-5 flex flex-col gap-10">
+            {/* Info Phone */}
+            <div className="flex gap-5">
+              {/* Icon */}
+              <div className="h-[55px] w-[55px] bg-slate-200 flex justify-center items-center rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#453ACE">
+                  <path d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z" />
+                </svg>
+              </div>
+
+              {/* Info */}
+              <div>
+                <h4 className="font-bold">Phone</h4>
+                <p className="text-[14px] text-secondary">+62 812-8321-4126</p>
+              </div>
+            </div>
+
+            {/* Info Email */}
+            <div className="flex gap-5">
+              {/* Icon */}
+              <div className="h-[55px] w-[55px] bg-slate-200 flex justify-center items-center rounded-lg">
+                <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd" fill="#453ACE">
+                  <path d="M22.288 21h-20.576c-.945 0-1.712-.767-1.712-1.712v-13.576c0-.945.767-1.712 1.712-1.712h20.576c.945 0 1.712.767 1.712 1.712v13.576c0 .945-.767 1.712-1.712 1.712zm-10.288-6.086l-9.342-6.483-.02 11.569h18.684v-11.569l-9.322 6.483zm8.869-9.914h-17.789l8.92 6.229s6.252-4.406 8.869-6.229z" />
+                </svg>
+              </div>
+
+              {/* Info */}
+              <div>
+                <h4 className="font-bold">Email</h4>
+                <p className="text-[14px] text-secondary">setranugraha75@gmail.com</p>
+              </div>
+            </div>
+
+            {/* Info Address */}
+            <div className="flex gap-5">
+              {/* Icon */}
+              <div className="h-[55px] w-[55px] bg-slate-200 flex justify-center items-center rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#453ACE">
+                  <path d="M12 3c2.131 0 4 1.73 4 3.702 0 2.05-1.714 4.941-4 8.561-2.286-3.62-4-6.511-4-8.561 0-1.972 1.869-3.702 4-3.702zm0-2c-3.148 0-6 2.553-6 5.702 0 3.148 2.602 6.907 6 12.298 3.398-5.391 6-9.15 6-12.298 0-3.149-2.851-5.702-6-5.702zm0 8c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm8 6h-3.135c-.385.641-.798 1.309-1.232 2h3.131l.5 1h-4.264l-.344.544-.289.456h.558l.858 2h-7.488l.858-2h.479l-.289-.456-.343-.544h-2.042l-1.011-1h2.42c-.435-.691-.848-1.359-1.232-2h-3.135l-4 8h24l-4-8zm-12.794 6h-3.97l1.764-3.528 1.516 1.528h1.549l-.859 2zm8.808-2h3.75l1 2h-3.892l-.858-2z" />
+                </svg>
+              </div>
+
+              {/* Info */}
+              <div>
+                <h4 className="font-bold">Address</h4>
+                <p className="text-[14px] text-secondary">Cikaret, Puri Nirwana 2, Jl. Mangga 2, Blok AY29</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* END Contact & Address */}
+
+      {/* START Footer */}
+      <footer className="px-5 mt-10 h-[150px] bg-slate-200 flex flex-col justify-center items-center gap-5">
+        <div className="flex gap-5 justify-center items-center">
+          {/* Instagram */}
+          <a href="https://instagram.com/setranugrahaa" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current hover:text-pink-700">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+
+          {/* Linkedin */}
+          <a href="https://www.linkedin.com/in/setranugraha" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current hover:text-blue-700">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
+          </a>
+
+          {/* Github */}
+          <a href="https://www.github.com/setranugraha" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current hover:text-slate-700">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+        </div>
+        <p className="text-secondary text-[14px] font-semibold">&copy; 2024 - Made By Setra</p>
+      </footer>
+      {/* END Footer */}
     </>
   )
 }
