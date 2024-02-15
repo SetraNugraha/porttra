@@ -7,7 +7,7 @@ const NavMenu = ({ title, url }) => {
   return (
     <>
       <li className="hover:bg-slate-200 hover:rounded-lg py-2">
-        <a href={url} className="px-2 font-semibold text-slate-500">
+        <a href={url} className="px-2 font-semibold text-slate-700">
           {title}
         </a>
       </li>
@@ -17,16 +17,16 @@ const NavMenu = ({ title, url }) => {
 
 const Header = ({ title, subTitle, position }) => {
   return (
-    <div className={`flex flex-col items-${position}`}>
-      <h3 className="text-[11px] text-secondary tracking-[7px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3">{title}</h3>
-      <h1 className="font-bold text-lg">{subTitle}</h1>
+    <div className={`flex flex-col items-${position} || xl:w-[55%] xl:mx-auto`}>
+      <h3 className="text-[11px] text-secondary tracking-[7px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold xl:before:h-[2px] ">{title}</h3>
+      <h1 className="font-bold text-lg text-gray-600 || xl:text-3xl ">{subTitle}</h1>
     </div>
   )
 }
 
 const ServicesMenu = ({ title, icon, description }) => {
   return (
-    <div className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center">
+    <div className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center || xl:w-1/4">
       {/* Icon */}
       <div className="bg-slate-200 p-4 rounded-xl">
         <img src={icon} alt="" />
@@ -49,11 +49,11 @@ const Project = ({ title, url, description, tech1, tech2, tech3, tech4, tech5, t
 
   return (
     <>
-      {/* Portofolio 1 */}
-      <div className="h-1/1 my-5 border border-secondary rounded-xl">
+      {/* Portofolio */}
+      <div className="h-1/1 my-5 border border-secondary rounded-xl || xl:w-[25%] xl:flex xl:flex-col xl:justify-between ">
         {/* Image */}
         <div>
-          <img src="./src/assets/no-image.png" alt="portofolio1" />
+          <img src="./src/assets/no-image.png" alt="portofolio" />
         </div>
 
         {/* Info */}
@@ -75,7 +75,7 @@ const Project = ({ title, url, description, tech1, tech2, tech3, tech4, tech5, t
           {tech5 ? <Techstack techName={tech5} /> : null}
           {tech6 ? <Techstack techName={tech6} /> : null}
         </div>
-        <p className="text-xs text-secondary text-[12px] leading-loose px-5 py-2">{description}</p>
+        <p className="text-xs text-secondary text-[12px] leading-loose px-5 py-2 ">{description}</p>
       </div>
     </>
   )
@@ -84,14 +84,14 @@ const Project = ({ title, url, description, tech1, tech2, tech3, tech4, tech5, t
 const Education = ({ place, major, year }) => {
   return (
     <>
-      <div className="flex gap-5">
+      <div className="flex gap-5 || xl:gap-10 ">
         {/* Line */}
-        <div className="relative top-1 w-[2px] h-[130px] bg-slate-400 before:absolute before:left-[-6px] before:w-[15px] before:h-[15px] before:bg-slate-400 before:rounded-full"></div>
+        <div className="relative top-1 w-[2px] h-[130px] bg-slate-400 before:absolute before:left-[-6px] before:w-[15px] before:h-[15px] before:bg-slate-400 before:rounded-full ||  "></div>
         {/* Info */}
         <div className="flex flex-col gap-2">
-          <h1 className="font-bold">{place}</h1>
-          <p className="text-xs text-secondary">{major}</p>
-          <h4 className="font-semibold text-sm mt-3">{year}</h4>
+          <h1 className="font-bold text-stone-700 || xl:text-xl ">{place}</h1>
+          <p className="text-xs text-slate-700 || xl:text-[16px] ">{major}</p>
+          <h4 className="font-semibold text-stone-700 text-sm mt-3 || xl:text-lg ">{year}</h4>
         </div>
       </div>
     </>
@@ -105,13 +105,13 @@ const Skills = () => {
 
   return (
     <>
-      <p>
-        Saya sangat antusias sekali dengan dunia <i>Information Technoology </i>(IT), selama perkuliahan saya banyak dibekali dengan pengetahuan seputar <i>Software Development</i>, seperti Project Management, Web Development, Database dan
-        sebagainya. Saya selalu siap untuk belajar dan mengembangkan keterampilan saya di bidang IT ini. Saya percaya bahwa dengan dedikasi, kerja keras, konsistensi dan kreativitas, saya dapat memberikan kontribusi yang berarti untuk diri
-        saya dan masyarakat banyak.
+      <p className="text-slate-700 xl:text-[16px] xl:text-justify">
+        Saya sangat antusias sekali dengan dunia <i>Information Technoology </i>(IT), selama perkuliahan saya banyak dibekali dengan pengetahuan seputar <i>Software Development</i>, seperti{' '}
+        <i>Project Management, Web Development, Database</i> dan sebagainya. Saya selalu siap untuk belajar dan mengembangkan keterampilan saya di bidang IT ini. Saya percaya bahwa dengan dedikasi, kerja keras, konsistensi dan kreativitas,
+        saya dapat memberikan kontribusi yang berarti untuk diri saya dan masyarakat banyak.
       </p>
 
-      <div className="py-5 px-4 flex justify-between items-start">
+      <div className="py-5 px-4 text-slate-700 flex justify-between items-start || xl:text-[16px] ">
         <ul className="list-disc">
           {database.map((item, index) => {
             return <li key={index}>{item}</li>
@@ -163,7 +163,7 @@ const ContactInfo = ({ title, icon, description }) => {
 
       {/* Info */}
       <div>
-        <h4 className="font-bold">{title}</h4>
+        <h4 className="font-bold text-stone-700">{title}</h4>
         <p className="text-[14px] text-secondary">{description}</p>
       </div>
     </div>
@@ -180,54 +180,74 @@ export default function App() {
   return (
     <>
       {/* START Navbar */}
-      <nav className="fixed bg-white h-[50px] w-full flex justify-between items-center px-5 drop-shadow-xl z-10">
-        {/* Title */}
-        <div>
-          <a href="#">
-            <h1 className="text-lg font-semibold">Portofolio</h1>
-          </a>
-        </div>
+      <nav className="fixed bg-white h-[50px] w-full flex justify-between items-center px-5 drop-shadow-xl z-10 || xl:h-[60px]">
+        <div className=" ||  xl:w-[70%] xl:mx-auto xl:justify-between xl:items-center xl:flex ">
+          {/* Title */}
+          <div className="">
+            <a href="#">
+              <h1 className="text-lg font-semibold || xl:text-2xl xl:font-bold">Setra Page</h1>
+            </a>
+          </div>
 
-        {/* Button Menu */}
+          {/* START Button Menu Mobile */}
+          <div className="absolute right-5 top-3 flex">
+            <button className="xl:hidden" onClick={handleToggleNav}>
+              {toggleNav ? <TbLetterX className="w-[30px] h-[30px] " /> : <IoMenu className="w-[30px] h-[30px]" />}
+            </button>
+            {/* Child Menu Mobile */}
+            {toggleNav ? (
+              <div className="absolute bg-slate-100 h-[330px] w-[200px] right-[5px] top-9 border border-slate-400 rounded-lg shadow-lg">
+                <ul className="flex flex-col gap-5 px-5 py-5">
+                  <NavMenu title={'Services'} url={'#services'} />
+                  <NavMenu title={'Portofolio'} url={'#portofolio'} />
+                  <NavMenu title={'Education & Skills'} url={'#skills'} />
+                  <NavMenu title={'Contact'} url={'#contact'} />
+                  <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
+                    <a href="./src/resume.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                      Resume
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            ) : null}
+          </div>
+          {/* END Button Menu Mobile */}
 
-        <div className="absolute right-5 flex">
-          <button onClick={handleToggleNav}>{toggleNav ? <TbLetterX className="w-[30px] h-[30px] " /> : <IoMenu className="w-[30px] h-[30px]" />}</button>
-          {/* Child Menu Mobile */}
-          {toggleNav ? (
-            <div className="absolute bg-slate-100 h-[330px] w-[200px] right-[5px] top-9 border border-slate-400 rounded-lg shadow-lg">
-              <ul className="flex flex-col gap-5 px-5 py-5">
-                <NavMenu title={'Services'} url={'#services'} />
-                <NavMenu title={'Portofolio'} url={'#portofolio'} />
-                <NavMenu title={'Education & Skills'} url={'#skills'} />
-                <NavMenu title={'Contact'} url={'#contact'} />
-                <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
-                  <a href="./src/resume.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
-                    Resume
-                  </a>
-                </li>
-              </ul>
-            </div>
-          ) : null}
+          {/* START NAV Menu Desktop View */}
+          <div className="hidden || xl:block">
+            <ul className="flex gap-5 px-5 py-5">
+              <NavMenu title={'Services'} url={'#services'} />
+              <NavMenu title={'Portofolio'} url={'#portofolio'} />
+              <NavMenu title={'Education & Skills'} url={'#skills'} />
+              <NavMenu title={'Contact'} url={'#contact'} />
+              <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
+                <a href="./src/resume.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                  Resume
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+        {/* END NAV Menu Desktop View */}
       </nav>
 
       {/* END Navbar */}
 
       {/* START Hero */}
-      <section className="px-5" id="hero">
+      <section className="px-5 || xl:pt-[100px] xl:w-[70%] xl:mx-auto xl:flex xl:gap-2" id="hero">
         {/* Image */}
-        <div className="pt-20 flex justify-center">
-          <img src="./src/assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px]" />
+        <div className="pt-20 flex justify-center || xl:w-1/2 xl:order-last">
+          <img src="./src/assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />
         </div>
 
         {/* Text Perkenalan */}
-        <div className="flex flex-col justify-center items-center">
-          <h3 className="text-xs text-secondary tracking-[6px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3">MY NAME IS</h3>
+        <div className="flex flex-col justify-center items-center || xl:w-1/2 xl:items-start">
+          <h3 className="text-xs text-secondary tracking-[6px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold">HELLO, IT&apos;S ME</h3>
 
-          <h1 className="text-2xl font-bold">
-            Setra Nugraha <span className="text-secondary">Putra Suma</span>
+          <h1 className="text-2xl font-bold || xl:text-5xl">
+            Setra Nugraha <span className="text-stone-400">Putra Suma</span>
           </h1>
-          <p className="text-justify text-[12px] text-secondary mt-2 leading-loose">
+          <p className="text-justify text-[12px] text-stone-800 mt-2 leading-loose || xl:text-lg">
             Lulusan sarjana sistem informasi universitas Gunadarma, yang antusias berfokus pada pengembangan perangkat lunak, analisis data, dan manajemen proyek. Saya memiliki pemahaman mendalam tentang teknologi informasi dan berkomitmen
             untuk menghadirkan solusi teknologi yang inovatif dan efisien untuk mendukung tujuan bisnis. Dengan keterampilan analisis yang kuat dan keahlian dalam pemrograman, saya siap untuk berkontribusi dalam menghadapi tantangan
             teknologi yang ada di era digital.
@@ -237,11 +257,11 @@ export default function App() {
       {/* END Hero */}
 
       {/* START Services */}
-      <section className="px-5 py-5 my-10 bg-slate-100" id="services">
+      <section className="px-5 py-5 my-10 bg-stone-200" id="services">
         <Header title={'SERVICES'} subTitle={'Specialize In'} position={'center'} />
 
         {/* Card */}
-        <div className="py-2">
+        <div className="py-2 || xl:py-10 xl:w-[80%] xl:mx-auto xl:flex xl:flex-wrap xl:gap-10 xl:justify-center xl:items-center">
           {/* Card Database */}
           <ServicesMenu
             title={'Databases'}
@@ -268,10 +288,10 @@ export default function App() {
 
       {/* START Portofolio */}
       <section className="px-5" id="portofolio">
-        <Header title={'MY PROJECT'} subTitle={'Featured Portofolio'} position={'center'} />
+        <Header title={'MY PROJECT'} subTitle={'Featured Portofolio'} position={'start'} />
 
         {/* Card Portofolio */}
-        <div>
+        <div className="xl:mt-10 xl:w-[75%] xl:mx-auto xl:flex xl:flex-wrap xl:gap-5 xl:justify-center">
           <Project title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'React'} tech2={'Express JS'} tech3={'PostgreSQL'} tech4={'Prisma'} />
           <Project title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'HTML'} tech2={'CSS'} tech3={'Javascript'} />
           <Project title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
@@ -280,21 +300,21 @@ export default function App() {
       {/* END Portofolio */}
 
       {/* START Education & Skills */}
-      <section className="px-5 py-5 my-10 bg-slate-100" id="skills">
+      <section className="px-5 py-5 my-10 bg-stone-200" id="skills">
         <Header title={'LEARNING PATH'} subTitle={'Education & Skills'} position={'start'} />
 
-        <div className="py-10">
+        <div className="py-10 || xl:w-[55%] xl:mx-auto xl:flex xl:items-start xl:mt-5">
           {/* START Education */}
-          <div className="flex flex-col">
+          <div className="flex flex-col || xl:w-1/2">
             {/* Education 1 */}
             <Education place={'Universitas Gunadarma'} major={"Bachelor's of Information System"} year={'2019 - 2023'} />
             {/* Education 2 */}
-            <Education place={'SMA Plus PGRI Cibinonga'} major={'Social Studiesm'} year={'2017 - 2019'} />
+            <Education place={'SMA Plus PGRI Cibinong'} major={'Social Studies'} year={'2017 - 2019'} />
           </div>
           {/* END Education */}
 
           {/* START Skills */}
-          <div className="py-5 text-secondary text-[13px] leading-loose ">
+          <div className="py-5 text-secondary text-[13px] leading-loose || xl:w-1/2 xl:py-0 ">
             <Skills />
           </div>
           {/* END Skills */}
@@ -304,16 +324,16 @@ export default function App() {
 
       {/* START Contact & Address */}
       <section className="px-5" id="contact">
-        <Header title={'FIND ME'} subTitle={'Contact & Address'} position={'start'} />
+        <Header title={'FIND ME'} subTitle={'Contact & Address'} position={'center'} />
 
-        <div>
+        <div className="xl:w-[55%] xl:mx-auto xl:flex xl:justify-center xl:gap-10 xl:items-start xl:mt-10">
           {/* Form  */}
-          <div>
+          <div className="xl:w-[45%]">
             <FormContact />
           </div>
 
           {/* Address & Contact */}
-          <div className="py-5 flex flex-col gap-10">
+          <div className="py-5 flex flex-col gap-10 || xl: ">
             <ContactInfo title={'Phone'} icon={'./src/assets/phone.svg'} description={'+62 812-8321-4126'} />
             <ContactInfo title={'Email'} icon={'./src/assets/email.svg'} description={'setranugraha75@gmail.com'} />
             <ContactInfo title={'Address'} icon={'./src/assets/address.svg'} description={'Cikaret, Puri Nirwana 2, Jl. Mangga 2, Blok AY29'} />
@@ -323,7 +343,7 @@ export default function App() {
       {/* END Contact & Address */}
 
       {/* START Footer */}
-      <footer className="px-5 mt-10 h-[150px] bg-slate-200 flex flex-col justify-center items-center gap-5">
+      <footer className="px-5 mt-10 h-[150px] bg-stone-200 flex flex-col justify-center items-center gap-5">
         <div className="flex gap-5 justify-center items-center">
           {/* Instagram */}
           <a href="https://instagram.com/setranugrahaa" target="_blank">
