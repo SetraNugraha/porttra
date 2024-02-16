@@ -332,7 +332,7 @@ export default function App() {
           {/* Card Database */}
           <ServicesMenu
             title={'Databases'}
-            icon={'./src/assets/database.svg'}
+            icon={'/src/assets/database.svg'}
             description={
               'Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data'
             }
