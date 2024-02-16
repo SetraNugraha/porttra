@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { IoMenu } from 'react-icons/io5'
 import { TbLetterX } from 'react-icons/tb'
+import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
 
 const NavMenu = ({ title, url }) => {
   return (
@@ -135,20 +137,85 @@ const Skills = () => {
 }
 
 const FormContact = () => {
-  const InputForm = ({ type, placeholder }) => {
-    return <input type={type} className="h-[35px] w-full border border-slate-500 rounded-md px-5 placeholder:font-semibold placeholder:text-[14px]" placeholder={placeholder} />
+  const serviceID = import.meta.env.VITE_SERVICE_ID
+  const templateID = import.meta.env.VITE_TEMPLATE_ID
+  const publicKEY = import.meta.env.VITE_PUBLIC_KEY
+  // Notif
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'center',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer
+      toast.onmouseleave = Swal.resumeTimer
+    },
+  })
+
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(serviceID, templateID, form.current, {
+        publicKey: publicKEY,
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!')
+
+          Toast.fire({
+            icon: 'success',
+            title: 'Message sent successfully',
+          })
+          form.current.reset()
+        },
+        (error) => {
+          console.log('FAILED...', error.text)
+          Toast.fire({
+            icon: 'error',
+            title: 'Error while sending message !',
+          })
+          form.current.reset()
+        },
+      )
+  }
+
+  const InputForm = ({ type, id, name, placeholder }) => {
+    return (
+      <input
+        type={type}
+        id={id}
+        name={name}
+        className="h-[35px] w-full border border-slate-500 rounded-md px-5 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]"
+        placeholder={placeholder}
+        required
+      />
+    )
   }
 
   return (
-    <form action="" className="my-5 flex flex-col gap-5">
+    <form ref={form} onSubmit={sendEmail} className="my-5 flex flex-col gap-5">
       {/* Name */}
-      <InputForm type={'text'} placeholder={'Name'} />
+      <InputForm type={'text'} id={'text'} name={'user_name'} placeholder={'Name'} />
       {/* Email */}
-      <InputForm type={'email'} placeholder={'Email'} />
+      <InputForm type={'email'} id={'email'} name={'user_email'} placeholder={'Email'} />
       {/* User Message */}
-      <textarea name="message" id="" cols="30" rows="10" className="h-[120px] w-full border border-slate-500 rounded-md px-5 py-2 placeholder:font-semibold placeholder:text-[14px]" placeholder="Write a message"></textarea>
+      <textarea
+        name="message"
+        id="message"
+        cols="30"
+        rows="10"
+        className="h-[120px] w-full border border-slate-500 rounded-md px-5 py-2 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]"
+        placeholder="Write a message"
+        required
+      />
       {/* Button */}
-      <button className="text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg hover:bg-[#453ACE]">Send Message</button>
+      <button type="submit" value="Send" className="text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg hover:bg-[#453ACE]">
+        Send Message
+      </button>
     </form>
   )
 }
@@ -266,21 +333,27 @@ export default function App() {
           <ServicesMenu
             title={'Databases'}
             icon={'./src/assets/database.svg'}
-            description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae fuga nobis delectus nostrum ea deleniti, voluptatibus eos unde earum perferendis?'}
+            description={
+              'Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data'
+            }
           />
 
           {/* Card Bakcend */}
           <ServicesMenu
             title={'Backend Developer'}
             icon={'./src/assets/backend.svg'}
-            description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae fuga nobis delectus nostrum ea deleniti, voluptatibus eos unde earum perferendis?'}
+            description={
+              'Membangun logika bisnis yang kuat untuk memproses data dan menjalankan operasi sebuah aplikasi, mengintegrasikan backend dengan database untuk menyimpan dan mengambil informasi secara efisien, serta mengimplementasikan API untuk berkomunikasi antara backend dan frontend'
+            }
           />
 
           {/* Card Frontend */}
           <ServicesMenu
             title={'Frontend Developer'}
             icon={'./src/assets/frontend.svg'}
-            description={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae fuga nobis delectus nostrum ea deleniti, voluptatibus eos unde earum perferendis?'}
+            description={
+              'Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web'
+            }
           />
         </div>
       </section>
