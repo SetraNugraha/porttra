@@ -34,7 +34,7 @@ const ServicesMenu = ({ title, icon, description }) => {
         <img src={icon} alt="" />
       </div>
       <h4 className="font-semibold py-5">{title}</h4>
-      <p className="text-center text-[12px] text-secondary leading-loose">{description}</p>
+      <p className="text-[12px] text-justify text-secondary leading-loose || xl:text-[14px]">{description}</p>
     </div>
   )
 }
@@ -248,7 +248,7 @@ export default function App() {
     <>
       {/* START Navbar */}
       <nav className="fixed bg-white h-[50px] w-full flex justify-between items-center px-5 drop-shadow-xl z-10 || xl:h-[60px]">
-        <div className=" ||  xl:w-[70%] xl:mx-auto xl:justify-between xl:items-center xl:flex ">
+        <div className=" ||  xl:w-[60%] xl:mx-auto xl:justify-between xl:items-center xl:flex ">
           {/* Title */}
           <div className="">
             <a href="#">
@@ -301,9 +301,9 @@ export default function App() {
       {/* END Navbar */}
 
       {/* START Hero */}
-      <section className="px-5 || xl:pt-[100px] xl:w-[70%] xl:mx-auto xl:flex xl:gap-2" id="hero">
+      <section className="px-5 || xl:pt-[100px] xl:w-[60%] xl:mx-auto xl:flex xl:gap-2" id="hero">
         {/* Image */}
-        <div className="pt-20 flex justify-center || xl:w-1/2 xl:order-last">
+        <div className="pt-20 flex justify-center || xl:w-1/2 xl:order-last xl:ml-[100px]">
           <img src="./src/assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />
         </div>
 
@@ -311,7 +311,7 @@ export default function App() {
         <div className="flex flex-col justify-center items-center || xl:w-1/2 xl:items-start">
           <h3 className="text-xs text-secondary tracking-[6px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold">HELLO, IT&apos;S ME</h3>
 
-          <h1 className="text-2xl font-bold || xl:text-5xl">
+          <h1 className="text-2xl font-bold || xl:text-4xl">
             Setra Nugraha <span className="text-stone-400">Putra Suma</span>
           </h1>
           <p className="text-justify text-[12px] text-stone-800 mt-2 leading-loose || xl:text-lg">
