@@ -389,9 +389,9 @@ export default function App() {
           {/* START Education */}
           <div className="flex flex-col || xl:w-1/2">
             {/* Education 1 */}
-            <Education place={'Gatau'} major={"Bachelor's of Information System"} year={'2019 - 2023'} />
+            <Education place={'Universitas Gunadarma'} major={"Bachelor's of Information System"} year={'2019 - 2023'} />
             {/* Education 2 */}
-            <Education place={'Gatau'} major={'Social Studies'} year={'2017 - 2019'} />
+            <Education place={'SMA Plus PGRI Cibinong'} major={'Social Studies'} year={'2017 - 2019'} />
           </div>
           {/* END Education */}
 
