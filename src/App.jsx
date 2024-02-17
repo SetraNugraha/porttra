@@ -137,9 +137,9 @@ const Skills = () => {
 }
 
 const FormContact = () => {
-  const serviceID = JSON.stringify(import.meta.env.VITE_SERVICE_ID)
-  const templateID = JSON.stringify(import.meta.env.VITE_TEMPLATE_ID)
-  const publicKEY = JSON.stringify(import.meta.env.VITE_PUBLIC_KEY)
+  const serviceID = import.meta.env.VITE_SERVICE_ID
+  const templateID = import.meta.env.VITE_TEMPLATE_ID
+  const publicKEY = import.meta.env.VITE_PUBLIC_KEY
   // Notif
   const Toast = Swal.mixin({
     toast: true,
