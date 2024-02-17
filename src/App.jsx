@@ -181,7 +181,6 @@ const FormContact = () => {
             icon: 'error',
             title: 'Error while sending message !',
           })
-          form.current.reset()
         },
       )
       .then(form.current.reset())
@@ -279,7 +278,7 @@ export default function App() {
                   <NavMenu title={'Education & Skills'} url={'#skills'} />
                   <NavMenu title={'Contact'} url={'#contact'} />
                   <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
-                    <a href="test.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                    <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                       Resume
                     </a>
                   </li>
@@ -297,7 +296,7 @@ export default function App() {
               <NavMenu title={'Education & Skills'} url={'#skills'} />
               <NavMenu title={'Contact'} url={'#contact'} />
               <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
-                <a href="test.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                   Resume
                 </a>
               </li>
