@@ -108,8 +108,9 @@ const Skills = () => {
   return (
     <>
       <p className="text-slate-700 xl:text-[16px] xl:text-justify">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est recusandae architecto voluptates, id quod in. Sunt accusantium, nemo mollitia veritatis nam provident maiores est nesciunt ratione adipisci magnam vel illum harum
-        laudantium ullam reiciendis. Impedit pariatur necessitatibus ad odio sunt et, ducimus perspiciatis nam atque officiis vero minus eaque voluptates dolor alias rerum numquam provident, sequi unde ipsam exercitationem nihil?
+        Saya mempunyai antusias yang tinggi dengan dunia <i>Information Technoology </i>(IT), selama perkuliahan saya banyak dibekali dengan pengetahuan seputar <i>Software Development</i>, seperti{' '}
+        <i>Project Management, Web Development, Database</i> dan sebagainya. Saya selalu siap untuk belajar dan mengembangkan keterampilan saya di bidang IT ini. Saya percaya bahwa dengan dedikasi, kerja keras, konsistensi dan kreativitas,
+        saya dapat memberikan kontribusi yang berarti untuk diri saya dan masyarakat banyak.
       </p>
 
       <div className="py-5 px-4 text-slate-700 flex justify-between items-start || xl:text-[16px] ">
@@ -173,7 +174,7 @@ const FormContact = () => {
               title: 'Message sent successfully',
             })
             setProcessSend(false)
-          }, 2000)
+          }, 1000)
         },
         (error) => {
           console.log('FAILED...', error.text)
@@ -323,8 +324,9 @@ export default function App() {
             Setra Nugraha <span className="text-stone-400">Putra Suma</span>
           </h1>
           <p className="text-justify text-[12px] text-stone-800 mt-2 leading-loose || xl:text-lg">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex iure, quo eius dignissimos laboriosam corporis consequatur provident sunt ab rem dolores modi nulla autem sapiente nam earum magnam necessitatibus, dicta
-            inventore dolorum doloremque quod? Minus vitae aliquam ipsa quaerat, nisi quos delectus eveniet nihil adipisci odio expedita facilis molestiae!
+            Lulusan sarjana sistem informasi universitas Gunadarma, yang antusias berfokus pada pengembangan perangkat lunak, analisis data, dan manajemen proyek. Saya memiliki pemahaman mendalam tentang teknologi informasi dan berkomitmen
+            untuk menghadirkan solusi teknologi yang inovatif dan efisien untuk mendukung tujuan bisnis. Dengan keterampilan analisis yang kuat dan keahlian dalam pemrograman, saya siap untuk berkontribusi dalam menghadapi tantangan
+            teknologi yang ada di era digital.
           </p>
         </div>
       </section>
@@ -414,9 +416,9 @@ export default function App() {
 
           {/* Address & Contact */}
           <div className="py-5 flex flex-col gap-10 || xl: ">
-            <ContactInfo title={'Phone'} icon={'assets/phone.svg'} description={'+62 888-8888-8888'} />
-            <ContactInfo title={'Email'} icon={'assets/email.svg'} description={'setranugraha7517267414@gmail.com'} />
-            <ContactInfo title={'Address'} icon={'assets/address.svg'} description={'Tidak Diketahui'} />
+            <ContactInfo title={'Phone'} icon={'assets/phone.svg'} description={'+62 812-8321-4126'} />
+            <ContactInfo title={'Email'} icon={'assets/email.svg'} description={'setranugraha75@gmail.com'} />
+            <ContactInfo title={'Address'} icon={'assets/address.svg'} description={'Cibinong, Kab. Bogor, Jawa Barat'} />
           </div>
         </div>
       </section>
