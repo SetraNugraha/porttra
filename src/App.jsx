@@ -55,7 +55,7 @@ const Project = ({ title, url, description, tech1, tech2, tech3, tech4, tech5, t
       <div className="h-1/1 my-5 border border-secondary rounded-xl || xl:w-[25%] xl:flex xl:flex-col xl:justify-between ">
         {/* Image */}
         <div>
-          <img src="./src/assets/no-image.png" alt="portofolio" />
+          <img src="assets/no-image.png" alt="portofolio" />
         </div>
 
         {/* Info */}
@@ -313,7 +313,7 @@ export default function App() {
       <section className="px-5 || xl:pt-[100px] xl:w-[60%] xl:mx-auto xl:flex xl:gap-2" id="hero">
         {/* Image */}
         <div className="pt-20 flex justify-center || xl:w-1/2 xl:order-last xl:ml-[100px]">
-          <img src="./src/assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />
+          <img src="assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />
         </div>
 
         {/* Text Perkenalan */}
@@ -340,7 +340,7 @@ export default function App() {
           {/* Card Database */}
           <ServicesMenu
             title={'Databases'}
-            icon={'/src/assets/database.svg'}
+            icon={'assets/database.svg'}
             description={
               'Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data'
             }
@@ -349,7 +349,7 @@ export default function App() {
           {/* Card Bakcend */}
           <ServicesMenu
             title={'Backend Developer'}
-            icon={'./src/assets/backend.svg'}
+            icon={'assets/backend.svg'}
             description={
               'Membangun logika bisnis yang kuat untuk memproses data dan menjalankan operasi sebuah aplikasi, mengintegrasikan backend dengan database untuk menyimpan dan mengambil informasi secara efisien, serta mengimplementasikan API untuk berkomunikasi antara backend dan frontend'
             }
@@ -358,7 +358,7 @@ export default function App() {
           {/* Card Frontend */}
           <ServicesMenu
             title={'Frontend Developer'}
-            icon={'./src/assets/frontend.svg'}
+            icon={'assets/frontend.svg'}
             description={
               'Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web'
             }
@@ -415,9 +415,9 @@ export default function App() {
 
           {/* Address & Contact */}
           <div className="py-5 flex flex-col gap-10 || xl: ">
-            <ContactInfo title={'Phone'} icon={'./src/assets/phone.svg'} description={'+62 888-8888-8888'} />
-            <ContactInfo title={'Email'} icon={'./src/assets/email.svg'} description={'setranugraha7517267414@gmail.com'} />
-            <ContactInfo title={'Address'} icon={'./src/assets/address.svg'} description={'Tidak Diketahui'} />
+            <ContactInfo title={'Phone'} icon={'assets/phone.svg'} description={'+62 888-8888-8888'} />
+            <ContactInfo title={'Email'} icon={'assets/email.svg'} description={'setranugraha7517267414@gmail.com'} />
+            <ContactInfo title={'Address'} icon={'assets/address.svg'} description={'Tidak Diketahui'} />
           </div>
         </div>
       </section>
