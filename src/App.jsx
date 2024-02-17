@@ -108,9 +108,8 @@ const Skills = () => {
   return (
     <>
       <p className="text-slate-700 xl:text-[16px] xl:text-justify">
-        Saya sangat antusias sekali dengan dunia <i>Information Technoology </i>(IT), selama perkuliahan saya banyak dibekali dengan pengetahuan seputar <i>Software Development</i>, seperti{' '}
-        <i>Project Management, Web Development, Database</i> dan sebagainya. Saya selalu siap untuk belajar dan mengembangkan keterampilan saya di bidang IT ini. Saya percaya bahwa dengan dedikasi, kerja keras, konsistensi dan kreativitas,
-        saya dapat memberikan kontribusi yang berarti untuk diri saya dan masyarakat banyak.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est recusandae architecto voluptates, id quod in. Sunt accusantium, nemo mollitia veritatis nam provident maiores est nesciunt ratione adipisci magnam vel illum harum
+        laudantium ullam reiciendis. Impedit pariatur necessitatibus ad odio sunt et, ducimus perspiciatis nam atque officiis vero minus eaque voluptates dolor alias rerum numquam provident, sequi unde ipsam exercitationem nihil?
       </p>
 
       <div className="py-5 px-4 text-slate-700 flex justify-between items-start || xl:text-[16px] ">
@@ -140,6 +139,8 @@ const FormContact = () => {
   const serviceID = import.meta.env.VITE_SERVICE_ID
   const templateID = import.meta.env.VITE_TEMPLATE_ID
   const publicKEY = import.meta.env.VITE_PUBLIC_KEY
+  const [processSend, setProcessSend] = useState(false)
+
   // Notif
   const Toast = Swal.mixin({
     toast: true,
@@ -162,15 +163,17 @@ const FormContact = () => {
       .sendForm(serviceID, templateID, form.current, {
         publicKey: publicKEY,
       })
+      .then(setProcessSend(true))
       .then(
         () => {
-          console.log('SUCCESS!')
-
-          Toast.fire({
-            icon: 'success',
-            title: 'Message sent successfully',
-          })
-          form.current.reset()
+          setTimeout(() => {
+            console.log('SUCCESS!')
+            Toast.fire({
+              icon: 'success',
+              title: 'Message sent successfully',
+            })
+            setProcessSend(false)
+          }, 2000)
         },
         (error) => {
           console.log('FAILED...', error.text)
@@ -181,6 +184,7 @@ const FormContact = () => {
           form.current.reset()
         },
       )
+      .then(form.current.reset())
   }
 
   const InputForm = ({ type, id, name, placeholder }) => {
@@ -213,8 +217,13 @@ const FormContact = () => {
         required
       />
       {/* Button */}
-      <button type="submit" value="Send" className="text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg hover:bg-[#453ACE]">
-        Send Message
+      <button
+        type="submit"
+        value="Send"
+        className={`text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg hover:bg-[#453ACE] ${processSend ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`}
+        disabled={processSend}
+      >
+        {processSend ? 'Process Sending Message ...' : 'Submit'}
       </button>
     </form>
   )
@@ -252,7 +261,7 @@ export default function App() {
           {/* Title */}
           <div className="">
             <a href="#">
-              <h1 className="text-lg font-semibold || xl:text-2xl xl:font-bold">Setra Page</h1>
+              <h1 className="text-lg font-semibold || xl:text-2xl xl:font-bold">Porttra</h1>
             </a>
           </div>
 
@@ -270,7 +279,7 @@ export default function App() {
                   <NavMenu title={'Education & Skills'} url={'#skills'} />
                   <NavMenu title={'Contact'} url={'#contact'} />
                   <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
-                    <a href="./src/resume.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                    <a href="./src/test.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                       Resume
                     </a>
                   </li>
@@ -288,7 +297,7 @@ export default function App() {
               <NavMenu title={'Education & Skills'} url={'#skills'} />
               <NavMenu title={'Contact'} url={'#contact'} />
               <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
-                <a href="./src/resume.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                <a href="./src/test.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                   Resume
                 </a>
               </li>
@@ -315,9 +324,8 @@ export default function App() {
             Setra Nugraha <span className="text-stone-400">Putra Suma</span>
           </h1>
           <p className="text-justify text-[12px] text-stone-800 mt-2 leading-loose || xl:text-lg">
-            Lulusan sarjana sistem informasi universitas Gunadarma, yang antusias berfokus pada pengembangan perangkat lunak, analisis data, dan manajemen proyek. Saya memiliki pemahaman mendalam tentang teknologi informasi dan berkomitmen
-            untuk menghadirkan solusi teknologi yang inovatif dan efisien untuk mendukung tujuan bisnis. Dengan keterampilan analisis yang kuat dan keahlian dalam pemrograman, saya siap untuk berkontribusi dalam menghadapi tantangan
-            teknologi yang ada di era digital.
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum ex iure, quo eius dignissimos laboriosam corporis consequatur provident sunt ab rem dolores modi nulla autem sapiente nam earum magnam necessitatibus, dicta
+            inventore dolorum doloremque quod? Minus vitae aliquam ipsa quaerat, nisi quos delectus eveniet nihil adipisci odio expedita facilis molestiae!
           </p>
         </div>
       </section>
@@ -380,9 +388,9 @@ export default function App() {
           {/* START Education */}
           <div className="flex flex-col || xl:w-1/2">
             {/* Education 1 */}
-            <Education place={'Universitas Gunadarma'} major={"Bachelor's of Information System"} year={'2019 - 2023'} />
+            <Education place={'Gatau'} major={"Bachelor's of Information System"} year={'2019 - 2023'} />
             {/* Education 2 */}
-            <Education place={'SMA Plus PGRI Cibinong'} major={'Social Studies'} year={'2017 - 2019'} />
+            <Education place={'Gatau'} major={'Social Studies'} year={'2017 - 2019'} />
           </div>
           {/* END Education */}
 
@@ -407,9 +415,9 @@ export default function App() {
 
           {/* Address & Contact */}
           <div className="py-5 flex flex-col gap-10 || xl: ">
-            <ContactInfo title={'Phone'} icon={'./src/assets/phone.svg'} description={'+62 812-8321-4126'} />
-            <ContactInfo title={'Email'} icon={'./src/assets/email.svg'} description={'setranugraha75@gmail.com'} />
-            <ContactInfo title={'Address'} icon={'./src/assets/address.svg'} description={'Cikaret, Puri Nirwana 2, Jl. Mangga 2, Blok AY29'} />
+            <ContactInfo title={'Phone'} icon={'./src/assets/phone.svg'} description={'+62 888-8888-8888'} />
+            <ContactInfo title={'Email'} icon={'./src/assets/email.svg'} description={'setranugraha7517267414@gmail.com'} />
+            <ContactInfo title={'Address'} icon={'./src/assets/address.svg'} description={'Tidak Diketahui'} />
           </div>
         </div>
       </section>
