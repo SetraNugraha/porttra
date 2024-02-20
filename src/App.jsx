@@ -39,7 +39,7 @@ const ServicesMenu = ({ title, icon, description }) => {
   )
 }
 
-const Project = ({ title, url, description, tech1, tech2, tech3, tech4, tech5, tech6 }) => {
+const Project = ({ pathImg, title, url, description, tech1, tech2, tech3, tech4, tech5, tech6 }) => {
   // TECHSTACK
   const Techstack = ({ techName }) => {
     return (
@@ -55,13 +55,13 @@ const Project = ({ title, url, description, tech1, tech2, tech3, tech4, tech5, t
       <div className="h-1/1 my-5 border border-secondary rounded-xl || xl:w-[25%] xl:flex xl:flex-col xl:justify-between ">
         {/* Image */}
         <div>
-          <img src="assets/no-image.png" alt="portofolio" />
+          <img src={pathImg} alt="portofolio" className='w-[95%] mx-auto my-2 rounded-lg shadow-xl' />
         </div>
 
         {/* Info */}
-        <div className="flex justify-between px-5">
-          <h4>{title}</h4>
-          <a href={url} className="hover:blue-500">
+        <div className="flex justify-between px-5 py-2">
+          <h4 className='font-semibold'>{title}</h4>
+          <a href={url} className="hover:blue-500" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" className="fill-current hover:text-blue-500" width="24" height="24" viewBox="0 0 24 24">
               <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
             </svg>
@@ -77,7 +77,7 @@ const Project = ({ title, url, description, tech1, tech2, tech3, tech4, tech5, t
           {tech5 ? <Techstack techName={tech5} /> : null}
           {tech6 ? <Techstack techName={tech6} /> : null}
         </div>
-        <p className="text-xs text-secondary text-[12px] leading-loose px-5 py-2 ">{description}</p>
+        <p className="text-[12px] text-secondary xl:text-[14px] leading-loose px-5 py-2 ">{description}</p>
       </div>
     </>
   )
@@ -374,9 +374,16 @@ export default function App() {
 
         {/* Card Portofolio */}
         <div className="xl:mt-10 xl:w-[75%] xl:mx-auto xl:flex xl:flex-wrap xl:gap-5 xl:justify-center">
-          <Project title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'React'} tech2={'Express JS'} tech3={'PostgreSQL'} tech4={'Prisma'} />
-          <Project title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'HTML'} tech2={'CSS'} tech3={'Javascript'} />
-          <Project title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
+          <Project
+            pathImg={'assets/fbcln.png'}
+            title={'Facebook Clone, Login & Homepage.'}
+            url={'https://facebook-clone-setra.vercel.app/'}
+            description={'Simple UI Facebook Clone, jika dibuka pada Google Chrome akan terdapat warning, klik detail dan klik link text paling bawah, atau buka dengan Ms. Edge - Desktop Only'}
+            tech1={'React'}
+            tech2={'Tailwind CSS'}
+          />
+          <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'HTML'} tech2={'CSS'} tech3={'Javascript'} />
+          <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
         </div>
       </section>
       {/* END Portofolio */}
