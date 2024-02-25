@@ -55,12 +55,12 @@ const Project = ({ pathImg, title, url, description, tech1, tech2, tech3, tech4,
       <div className="h-1/1 my-5 border border-secondary rounded-xl || xl:w-[25%] xl:flex xl:flex-col xl:justify-between ">
         {/* Image */}
         <div>
-          <img src={pathImg} alt="portofolio" className='w-[95%] mx-auto my-2 rounded-lg shadow-xl' />
+          <img src={pathImg} alt="portofolio" className="w-[95%] mx-auto my-2 rounded-lg shadow-xl" />
         </div>
 
         {/* Info */}
         <div className="flex justify-between px-5 py-2">
-          <h4 className='font-semibold'>{title}</h4>
+          <h4 className="font-semibold">{title}</h4>
           <a href={url} className="hover:blue-500" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" className="fill-current hover:text-blue-500" width="24" height="24" viewBox="0 0 24 24">
               <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
@@ -101,9 +101,8 @@ const Education = ({ place, major, year }) => {
 }
 
 const Skills = () => {
-  const database = ['MySQL', 'PostgreSQL', 'SQL Server', 'Oracle']
-  const code = ['HTML', 'CSS - TailwindCSS', 'PHP - Laravel', 'Javascript - React JS', 'Express JS']
-  const msOffice = ['Ms. Word', 'Ms. Excel']
+  const database = ['MySQL.svg', 'PostgresSQL.svg', 'SQL-Server.svg', 'SQL-Developer.svg']
+  const code = ['HTML5.svg', 'CSS3.svg', 'Tailwind-CSS.svg', 'PHP.svg', 'JavaScript.svg', 'React.svg', 'Laravel.svg']
 
   return (
     <>
@@ -113,24 +112,38 @@ const Skills = () => {
         saya dapat memberikan kontribusi yang berarti untuk diri saya dan masyarakat banyak.
       </p>
 
-      <div className="py-5 px-4 text-slate-700 flex justify-between items-start || xl:text-[16px] ">
-        <ul className="list-disc">
-          {database.map((item, index) => {
-            return <li key={index}>{item}</li>
-          })}
-        </ul>
+      <div className="py-5 text-slate-700 || xl:text-[16px] ">
+        <h3 className="font-bold">My Tech Proficiency - Junior Level, Commited to Evolve</h3>
 
-        <ul className="list-disc">
-          {code.map((item, index) => {
-            return <li key={index}>{item}</li>
-          })}
-        </ul>
+        <div className="flex justify-between items-start my-3">
+          {/* DATABASE */}
+          <div className="w-1/2 flex flex-col justify-center items-center">
+            <h6 className="font-semibold text-[14px] text-secondary py-1 || xl:text-[16px]">Database : </h6>
+            <ul className="flex flex-wrap justify-center gap-3 py-4 px-4 || xl:justify-start">
+              {database.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <img src={`assets/skills/${item}`} alt="logo database" className="w-[40px] h-[40px]" />
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
 
-        <ul className="list-disc">
-          {msOffice.map((item, index) => {
-            return <li key={index}>{item}</li>
-          })}
-        </ul>
+          {/* CODE */}
+          <div className="w-1/2 flex flex-col justify-center items-center">
+            <h6 className="font-semibold text-[14px] text-secondary py-1 xl:text-[16px]">Code : </h6>
+            <ul className="flex flex-wrap justify-center gap-3 py-4 px-4 || xl:justify-start">
+              {code.map((item, index) => {
+                return (
+                  <li key={index}>
+                    <img src={`assets/skills/${item}`} alt="logo code" className="w-[40px] h-[40px]" />
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   )
@@ -377,12 +390,20 @@ export default function App() {
           <Project
             pathImg={'assets/fbcln.png'}
             title={'Facebook Clone, Login & Homepage.'}
-            url={'https://facebook-clone-setra.vercel.app/'}
-            description={'Simple UI Facebook Clone, jika dibuka pada Google Chrome akan terdapat warning, klik detail dan klik link text paling bawah, atau buka dengan Ms. Edge - Desktop Only'}
+            url={'https://fbcln-setra.vercel.app/'}
+            description={'Slicing Login & Homepage UI Facebook - Desktop Only'}
             tech1={'React'}
             tech2={'Tailwind CSS'}
           />
-          <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'HTML'} tech2={'CSS'} tech3={'Javascript'} />
+          <Project
+            pathImg={'assets/shoplist.png'}
+            title={'Shopping list'}
+            url={'https://shoplist-setra.vercel.app'}
+            description={'Web App sederhana untuk pencatatan perbelanjaan - Desktop & Mobile'}
+            tech1={'React JS'}
+            tech2={'Tailwind CSS'}
+            tech3={'Local Storage'}
+          />
           <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
         </div>
       </section>
