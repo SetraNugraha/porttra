@@ -392,7 +392,7 @@ export default function App() {
             title={'Facebook Clone, Login & Homepage.'}
             url={'https://fbcln-setra.vercel.app/'}
             description={'Slicing Login & Homepage UI Facebook - Desktop Only'}
-            tech1={'React'}
+            tech1={'React JS'}
             tech2={'Tailwind CSS'}
           />
           <Project
