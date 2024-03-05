@@ -404,6 +404,15 @@ export default function App() {
             tech2={'Tailwind CSS'}
             tech3={'Local Storage'}
           />
+          <Project
+            pathImg={'assets/guessnumber.png'}
+            title={'Game App - Guess The Number ! '}
+            url={'https://guess-number-bysetra.vercel.app'}
+            description={'Simple game to predict the number based on difficulty'}
+            tech1={'React JS'}
+            tech2={'Tailwind CSS'}
+          />
+          <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
           <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
         </div>
       </section>
