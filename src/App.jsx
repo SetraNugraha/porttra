@@ -285,7 +285,7 @@ export default function App() {
             </button>
             {/* Child Menu Mobile */}
             {toggleNav ? (
-              <div className="absolute bg-slate-100 h-[330px] w-[200px] right-[5px] top-9 border border-slate-400 rounded-lg shadow-lg">
+              <div className="absolute bg-slate-100 h-[390px] w-[200px] right-[5px] top-9 border border-slate-400 rounded-lg shadow-lg">
                 <ul className="flex flex-col gap-5 px-5 py-5">
                   <NavMenu title={'Services'} url={'#services'} />
                   <NavMenu title={'Portofolio'} url={'#portofolio'} />
@@ -294,6 +294,11 @@ export default function App() {
                   <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
                     <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                       Resume
+                    </a>
+                  </li>
+                  <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
+                    <a href="sertifikasi-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                      Certification
                     </a>
                   </li>
                 </ul>
@@ -312,6 +317,11 @@ export default function App() {
               <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
                 <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                   Resume
+                </a>
+              </li>
+              <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
+                <a href="sertifikasi-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
+                Certification
                 </a>
               </li>
             </ul>
