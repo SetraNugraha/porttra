@@ -321,7 +321,7 @@ export default function App() {
               </li>
               <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
                 <a href="sertifikasi-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
-                Certification
+                  Certification
                 </a>
               </li>
             </ul>
@@ -495,7 +495,9 @@ export default function App() {
             </svg>
           </a>
         </div>
-        <p className="text-secondary text-[14px] font-semibold">&copy; 2024 - Made By Setra</p>
+        <p className="text-secondary text-[14px] font-semibold flex flex-col justify-center items-center">
+          &copy; 2024 - Made By Setra <span>Vite - React JS - Tailwind CSS - Email JS</span>
+        </p>
       </footer>
       {/* END Footer */}
     </>
