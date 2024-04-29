@@ -2,16 +2,17 @@
 import { useState, useRef } from 'react'
 import { IoMenu } from 'react-icons/io5'
 import { TbLetterX } from 'react-icons/tb'
+import { Link } from 'react-scroll'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
 
-const NavMenu = ({ title, url }) => {
+const NavMenu = ({ title, path, key }) => {
   return (
     <>
-      <li className="hover:bg-slate-200 hover:rounded-lg py-2">
-        <a href={url} className="px-2 font-semibold text-slate-700">
+      <li key={key} className="hover:bg-slate-200 hover:rounded-lg py-2">
+        <Link to={path} spy={true} smooth={true} offset={-80} duration={1000} className="px-2 font-semibold text-slate-700">
           {title}
-        </a>
+        </Link>
       </li>
     </>
   )
@@ -101,7 +102,7 @@ const Education = ({ place, major, year }) => {
 }
 
 const Skills = () => {
-  const database = ['MySQL.svg', 'PostgresSQL.svg', 'SQL-Server.svg', 'SQL-Developer.svg']
+  const database = ['MySQL.svg', 'PostgresSQL.svg']
   const code = ['HTML5.svg', 'CSS3.svg', 'Tailwind-CSS.svg', 'PHP.svg', 'JavaScript.svg', 'React.svg', 'Laravel.svg']
 
   return (
@@ -260,6 +261,25 @@ const ContactInfo = ({ title, icon, description }) => {
 }
 
 export default function App() {
+  const menuNav = [
+    {
+      title: 'Services',
+      path: 'services',
+    },
+    {
+      title: 'Portfolio',
+      path: 'portfolio',
+    },
+    {
+      title: 'Education & Skills',
+      path: 'skills',
+    },
+    {
+      title: 'Contact',
+      path: 'contact',
+    },
+  ]
+
   const [toggleNav, setToggleNav] = useState(false)
 
   const handleToggleNav = () => {
@@ -273,9 +293,9 @@ export default function App() {
         <div className=" ||  xl:w-[60%] xl:mx-auto xl:justify-between xl:items-center xl:flex ">
           {/* Title */}
           <div className="">
-            <a href="#">
+            <Link to="hero" spy={true} smooth={true} offset={-70} duration={1000}>
               <h1 className="text-lg font-semibold || xl:text-2xl xl:font-bold">Porttra</h1>
-            </a>
+            </Link>
           </div>
 
           {/* START Button Menu Mobile */}
@@ -287,10 +307,9 @@ export default function App() {
             {toggleNav ? (
               <div className="absolute bg-slate-100 h-[390px] w-[200px] right-[5px] top-9 border border-slate-400 rounded-lg shadow-lg">
                 <ul className="flex flex-col gap-5 px-5 py-5">
-                  <NavMenu title={'Services'} url={'#services'} />
-                  <NavMenu title={'Portofolio'} url={'#portofolio'} />
-                  <NavMenu title={'Education & Skills'} url={'#skills'} />
-                  <NavMenu title={'Contact'} url={'#contact'} />
+                  {menuNav.map((item, index) => (
+                    <NavMenu title={item.title} path={item.path} key={index} />
+                  ))}
                   <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
                     <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                       Resume
@@ -310,10 +329,9 @@ export default function App() {
           {/* START NAV Menu Desktop View */}
           <div className="hidden || xl:block">
             <ul className="flex gap-5 px-5 py-5">
-              <NavMenu title={'Services'} url={'#services'} />
-              <NavMenu title={'Portofolio'} url={'#portofolio'} />
-              <NavMenu title={'Education & Skills'} url={'#skills'} />
-              <NavMenu title={'Contact'} url={'#contact'} />
+              {menuNav.map((item, index) => (
+                <NavMenu title={item.title} path={item.path} key={index} />
+              ))}
               <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
                 <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                   Resume
@@ -344,13 +362,9 @@ export default function App() {
           <h3 className="text-xs text-secondary tracking-[6px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold">HELLO, IT&apos;S ME</h3>
 
           <h1 className="text-2xl font-bold || xl:text-4xl">
-            Setra Nugraha <span className="text-stone-400">Putra Suma</span>
+            Setra Nugraha <span className="text-stone-500">Putra Suma</span>
           </h1>
-          <p className="text-justify text-[12px] text-stone-800 mt-2 leading-loose || xl:text-lg">
-            Lulusan sarjana sistem informasi universitas Gunadarma, yang antusias berfokus pada pengembangan perangkat lunak, analisis data, dan manajemen proyek. Saya memiliki pemahaman mendalam tentang teknologi informasi dan berkomitmen
-            untuk menghadirkan solusi teknologi yang inovatif dan efisien untuk mendukung tujuan bisnis. Dengan keterampilan analisis yang kuat dan keahlian dalam pemrograman, saya siap untuk berkontribusi dalam menghadapi tantangan
-            teknologi yang ada di era digital.
-          </p>
+          <p className="text-justify text-[14px] font-semibold text-white mt-4 leading-loose bg-stone-500 py-1 px-4 rounded-lg || xl:text-lg">Tech Enthusiast</p>
         </div>
       </section>
       {/* END Hero */}
@@ -391,9 +405,9 @@ export default function App() {
       </section>
       {/* END Services */}
 
-      {/* START Portofolio */}
-      <section className="px-5" id="portofolio">
-        <Header title={'MY PROJECT'} subTitle={'Featured Portofolio'} position={'start'} />
+      {/* START Portfolio */}
+      <section className="px-5" id="portfolio">
+        <Header title={'MY PROJECT'} subTitle={'Featured Portfolio'} position={'start'} />
 
         {/* Card Portofolio */}
         <div className="xl:mt-10 xl:w-[75%] xl:mx-auto xl:flex xl:flex-wrap xl:gap-5 xl:justify-center">
