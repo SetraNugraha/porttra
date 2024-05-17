@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react'
 import { IoMenu } from 'react-icons/io5'
 import { TbLetterX } from 'react-icons/tb'
+import { IoMdWarning } from 'react-icons/io'
 import { Link } from 'react-scroll'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
@@ -27,6 +28,7 @@ const Header = ({ title, subTitle, position }) => {
   )
 }
 
+// eslint-disable-next-line no-unused-vars
 const ServicesMenu = ({ title, icon, description }) => {
   return (
     <div className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center || xl:w-1/4">
@@ -375,32 +377,38 @@ export default function App() {
 
         {/* Card */}
         <div className="py-2 || xl:py-10 xl:w-[80%] xl:mx-auto xl:flex xl:flex-wrap xl:gap-10 xl:justify-center xl:items-center">
+          <div className="flex flex-col justify-center items-center">
+            <img src="assets/under-construction.png" alt="under-construction" className="w-[500px]" />
+            <h1 className="text-justify text-[14px] font-semibold text-white mt-10 leading-loose bg-orange-500 py-1 px-4 rounded-lg flex items-center gap-x-3 || xl:text-lg">
+              <span>{<IoMdWarning />}</span>Section Under Construction<span>{<IoMdWarning />}</span>
+            </h1>
+          </div>
           {/* Card Database */}
-          <ServicesMenu
+          {/* <ServicesMenu
             title={'Databases'}
             icon={'assets/database.svg'}
             description={
               'Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data'
             }
-          />
+          /> */}
 
           {/* Card Bakcend */}
-          <ServicesMenu
+          {/* <ServicesMenu
             title={'Backend Developer'}
             icon={'assets/backend.svg'}
             description={
               'Membangun logika bisnis yang kuat untuk memproses data dan menjalankan operasi sebuah aplikasi, mengintegrasikan backend dengan database untuk menyimpan dan mengambil informasi secara efisien, serta mengimplementasikan API untuk berkomunikasi antara backend dan frontend'
             }
-          />
+          /> */}
 
           {/* Card Frontend */}
-          <ServicesMenu
+          {/* <ServicesMenu
             title={'Frontend Developer'}
             icon={'assets/frontend.svg'}
             description={
               'Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web'
             }
-          />
+          /> */}
         </div>
       </section>
       {/* END Services */}
