@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState, useRef } from 'react'
 import { IoMenu } from 'react-icons/io5'
@@ -6,6 +7,7 @@ import { IoMdWarning } from 'react-icons/io'
 import { Link } from 'react-scroll'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
+import { projects, services, contactInfo } from './data'
 
 const NavMenu = ({ title, path, key }) => {
   return (
@@ -25,64 +27,6 @@ const Header = ({ title, subTitle, position }) => {
       <h3 className="text-[11px] text-secondary tracking-[7px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold xl:before:h-[2px] ">{title}</h3>
       <h1 className="font-bold text-lg text-gray-600 || xl:text-3xl ">{subTitle}</h1>
     </div>
-  )
-}
-
-// eslint-disable-next-line no-unused-vars
-const ServicesMenu = ({ title, icon, description }) => {
-  return (
-    <div className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center || xl:w-1/4">
-      {/* Icon */}
-      <div className="bg-slate-200 p-4 rounded-xl">
-        <img src={icon} alt="" />
-      </div>
-      <h4 className="font-semibold py-5">{title}</h4>
-      <p className="text-[12px] text-justify text-secondary leading-loose || xl:text-[14px]">{description}</p>
-    </div>
-  )
-}
-
-const Project = ({ pathImg, title, url, description, tech1, tech2, tech3, tech4, tech5, tech6 }) => {
-  // TECHSTACK
-  const Techstack = ({ techName }) => {
-    return (
-      <div className="border border-slate-400 px-2">
-        <p>{techName}</p>
-      </div>
-    )
-  }
-
-  return (
-    <>
-      {/* Portofolio */}
-      <div className="h-1/1 my-5 border border-secondary rounded-xl || xl:w-[25%] xl:flex xl:flex-col xl:justify-between ">
-        {/* Image */}
-        <div>
-          <img src={pathImg} alt="portofolio" className="w-[95%] mx-auto my-2 rounded-lg shadow-xl" />
-        </div>
-
-        {/* Info */}
-        <div className="flex justify-between px-5 py-2">
-          <h4 className="font-semibold">{title}</h4>
-          <a href={url} className="hover:blue-500" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" className="fill-current hover:text-blue-500" width="24" height="24" viewBox="0 0 24 24">
-              <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
-            </svg>
-          </a>
-        </div>
-
-        {/* Techstack */}
-        <div className="relative flex flex-wrap gap-3 px-5 py-3">
-          {tech1 ? <Techstack techName={tech1} /> : null}
-          {tech2 ? <Techstack techName={tech2} /> : null}
-          {tech3 ? <Techstack techName={tech3} /> : null}
-          {tech4 ? <Techstack techName={tech4} /> : null}
-          {tech5 ? <Techstack techName={tech5} /> : null}
-          {tech6 ? <Techstack techName={tech6} /> : null}
-        </div>
-        <p className="text-[12px] text-secondary xl:text-[14px] leading-loose px-5 py-2 ">{description}</p>
-      </div>
-    </>
   )
 }
 
@@ -109,7 +53,7 @@ const Skills = () => {
 
   return (
     <>
-      <p className="text-slate-700 xl:text-[16px] xl:text-justify">
+      <p className="text-slate-700 text-[14px] xl:text-[16px] text-justify">
         Saya mempunyai antusias yang tinggi dengan dunia <i>Information Technoology </i>(IT), selama perkuliahan saya banyak dibekali dengan pengetahuan seputar <i>Software Development</i>, seperti{' '}
         <i>Project Management, Web Development, Database</i> dan sebagainya. Saya selalu siap untuk belajar dan mengembangkan keterampilan saya di bidang IT ini. Saya percaya bahwa dengan dedikasi, kerja keras, konsistensi dan kreativitas,
         saya dapat memberikan kontribusi yang berarti untuk diri saya dan masyarakat banyak.
@@ -122,7 +66,7 @@ const Skills = () => {
           {/* DATABASE */}
           <div className="w-1/2 flex flex-col justify-center items-center">
             <h6 className="font-semibold text-[14px] text-secondary py-1 || xl:text-[16px]">Database : </h6>
-            <ul className="flex flex-wrap justify-center gap-3 py-4 px-4 || xl:justify-start">
+            <ul className="grid grid-cols-2 justify-center gap-3 py-4 px-4 || xl:justify-start">
               {database.map((item, index) => {
                 return (
                   <li key={index}>
@@ -136,7 +80,7 @@ const Skills = () => {
           {/* CODE */}
           <div className="w-1/2 flex flex-col justify-center items-center">
             <h6 className="font-semibold text-[14px] text-secondary py-1 xl:text-[16px]">Code : </h6>
-            <ul className="flex flex-wrap justify-center gap-3 py-4 px-4 || xl:justify-start">
+            <ul className="grid grid-cols-3 gap-3 py-4 px-4 || xl:justify-start">
               {code.map((item, index) => {
                 return (
                   <li key={index}>
@@ -228,7 +172,7 @@ const FormContact = () => {
         id="message"
         cols="30"
         rows="10"
-        className="h-[120px] w-full border border-slate-500 rounded-md px-5 py-2 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]"
+        className="h-[120px] w-full border border-slate-500 rounded-md px-4 py-2 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]"
         placeholder="Write a message"
         required
       />
@@ -245,19 +189,13 @@ const FormContact = () => {
   )
 }
 
-const ContactInfo = ({ title, icon, description }) => {
+const MaintenanceSection = () => {
   return (
-    <div className="flex gap-5">
-      {/* Icon */}
-      <div className="h-[55px] w-[55px] bg-slate-200 flex justify-center items-center rounded-lg">
-        <img src={icon} />
-      </div>
-
-      {/* Info */}
-      <div>
-        <h4 className="font-bold text-stone-700">{title}</h4>
-        <p className="text-[14px] text-secondary">{description}</p>
-      </div>
+    <div className="flex flex-col justify-center items-center">
+      <img src="assets/under-construction.png" alt="under-construction" className="w-[500px]" />
+      <h1 className="text-justify text-[14px] font-semibold text-white mt-10 leading-loose bg-orange-500 py-1 px-4 rounded-lg flex items-center gap-x-3 || xl:text-lg">
+        <span>{<IoMdWarning />}</span>Section Under Construction<span>{<IoMdWarning />}</span>
+      </h1>
     </div>
   )
 }
@@ -376,39 +314,17 @@ export default function App() {
         <Header title={'SERVICES'} subTitle={'Specialize In'} position={'center'} />
 
         {/* Card */}
-        <div className="py-2 || xl:py-10 xl:w-[80%] xl:mx-auto xl:flex xl:flex-wrap xl:gap-10 xl:justify-center xl:items-center">
-          <div className="flex flex-col justify-center items-center">
-            <img src="assets/under-construction.png" alt="under-construction" className="w-[500px]" />
-            <h1 className="text-justify text-[14px] font-semibold text-white mt-10 leading-loose bg-orange-500 py-1 px-4 rounded-lg flex items-center gap-x-3 || xl:text-lg">
-              <span>{<IoMdWarning />}</span>Section Under Construction<span>{<IoMdWarning />}</span>
-            </h1>
-          </div>
-          {/* Card Database */}
-          {/* <ServicesMenu
-            title={'Databases'}
-            icon={'assets/database.svg'}
-            description={
-              'Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data'
-            }
-          /> */}
-
-          {/* Card Bakcend */}
-          {/* <ServicesMenu
-            title={'Backend Developer'}
-            icon={'assets/backend.svg'}
-            description={
-              'Membangun logika bisnis yang kuat untuk memproses data dan menjalankan operasi sebuah aplikasi, mengintegrasikan backend dengan database untuk menyimpan dan mengambil informasi secara efisien, serta mengimplementasikan API untuk berkomunikasi antara backend dan frontend'
-            }
-          /> */}
-
-          {/* Card Frontend */}
-          {/* <ServicesMenu
-            title={'Frontend Developer'}
-            icon={'assets/frontend.svg'}
-            description={
-              'Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web'
-            }
-          /> */}
+        <div className="py-2 w-[90%] mx-auto || xl:py-10 xl:w-[55%] xl:mx-auto xl:grid xl:grid-cols-3 xl:gap-5">
+          {services.map((service, index) => (
+            <div key={index} className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center shadow-lg transform transition duration-300 hover:scale-[105%]">
+              {/* Icon */}
+              <div className="bg-slate-200 p-4 rounded-xl">
+                <img src={`assets/${service.icon}`} alt="" />
+              </div>
+              <h4 className="font-semibold py-2">{service.title}</h4>
+              <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
+            </div>
+          ))}
         </div>
       </section>
       {/* END Services */}
@@ -418,34 +334,35 @@ export default function App() {
         <Header title={'MY PROJECT'} subTitle={'Featured Portfolio'} position={'start'} />
 
         {/* Card Portofolio */}
-        <div className="xl:mt-10 xl:w-[75%] xl:mx-auto xl:flex xl:flex-wrap xl:gap-5 xl:justify-center">
-          <Project
-            pathImg={'assets/fbcln.png'}
-            title={'Facebook Clone, Login & Homepage.'}
-            url={'https://fbcln-setra.vercel.app/'}
-            description={'Slicing Login & Homepage UI Facebook - Desktop Only'}
-            tech1={'React JS'}
-            tech2={'Tailwind CSS'}
-          />
-          <Project
-            pathImg={'assets/shoplist.png'}
-            title={'Shopping list'}
-            url={'https://shoplist-setra.vercel.app'}
-            description={'Web App sederhana untuk pencatatan perbelanjaan - Desktop & Mobile'}
-            tech1={'React JS'}
-            tech2={'Tailwind CSS'}
-            tech3={'Local Storage'}
-          />
-          <Project
-            pathImg={'assets/guessnumber.png'}
-            title={'Game App - Guess The Number ! '}
-            url={'https://guess-number-bysetra.vercel.app'}
-            description={'Simple game to predict the number based on difficulty'}
-            tech1={'React JS'}
-            tech2={'Tailwind CSS'}
-          />
-          <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
-          <Project pathImg={'assets/no-image.png'} title={'Project Will Be Added Soon ...'} url={'#portofolio'} description={'No Description Added'} tech1={'Laravel'} tech2={'Vue'} tech3={'MySQL'} />
+        <div className=" xl:w-[55%] mx-auto my-7 xl:grid xl:grid-cols-3 xl:gap-5">
+          {projects.map((project, index) => (
+            <div key={index} className="w-[90%] mx-auto mt-5 px-2 py-2 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full">
+              {/* Image */}
+              <img src={project.image} alt={project.title} className=" rounded-md  shadow-lg" />
+              {/* Title, Description, Link */}
+              <div>
+                {/* Title & Link */}
+                <div className="mx-2 mt-4 flex justify-between items-center">
+                  <h1 className="font-bold">{project.title}</h1>
+                  <a href={project.url} className="hover:blue-500" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="fill-current hover:text-blue-500" width="24" height="24" viewBox="0 0 24 24">
+                      <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
+                    </svg>
+                  </a>
+                </div>
+                {/* Description */}
+                <p className="mx-2 text-[14px] text-slate-500 my-2">{project.description}</p>
+              </div>
+              {/* Tech */}
+              <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
+                {project.tech.map((tech, index) => (
+                  <li key={index}>
+                    <img src={`assets/skills/${tech}`} alt="" className="w-[20px] h-[20px]" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
       {/* END Portofolio */}
@@ -485,9 +402,19 @@ export default function App() {
 
           {/* Address & Contact */}
           <div className="py-5 flex flex-col gap-10 || xl: ">
-            <ContactInfo title={'Phone'} icon={'assets/phone.svg'} description={'+62 812-8321-4126'} />
-            <ContactInfo title={'Email'} icon={'assets/email.svg'} description={'setranugraha75@gmail.com'} />
-            <ContactInfo title={'Address'} icon={'assets/address.svg'} description={'Cibinong, Kab. Bogor, Jawa Barat'} />
+            {contactInfo.map((contact, index) => (
+              <div key={index} className="flex gap-5">
+                {/* Icon */}
+                <div className="h-[55px] w-[55px] bg-slate-200 flex justify-center items-center rounded-lg">
+                  <img src={`assets/${contact.icon}`} />
+                </div>
+                {/* Info */}
+                <div>
+                  <h4 className="font-bold text-stone-700">{contact.title}</h4>
+                  <p className="text-[14px] text-secondary">{contact.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
