@@ -334,7 +334,7 @@ export default function App() {
             Setra Nugraha <span className="text-stone-500">Putra Suma</span>
           </h1>
           <div className="flex gap-x-4 justify-center items-center mt-5">
-            <p className="text-justify text-[14px] font-semibold text-white leading-loose bg-stone-500 py-1 px-4 rounded-lg || xl:text-lg">Tech Enthusiast</p>
+            <p className="text-justify text-[14px] font-semibold text-white leading-loose bg-stone-400 py-1 px-4 rounded-lg || xl:text-lg">Tech Enthusiast</p>
             <SocialMediaLink />
           </div>
         </div>
@@ -342,7 +342,7 @@ export default function App() {
       {/* END Hero */}
 
       {/* START Services */}
-      <section className="px-5 py-5 my-10 bg-stone-200" id="services">
+      <section className="px-5 py-5 my-10 bg-stone-100" id="services">
         <Header title={'SERVICES'} subTitle={'Specialize In'} position={'center'} />
 
         {/* Card */}
@@ -400,7 +400,7 @@ export default function App() {
       {/* END Portofolio */}
 
       {/* START Education & Skills */}
-      <section className="px-5 py-5 my-10 bg-stone-200" id="skills">
+      <section className="px-5 py-5 my-10 bg-stone-100" id="skills">
         <Header title={'LEARNING PATH'} subTitle={'Education & Skills'} position={'start'} />
 
         <div className="py-10 || xl:w-[55%] xl:mx-auto xl:flex xl:items-start xl:mt-5">
