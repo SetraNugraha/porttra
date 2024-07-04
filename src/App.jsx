@@ -368,11 +368,11 @@ export default function App() {
         {/* Card Portofolio */}
         <div className=" xl:w-[55%] mx-auto my-7 xl:grid xl:grid-cols-3 xl:gap-5">
           {projects.map((project, index) => (
-            <div key={index} className="w-[90%] mx-auto mt-5 px-2 py-2 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full">
-              {/* Image */}
-              <img src={project.image} alt={project.title} className=" rounded-md  shadow-lg" />
-              {/* Title, Description, Link */}
+            <div key={index} className="w-[90%] flex flex-col justify-between mx-auto mt-5 px-2 py-2 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full">
+              {/* Image & Description */}
               <div>
+                {/* Image */}
+                <img src={project.image} alt={project.title} className=" rounded-md  shadow-md" />
                 {/* Title & Link */}
                 <div className="mx-2 mt-4 flex justify-between items-center">
                   <h1 className="font-bold">{project.title}</h1>
@@ -383,13 +383,13 @@ export default function App() {
                   </a>
                 </div>
                 {/* Description */}
-                <p className="mx-2 text-[14px] text-slate-500 my-2">{project.description}</p>
+                <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
               </div>
               {/* Tech */}
               <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
                 {project.tech.map((tech, index) => (
                   <li key={index}>
-                    <img src={`assets/skills/${tech}`} alt="" className="w-[20px] h-[20px]" />
+                    <img src={`assets/skills/${tech}`} alt={tech} className="w-[20px] h-[20px]" />
                   </li>
                 ))}
               </ul>

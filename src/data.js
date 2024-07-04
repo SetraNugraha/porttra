@@ -1,9 +1,16 @@
 export const projects = [
   {
-    title: 'Facebook Clone',
+    title: 'PostSpot',
+    url: 'https://postspot.site',
+    image: 'assets/postspot.png',
+    description: 'PostSpot adalah aplikasi web yang memungkinkan pengguna untuk memposting konten, seperti artikel & foto yang dapat dilihat oleh pengguna lain. - Desktop Only',
+    tech: ['Laravel.svg', 'MySQL.svg', 'Alpine-js.svg', 'Tailwind-CSS.svg'],
+  },
+  {
+    title: 'Facebook Clone', 
     url: 'https://fbcln-setra.vercel.app/',
     image: 'assets/fbcln.png',
-    description: 'Slicing Login, Register & Homepage UI Facebook - Desktop Only',
+    description: 'Slicing Login, Register, Homepage & Profile UI Facebook - Desktop Only',
     tech: ['React.svg', 'Tailwind-CSS.svg'],
   },
   {
