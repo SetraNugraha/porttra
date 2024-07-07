@@ -27,6 +27,13 @@ export const projects = [
     description: 'Simple game to predict the number based on difficulty',
     tech: ['React.svg', 'Tailwind-CSS.svg'],
   },
+  {
+    title: 'NatureSpot',
+    url: 'https://nature-spot-id.vercel.app',
+    image: 'assets/naturespot.png',
+    description: 'Slicing Figma designs to code for e-commerce websites that sell various plants - Desktop Only.',
+    tech: ['React.svg', 'Tailwind-CSS.svg'],
+  },
 ]
 
 export const services = [
