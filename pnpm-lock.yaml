@@ -29,6 +29,9 @@ dependencies:
   sweetalert2:
     specifier: ^11.10.5
     version: 11.10.5
+  swiper:
+    specifier: ^11.1.5
+    version: 11.1.5
 
 devDependencies:
   '@rollup/plugin-replace':
@@ -2933,6 +2936,11 @@ packages:
 
   /sweetalert2@11.10.5:
     resolution: {integrity: sha512-q9eE3EKhMcpIDU/Xcz7z5lk8axCGkgxwK47gXGrrfncnBJWxHPPHnBVAjfsVXcTt8Yi8U6HNEcBRSu+qGeyFdA==}
+    dev: false
+
+  /swiper@11.1.5:
+    resolution: {integrity: sha512-JJQWFXdxiMGC2j6ZGTYat5Z7NN9JORJBgHp0/joX9uPod+cRj0wr5H5VnWSNIz9JeAamQvYKaG7aFrGHIF9OEg==}
+    engines: {node: '>= 4.7.0'}
     dev: false
 
   /tailwindcss@3.4.1:

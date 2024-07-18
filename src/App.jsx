@@ -3,11 +3,22 @@
 import { useState, useRef } from 'react'
 import { IoMenu } from 'react-icons/io5'
 import { TbLetterX } from 'react-icons/tb'
-import { IoMdWarning } from 'react-icons/io'
+import { IoMdWarning, IoMdCloudDownload } from 'react-icons/io'
 import { Link } from 'react-scroll'
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
+
+// import Swiper core and required modules
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+
 import { projects, services, contactInfo } from './data'
+import { useEffect } from 'react'
 
 const NavMenu = ({ title, path, key }) => {
   return (
@@ -192,7 +203,7 @@ const FormContact = () => {
 const SocialMediaLink = () => {
   return (
     <>
-      <div className="flex gap-5 justify-center items-center">
+      <div className="flex gap-4 justify-center items-center">
         {/* Instagram */}
         <a href="https://instagram.com/setranugrahaa" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" className="fill-current text-stone-600 hover:text-pink-700">
@@ -230,6 +241,19 @@ const MaintenanceSection = () => {
 }
 
 export default function App() {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleIsMobile = () => {
+      setIsMobile(window.innerWidth < 1280)
+    }
+
+    handleIsMobile()
+    window.addEventListener('resize', handleIsMobile)
+
+    return () => window.removeEventListener('resize', handleIsMobile)
+  }, [])
+
   const menuNav = [
     {
       title: 'Services',
@@ -268,22 +292,17 @@ export default function App() {
           </div>
 
           {/* START Button Menu Mobile */}
-          <div className="absolute right-5 top-3 flex">
+          <div className="absolute z-50 right-5 top-3 flex">
             <button className="xl:hidden" onClick={handleToggleNav}>
               {toggleNav ? <TbLetterX className="w-[30px] h-[30px] " /> : <IoMenu className="w-[30px] h-[30px]" />}
             </button>
             {/* Child Menu Mobile */}
             {toggleNav ? (
-              <div className="absolute bg-slate-100 h-[390px] w-[200px] right-[5px] top-9 border border-slate-400 rounded-lg shadow-lg">
-                <ul className="flex flex-col gap-5 px-5 py-5">
+              <div className="absolute bg-slate-100 h-[330px] w-[200px] right-[5px] top-9 border border-slate-400 rounded-lg shadow-lg ">
+                <ul className="flex flex-col gap-5 px-5 py-5 ">
                   {menuNav.map((item, index) => (
                     <NavMenu title={item.title} path={item.path} key={index} />
                   ))}
-                  <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
-                    <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
-                      Resume
-                    </a>
-                  </li>
                   <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
                     <a href="sertifikasi-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                       Certification
@@ -301,11 +320,6 @@ export default function App() {
               {menuNav.map((item, index) => (
                 <NavMenu title={item.title} path={item.path} key={index} />
               ))}
-              <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
-                <a href="resume-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
-                  Resume
-                </a>
-              </li>
               <li className="bg-white hover:drop-shadow-lg rounded-lg py-2 border border-slate-400 text-center">
                 <a href="sertifikasi-setra.pdf" target="_blank" className="px-2 font-semibold tracking-widest">
                   Certification
@@ -326,38 +340,65 @@ export default function App() {
           <img src="assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />
         </div>
 
-        {/* Text Perkenalan */}
-        <div className="flex flex-col justify-center items-center || xl:w-1/2 xl:items-start">
-          <h3 className="text-xs text-secondary tracking-[6px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold">HELLO, IT&apos;S ME</h3>
+        <div className="flex flex-col justify-center items-center mt-5 || xl:w-1/2 xl:items-start">
+          {/* Greeting */}
+          <div className="flex flex-col items-center || xl:items-start">
+            <h3 className="text-xs text-secondary tracking-[6px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold">HELLO, IT&apos;S ME</h3>
+            {/* Name */}
+            <h1 className="text-2xl font-bold text-slate-700 || xl:text-4xl">
+              Setra Nugraha <span className="text-stone-500">Putra Suma</span>
+            </h1>
+          </div>
 
-          <h1 className="text-2xl font-bold || xl:text-4xl">
-            Setra Nugraha <span className="text-stone-500">Putra Suma</span>
-          </h1>
-          <div className="flex gap-x-4 justify-center items-center mt-5">
-            <p className="text-justify text-[14px] font-semibold text-white leading-loose bg-stone-400 py-1 px-4 rounded-lg || xl:text-lg">Tech Enthusiast</p>
-            <SocialMediaLink />
+          {/* desc */}
+          <div className="mt-2 flex flex-col gap-y-3 py-1 items-center xl:mx-0">
+            <div className="flex gap-x-5 items-center">
+              <a href="resume-setra.pdf" target="_blank" className="text-[14px] font-semibold text-white bg-stone-500 py-1 px-3 rounded-lg flex gap-x-2 items-center hover:opacity-70 || xl:text-lg">
+                <IoMdCloudDownload className="w-[20px] h-[20px]" />
+                <span>Resume</span>
+              </a>
+              <SocialMediaLink />
+            </div>
           </div>
         </div>
       </section>
       {/* END Hero */}
 
       {/* START Services */}
-      <section className="px-5 py-5 my-10 bg-stone-100" id="services">
+      <section className="relative px-5 py-10 my-10 bg-stone-100" id="services">
         <Header title={'SERVICES'} subTitle={'Specialize In'} position={'center'} />
 
         {/* Card */}
-        <div className="py-2 w-[90%] mx-auto || xl:py-10 xl:w-[55%] xl:mx-auto xl:grid xl:grid-cols-3 xl:gap-5">
-          {services.map((service, index) => (
-            <div key={index} className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center shadow-lg transform transition duration-300 hover:scale-[105%]">
-              {/* Icon */}
-              <div className="bg-slate-200 p-4 rounded-xl">
-                <img src={`assets/${service.icon}`} alt="" />
+        {isMobile ? (
+          <div className="py-5">
+            <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]} autoplay={{ delay: 2500 }} spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, el: '.swiper-pagination' }} className="py-5 grid mx-auto">
+              {services.map((service, index) => (
+                <SwiperSlide key={index} className="bg-white my-1 px-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-md">
+                  {/* Icon */}
+                  <div className="bg-slate-200 p-4 rounded-xl mt-5">
+                    <img src={`assets/${service.icon}`} alt="" />
+                  </div>
+                  <h4 className="font-semibold py-2">{service.title}</h4>
+                  <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="swiper-pagination z-0 mb-[15px] flex gap-x-3 items-center justify-center"></div>
+          </div>
+        ) : (
+          <div className="py-2 w-[90%] mx-auto || xl:py-10 xl:w-[55%] xl:mx-auto xl:grid xl:grid-cols-3 xl:gap-5">
+            {services.map((service, index) => (
+              <div key={index} className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center shadow-lg transform transition duration-300 hover:scale-[105%]">
+                {/* Icon */}
+                <div className="bg-slate-200 p-4 rounded-xl">
+                  <img src={`assets/${service.icon}`} alt="" />
+                </div>
+                <h4 className="font-semibold py-2">{service.title}</h4>
+                <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
               </div>
-              <h4 className="font-semibold py-2">{service.title}</h4>
-              <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
       {/* END Services */}
 
@@ -366,36 +407,72 @@ export default function App() {
         <Header title={'MY PROJECT'} subTitle={'Featured Portfolio'} position={'start'} />
 
         {/* Card Portofolio */}
-        <div className=" xl:w-[55%] mx-auto my-7 xl:grid xl:grid-cols-3 xl:gap-5">
-          {projects.map((project, index) => (
-            <div key={index} className="w-[90%] flex flex-col justify-between mx-auto mt-5 px-2 py-2 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full">
-              {/* Image & Description */}
-              <div>
-                {/* Image */}
-                <img src={project.image} alt={project.title} className=" rounded-md  shadow-md" />
-                {/* Title & Link */}
-                <div className="mx-2 mt-4 flex justify-between items-center">
-                  <h1 className="font-bold">{project.title}</h1>
-                  <a href={project.url} className="hover:blue-500" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="fill-current hover:text-blue-500" width="24" height="24" viewBox="0 0 24 24">
-                      <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
-                    </svg>
-                  </a>
+        {isMobile ? (
+          <div>
+            <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]} autoplay={{ delay: 2500 }} spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, el: '.project-swiper' }} className=" mx-auto my-3 py-5 grid">
+              {projects.map((project, index) => (
+                <SwiperSlide key={index} className="w-[90%] flex flex-col justify-between mx-auto px-2 py-2 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full">
+                  {/* Image & Description */}
+                  <div>
+                    {/* Image */}
+                    <img src={project.image} alt={project.title} className=" rounded-md  shadow-md" />
+                    {/* Title & Link */}
+                    <div className="mx-2 mt-4 flex justify-between items-center">
+                      <h1 className="font-bold">{project.title}</h1>
+                      <a href={project.url} className="hover:blue-500" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="fill-current hover:text-blue-500" width="24" height="24" viewBox="0 0 24 24">
+                          <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
+                        </svg>
+                      </a>
+                    </div>
+                    {/* Description */}
+                    <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
+                  </div>
+                  {/* Tech */}
+                  <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
+                    {project.tech.map((tech, index) => (
+                      <li key={index}>
+                        <img src={`assets/skills/${tech}`} alt={tech} className="w-[20px] h-[20px]" />
+                      </li>
+                    ))}
+                  </ul>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className="project-swiper flex gap-x-3 justify-center items-center"></div>
+          </div>
+        ) : (
+          <div className=" mx-auto my-3 py-5 grid grid-cols-3 gap-5 w-[55%]">
+            {projects.map((project, index) => (
+              <div key={index} className="w-[90%] flex flex-col justify-between mx-auto px-2 py-2 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full">
+                {/* Image & Description */}
+                <div>
+                  {/* Image */}
+                  <img src={project.image} alt={project.title} className=" rounded-md  shadow-md" />
+                  {/* Title & Link */}
+                  <div className="mx-2 mt-4 flex justify-between items-center">
+                    <h1 className="font-bold">{project.title}</h1>
+                    <a href={project.url} className="hover:blue-500" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="fill-current hover:text-blue-500" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
+                      </svg>
+                    </a>
+                  </div>
+                  {/* Description */}
+                  <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
                 </div>
-                {/* Description */}
-                <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
+                {/* Tech */}
+                <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
+                  {project.tech.map((tech, index) => (
+                    <li key={index}>
+                      <img src={`assets/skills/${tech}`} alt={tech} className="w-[20px] h-[20px]" />
+                    </li>
+                  ))}
+                </ul>
               </div>
-              {/* Tech */}
-              <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
-                {project.tech.map((tech, index) => (
-                  <li key={index}>
-                    <img src={`assets/skills/${tech}`} alt={tech} className="w-[20px] h-[20px]" />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
       {/* END Portofolio */}
 
