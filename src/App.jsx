@@ -20,10 +20,10 @@ import 'swiper/css/scrollbar'
 import { projects, services, contactInfo } from './data'
 import { useEffect } from 'react'
 
-const NavMenu = ({ title, path, key }) => {
+const NavMenu = ({ title, path }) => {
   return (
     <>
-      <li key={key} className="hover:bg-slate-200 hover:rounded-lg cursor-pointer py-2">
+      <li className="hover:bg-slate-200 hover:rounded-lg cursor-pointer py-2">
         <Link to={path} spy={true} smooth={true} offset={-80} duration={1200} className="px-2 font-semibold text-slate-700 cursor-pointer">
           {title}
         </Link>
@@ -373,7 +373,7 @@ export default function App() {
           <div className="py-5">
             <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]} autoplay={{ delay: 2500 }} spaceBetween={50} slidesPerView={1} pagination={{ clickable: true, el: '.swiper-pagination' }} className="py-5 grid mx-auto">
               {services.map((service, index) => (
-                <SwiperSlide key={index} className="bg-white my-1 px-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-md">
+                <SwiperSlide key={index} className="bg-white my-1 px-5 pb-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-md">
                   {/* Icon */}
                   <div className="bg-slate-200 p-4 rounded-xl mt-5">
                     <img src={`assets/${service.icon}`} alt="" />
