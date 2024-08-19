@@ -29,6 +29,8 @@ export default function Portfolio({ isMobile, projects }) {
                   alt={project.title}
                   className=" rounded-md  shadow-md"
                 />
+
+                {/* Title & Link */}
                 <div className="mx-2 mt-4 flex justify-between items-center">
                   <h1 className="font-bold">{project.title}</h1>
                   <a
@@ -47,6 +49,8 @@ export default function Portfolio({ isMobile, projects }) {
                     </svg>
                   </a>
                 </div>
+                {/* END Title & Link */}
+                <h4 className='text-slate-500 tracking-wide font-semibold mx-2 my-2'>{`[ ${project.type} ]`}</h4>
                 <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
               </div>
               <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
@@ -97,6 +101,8 @@ export default function Portfolio({ isMobile, projects }) {
                     </svg>
                   </a>
                 </div>
+                {/* Type */}
+                <h4 className='text-slate-500 tracking-wide font-semibold mx-2 my-2'>{`[ ${project.type} ]`}</h4>
                 {/* Description */}
                 <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
               </div>
