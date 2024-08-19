@@ -50,7 +50,7 @@ export default function Portfolio({ isMobile, projects }) {
                   </a>
                 </div>
                 {/* END Title & Link */}
-                <h4 className='text-slate-500 tracking-wide font-semibold mx-2 my-2'>{`[ ${project.type} ]`}</h4>
+                <h4 className="text-slate-500 tracking-wide font-semibold mx-2 my-2">{`[ ${project.type} ]`}</h4>
                 <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
               </div>
               <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
@@ -68,11 +68,11 @@ export default function Portfolio({ isMobile, projects }) {
           )}
         />
       ) : (
-        <div className=" mx-auto my-3 py-5 grid grid-cols-3 gap-5 w-[55%]">
+        <div className=" mx-auto my-3 py-5 grid grid-cols-3 gap-7 w-[55%]">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="w-[90%] flex flex-col justify-between mx-auto px-2 py-2 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full"
+              className="w-[90%] flex flex-col justify-between mx-auto px-2 py-2 border border-slate-100 shadow-xl shadow-slate-300 rounded-lg xl:w-full"
             >
               {/* Image & Description */}
               <div>
@@ -80,7 +80,7 @@ export default function Portfolio({ isMobile, projects }) {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className=" rounded-md  shadow-md"
+                  className=" rounded-md  shadow-md "
                 />
                 {/* Title & Link */}
                 <div className="mx-2 mt-4 flex justify-between items-center">
@@ -102,9 +102,9 @@ export default function Portfolio({ isMobile, projects }) {
                   </a>
                 </div>
                 {/* Type */}
-                <h4 className='text-slate-500 tracking-wide font-semibold mx-2 my-2'>{`[ ${project.type} ]`}</h4>
+                <h4 className="text-slate-500 tracking-wide font-semibold mx-2 my-2">{`[ ${project.type} ]`}</h4>
                 {/* Description */}
-                <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
+                <p className="mx-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
               </div>
               {/* Tech */}
               <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">

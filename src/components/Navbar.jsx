@@ -24,7 +24,7 @@ const NavMenu = ({ title, path }) => {
   )
 }
 
-export default function Navbar({ isMobile }) {
+export default function Navbar() {
   const menuNav = [
     {
       title: 'Services',
@@ -51,8 +51,8 @@ export default function Navbar({ isMobile }) {
   }
 
   return (
-    <nav className="fixed bg-white h-[50px] w-full flex justify-between items-center px-5 drop-shadow-xl z-10 || xl:h-[60px]">
-      <div className=" ||  xl:w-[60%] xl:mx-auto xl:justify-between xl:items-center xl:flex ">
+    <nav className="fixed bg-white h-[50px] w-full flex justify-between items-center px-5 drop-shadow-xl z-10 || xl:h-[60px] xl:px-0">
+      <div className="xl:justify-between xl:items-center xl:flex xl:w-[60%] xl:mx-auto">
         {/* Title */}
         <div>
           <Link
@@ -102,7 +102,7 @@ export default function Navbar({ isMobile }) {
 
         {/* START NAV Menu Desktop View */}
         <div className="hidden || xl:block">
-          <ul className="flex gap-5 px-5 py-5">
+          <ul className="flex gap-5 px- py-5">
             {menuNav.map((item, index) => (
               <NavMenu
                 title={item.title}

@@ -5,7 +5,7 @@ import { CustomSwiper } from '../elements/CustomSwiper'
 export default function Services({ isMobile, services }) {
   return (
     <section
-      className="relative px-5 py-10 my-10 bg-stone-100"
+      className="py-10 my-10 px-5 bg-stone-100"
       id="services"
     >
       <Header
@@ -39,7 +39,7 @@ export default function Services({ isMobile, services }) {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white my-5 h-1/1 py-10 px-5 rounded-lg flex flex-col items-center shadow-lg transform transition duration-300 hover:scale-[105%]"
+              className="bg-white my-5 py-10 px-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-xl shadow-slate-200 transform transition duration-300 hover:scale-[105%]"
             >
               {/* Icon */}
               <div className="bg-slate-200 p-4 rounded-xl">

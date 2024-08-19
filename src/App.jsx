@@ -29,7 +29,7 @@ export default function App() {
   return (
     <>
       {/* START Navbar */}
-      <Navbar isMobile={isMobile} />
+      <Navbar />
       {/* END Navbar */}
 
       {/* START Hero */}
