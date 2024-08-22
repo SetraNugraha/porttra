@@ -31,7 +31,8 @@ export default function Portfolio({ isMobile, projects }) {
                 />
 
                 {/* Title & Link */}
-                <div className="mx-2 mt-4 flex justify-between items-center">
+                <h4 className="text-stone-400 italic text-[13px] tracking-wide font-semibold mx-2 mt-2">{`${project.type}`}</h4>
+                <div className="mx-2 mt-2 flex justify-between items-center">
                   <h1 className="font-bold">{project.title}</h1>
                   <a
                     href={project.url}
@@ -50,7 +51,6 @@ export default function Portfolio({ isMobile, projects }) {
                   </a>
                 </div>
                 {/* END Title & Link */}
-                <h4 className="text-slate-500 tracking-wide font-semibold mx-2 my-2">{`[ ${project.type} ]`}</h4>
                 <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
               </div>
               <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
