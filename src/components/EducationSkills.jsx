@@ -19,7 +19,7 @@ const Education = ({ place, major, year }) => {
 }
 
 const Skills = () => {
-  const database = ['MySQL.svg', 'PostgresSQL.svg']
+  const database = ['MySQL.svg', 'PostgreSQL.svg']
   const code = ['HTML5.svg', 'CSS3.svg', 'Tailwind-CSS.svg', 'PHP.svg', 'JavaScript.svg', 'React.svg', 'Laravel.svg', 'nodejs.svg']
 
   return (

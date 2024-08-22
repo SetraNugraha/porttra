@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'PostSpot',
-    type: 'Fullstack App',
+    type: 'Fullstack',
     url: 'https://postspot.site',
     image: 'assets/postspot.png',
     description: 'PostSpot is a web application that allows users to post content, such as articles and photos, which can be viewed by other users. - Desktop Only',
@@ -9,11 +9,11 @@ export const projects = [
   },
   {
     title: 'Facebook Clone',
-    type: 'Slicing',
-    url: 'https://fbcln-setra.vercel.app/',
+    type: 'Fullstack',
+    url: 'https://client-fbclone.vercel.app/',
     image: 'assets/fbcln.png',
-    description: 'Slicing Login, Register, Homepage & Profile UI Facebook - Desktop Only',
-    tech: ['React.svg', 'Tailwind-CSS.svg'],
+    description: 'Simple Facebook Clone, features:  Register, Login, Logout, Post, Like, Comment & Profile Page - Desktop Only',
+    tech: ['React.svg', 'Tailwind-CSS.svg', 'nodejs.svg', 'PostgreSQL.svg', 'Prisma.svg'],
   },
   {
     title: 'NatureSpot',
