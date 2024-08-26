@@ -36,7 +36,7 @@ export default function Portfolio({ isMobile, projects }) {
                 />
 
                 {/* Title & Link */}
-                <h4 className="text-stone-400 italic text-[13px] tracking-wide font-semibold mx-2 mt-2">{`${project.type}`}</h4>
+                <h4 className="text-[#7e74f1] opacity-90 italic text-[14px] tracking-wider font-semibold mx-2 mt-2">{`${project.type}`}</h4>
                 <div className="mx-2 mt-2 flex justify-between items-center">
                   <h1 className="font-bold">{project.title}</h1>
                   <div className="flex gap-x-1 items-center">
@@ -90,7 +90,7 @@ export default function Portfolio({ isMobile, projects }) {
                   className=" rounded-md  shadow-md "
                 />
                 {/* Title & Link */}
-                <h4 className="text-stone-400 italic text-[13px] tracking-wide font-semibold mx-2 mt-2">{`${project.type}`}</h4>
+                <h4 className="text-[#7e74f1] opacity-90 italic text-[14px] tracking-wider font-semibold mx-2 mt-2">{`${project.type}`}</h4>
                 <div className="mx-2 my-1 flex justify-between items-center">
                   <h1 className="font-bold">{project.title}</h1>
                   <div className="flex gap-x-1 items-center">
