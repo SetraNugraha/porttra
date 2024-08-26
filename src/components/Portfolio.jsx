@@ -1,6 +1,9 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Header } from '../elements/Header'
 import { CustomSwiper } from '../elements/CustomSwiper'
+import { BiLinkExternal } from 'react-icons/bi'
+import { AiOutlineCode } from 'react-icons/ai'
 
 export default function Portfolio({ isMobile, projects }) {
   return (
@@ -15,6 +18,8 @@ export default function Portfolio({ isMobile, projects }) {
       />
 
       {/* Card Portofolio */}
+
+      {/* Mobile */}
       {isMobile ? (
         <CustomSwiper
           data={projects}
@@ -34,21 +39,22 @@ export default function Portfolio({ isMobile, projects }) {
                 <h4 className="text-stone-400 italic text-[13px] tracking-wide font-semibold mx-2 mt-2">{`${project.type}`}</h4>
                 <div className="mx-2 mt-2 flex justify-between items-center">
                   <h1 className="font-bold">{project.title}</h1>
-                  <a
-                    href={project.url}
-                    className="hover:blue-500"
-                    target="_blank"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="fill-current hover:text-blue-500"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
+                  <div className="flex gap-x-1 items-center">
+                    <a
+                      href={project.source_code}
+                      className="hover:blue-500"
+                      target="_blank"
                     >
-                      <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
-                    </svg>
-                  </a>
+                      <AiOutlineCode className="w-[22px] h-[22px] hover:text-blue-500" />
+                    </a>
+                    <a
+                      href={project.url}
+                      className="hover:blue-500"
+                      target="_blank"
+                    >
+                      <BiLinkExternal className="w-[22px] h-[22px] hover:text-blue-500" />
+                    </a>
+                  </div>
                 </div>
                 {/* END Title & Link */}
                 <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
@@ -68,6 +74,7 @@ export default function Portfolio({ isMobile, projects }) {
           )}
         />
       ) : (
+        // Desktop
         <div className=" mx-auto my-3 py-5 grid grid-cols-3 gap-7 w-[55%]">
           {projects.map((project, index) => (
             <div
@@ -86,21 +93,22 @@ export default function Portfolio({ isMobile, projects }) {
                 <h4 className="text-stone-400 italic text-[13px] tracking-wide font-semibold mx-2 mt-2">{`${project.type}`}</h4>
                 <div className="mx-2 my-1 flex justify-between items-center">
                   <h1 className="font-bold">{project.title}</h1>
-                  <a
-                    href={project.url}
-                    className="hover:blue-500"
-                    target="_blank"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="fill-current hover:text-blue-500"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
+                  <div className="flex gap-x-1 items-center">
+                    <a
+                      href={project.source_code}
+                      className="hover:blue-500"
+                      target="_blank"
                     >
-                      <path d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z" />
-                    </svg>
-                  </a>
+                      <AiOutlineCode className="w-[22px] h-[22px] hover:text-blue-500" />
+                    </a>
+                    <a
+                      href={project.url}
+                      className="hover:blue-500"
+                      target="_blank"
+                    >
+                      <BiLinkExternal className="w-[22px] h-[22px] hover:text-blue-500" />
+                    </a>
+                  </div>
                 </div>
                 {/* Type */}
                 {/* Description */}
