@@ -18,6 +18,15 @@ export const projects = [
     tech: ['React.svg', 'Tailwind-CSS.svg', 'nodejs.svg', 'PostgreSQL.svg', 'Prisma.svg'],
   },
   {
+    title: 'Pharmakey',
+    type: 'Slicing Frontend',
+    url: 'https://pharmakey.vercel.app/',
+    source_code: 'https://github.com/SetraNugraha/pharmakey',
+    image: 'assets/pharmakey.png',
+    description: 'Slicing a Figma design to code using React JS, from the Pharma, BuildWithAngga.com course. - Mobile Only',
+    tech: ['React.svg', 'Tailwind-CSS.svg'],
+  },
+  {
     title: 'NatureSpot',
     type: 'Slicing - Landing Page',
     url: 'https://nature-spot-id.vercel.app',

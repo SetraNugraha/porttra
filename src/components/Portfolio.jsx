@@ -88,7 +88,7 @@ export default function Portfolio({ isMobile, projects }) {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className=" rounded-md  shadow-md "
+                    className=" rounded-md  shadow-md"
                   />
                   {/* Title & Link */}
                   <h4 className="text-[#7e74f1] opacity-90 italic text-[14px] tracking-wider font-semibold mx-2 mt-2">{`${project.type}`}</h4>
@@ -113,7 +113,7 @@ export default function Portfolio({ isMobile, projects }) {
                   </div>
                   {/* Type */}
                   {/* Description */}
-                  <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify">{project.description}</p>
+                  <p className="mx-2 mt-2 text-[14px] text-slate-500 text-justify ">{project.description}</p>
                 </div>
                 {/* Tech */}
                 <ul className="flex flex-wrap mx-2 gap-2 mt-5 mb-2">
