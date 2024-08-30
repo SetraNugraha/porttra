@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="flex flex-col items-center || xl:items-start">
           <h3 className="text-xs text-secondary tracking-[6px] flex items-center before:w-[30px] before:h-[1px] before:bg-secondary before:mr-3 || xl:text-lg xl:font-semibold">HELLO, IT&apos;S ME</h3>
           {/* Name */}
-          <h1 className="text-2xl font-bold text-slate-700 || xl:text-4xl">
+          <h1 className="text-2xl font-bold text-slate-700 || xl:text-3xl">
             Setra Nugraha <span className="text-stone-500">Putra Suma</span>
           </h1>
         </div>
