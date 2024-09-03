@@ -18,7 +18,9 @@ export default function Services({ isMobile, services }) {
       {isMobile ? (
         <CustomSwiper
           data={services}
-          style={'bg-white my-1 px-5 pb-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-md'}
+          style={
+            'bg-white my-1 px-5 pb-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-md'
+          }
           dotFor={'services'}
           dotStyle={'z-0 flex gap-x-3 items-center justify-center'}
           renderSlide={(service) => (
@@ -30,7 +32,9 @@ export default function Services({ isMobile, services }) {
                 />
               </div>
               <h4 className="font-semibold py-2">{service.title}</h4>
-              <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
+              <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">
+                {service.description}
+              </p>
             </>
           )}
         />
@@ -49,7 +53,9 @@ export default function Services({ isMobile, services }) {
                 />
               </div>
               <h4 className="font-semibold py-2">{service.title}</h4>
-              <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
+              <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
