@@ -35,7 +35,7 @@ export const projects = [
     url: 'https://pharmakey.vercel.app/',
     source_code: 'https://github.com/SetraNugraha/pharmakey',
     youtube_url:
-      'https://www.youtube.com/embed/l8Pf3veQx6I?si=25CXTmn44WL59uhK',
+      'https://www.youtube.com/embed/D1bskyV-4RU?si=DtJ3gyFb6aVoAX5c',
     image: 'assets/pharmakey.png',
     description:
       'Slicing a Figma design to code using React JS, from the Pharma, BuildWithAngga.com course. - Mobile Only',
