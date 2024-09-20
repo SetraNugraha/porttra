@@ -77,8 +77,7 @@ export default function ContactAddress({ contactInfo }) {
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="my-5 flex flex-col gap-5"
-      >
+        className="my-5 flex flex-col gap-5">
         {/* Name */}
         <InputForm
           type={'text'}
@@ -107,9 +106,10 @@ export default function ContactAddress({ contactInfo }) {
         <button
           type="submit"
           value="Send"
-          className={`text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg hover:bg-[#453ACE] ${processSend ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''}`}
-          disabled={processSend}
-        >
+          className={`text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg duration-300 tracking-wider shadow-lg shadow-gray-300 hover:bg-white hover:outline-none hover:ring-2 hover:ring-[#7e74f1] hover:text-[#7e74f1] ${
+            processSend ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''
+          }`}
+          disabled={processSend}>
           {processSend ? 'Process Sending Message ...' : 'Submit'}
         </button>
       </form>
@@ -117,10 +117,7 @@ export default function ContactAddress({ contactInfo }) {
   }
 
   return (
-    <section
-      className="px-5"
-      id="contact"
-    >
+    <section className="px-5" id="contact">
       <Header
         title={'FIND ME'}
         subTitle={'Contact & Address'}
@@ -136,10 +133,7 @@ export default function ContactAddress({ contactInfo }) {
         {/* Address & Contact */}
         <div className="py-5 flex flex-col gap-10 || xl: ">
           {contactInfo.map((contact, index) => (
-            <div
-              key={index}
-              className="flex gap-5"
-            >
+            <div key={index} className="flex gap-5">
               {/* Icon */}
               <div className="h-[55px] w-[55px] bg-slate-200 flex justify-center items-center rounded-lg">
                 <img src={`assets/${contact.icon}`} />
@@ -147,7 +141,9 @@ export default function ContactAddress({ contactInfo }) {
               {/* Info */}
               <div>
                 <h4 className="font-bold text-stone-700">{contact.title}</h4>
-                <p className="text-[14px] text-secondary">{contact.description}</p>
+                <p className="text-[14px] text-secondary">
+                  {contact.description}
+                </p>
               </div>
             </div>
           ))}
