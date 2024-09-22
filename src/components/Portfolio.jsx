@@ -30,40 +30,28 @@ export default function Portfolio({ isMobile, projects }) {
     setOpenModal(true)
   }
 
-  const ModalDetailProject = ({
-    title,
-    type,
-    description,
-    youtube_url,
-    tech,
-    source_code,
-    url,
-  }) => {
+  const ModalDetailProject = ({ title, type, description, youtube_url, tech, source_code, url, feature, issue, demoAccount }) => {
     return (
       <>
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 overflow-y-hidden">
-          <div className="p-5 w-[95%] xl:w-[700px] bg-white rounded-xl">
+          <div className="p-5 max-h-[850px] w-[95%] xl:w-[700px] bg-white rounded-xl">
             {/* Header */}
             <div className="relative flex items-start justify-between">
               <div>
                 <h1 className="font-bold tracking-widest">{title}</h1>
-                <h3 className="font-bold tracking-widest text-[#7e74f1] text-[14px] italic">
-                  {type}
-                </h3>
+                <h3 className="font-bold tracking-widest text-[#7e74f1] text-[14px] italic">{type}</h3>
               </div>
-              <button
-                onClick={() => setOpenModal(false)}
-                className="font-bold bg-slate-300 px-2 rounded-lg shadow-xl hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out mb-3">
+              <button onClick={() => setOpenModal(false)} className="font-bold bg-slate-300 px-2 rounded-lg shadow-xl hover:bg-red-500 hover:text-white transition-all duration-300 ease-in-out mb-3">
                 X
               </button>
               <span className="absolute -bottom-2 h-[1px] bg-slate-400 w-full"></span>
             </div>
 
             {/* Demo Video */}
-            <div className="flex items-center justify-center my-5">
+            <div className="flex items-center justify-center my-5 border-b-2 border-black">
               <iframe
                 width="650"
-                height="380"
+                height="250"
                 src={youtube_url}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -71,22 +59,82 @@ export default function Portfolio({ isMobile, projects }) {
                 allowFullScreen></iframe>
             </div>
 
-            {/* Description */}
-            <div className="flex flex-col gap-y-5 my-5">
-              <p className="text-justify font-semibold text-slate-400 text-sm">
-                {description}
-              </p>
+            {/* Detail Project */}
+            <div className="flex flex-col gap-y-5 my-5 max-h-[250px] overflow-y-auto">
+              {/* Description */}
+              <div className="mx-2">
+                <h1 className="font-semibold tracking-wider">Description :</h1>
+                <p className="text-justify font-semibold text-slate-400 text-sm">{description}</p>
+              </div>
 
-              <div className="flex items-center gap-x-2">
-                {tech.map((item) => (
-                  <>
-                    <img
-                      src={`assets/skills/${item}`}
-                      alt={item}
-                      className="size-[22px]"
-                    />
-                  </>
-                ))}
+              {/* Feature */}
+              {feature && (
+                <div className="mx-2">
+                  <h1 className="font-semibold tracking-wider">Feature : </h1>
+                  <div className="grid grid-cols-2 gap-x-3 text-slate-400 font-semibold text-sm">
+                    {feature.map((item) => (
+                      <>
+                        <ul className="list-disc ml-5">
+                          <li className="">{item}</li>
+                        </ul>
+                      </>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Issue */}
+              {issue && (
+                <div className="mx-2">
+                  <h1 className="font-semibold tracking-wider">Issue : </h1>
+                  <div className="text-slate-400 font-semibold text-sm">
+                    {issue.map((item) => (
+                      <>
+                        <ul className="list-disc ml-5">
+                          <li className="">{item}</li>
+                        </ul>
+                      </>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Demo Account */}
+              {demoAccount && (
+                <div className="mx-2">
+                  <h1 className="font-semibold tracking-wider">Tester account : </h1>
+                  <div className="text-slate-400 font-semibold text-sm">
+                    {demoAccount.map((item) => (
+                      <>
+                        <div className=''>
+                          <div className="grid grid-cols-[70px_10px_auto]">
+                            <p>Email</p>
+                            <p>:</p>
+                            <p>{item.email}</p>
+                          </div>
+
+                          <div className="grid grid-cols-[70px_10px_auto]">
+                            <p>Password</p>
+                            <p>:</p>
+                            <p>{item.password}</p>
+                          </div>
+                        </div>
+                      </>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Tech */}
+              <div className="flex flex-col gap-y-1 mx-2">
+                <h1 className="font-semibold tracking-wider">Tech : </h1>
+                <div className="flex items-center gap-x-2">
+                  {tech.map((item) => (
+                    <>
+                      <img src={`assets/skills/${item}`} alt={item} className="size-[22px]" />
+                    </>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -95,14 +143,16 @@ export default function Portfolio({ isMobile, projects }) {
               <a
                 href={source_code}
                 target="_blank"
-                className="py-2 px-3 w-1/2 text-center bg-gray-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
+                className="py-2 px-3 w-1/2 flex items-center gap-x-2 justify-center text-center bg-gray-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
                 Source Code
+                <AiOutlineCode size={23} />
               </a>
               <a
                 href={url}
                 target="_blank"
-                className="py-2 px-3 w-1/2 text-center bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
-                Go to website
+                className="py-2 px-3 w-1/2 flex items-center gap-x-2 justify-center text-center bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
+                Visit Website
+                <BiLinkExternal size={23} />
               </a>
             </div>
           </div>
@@ -113,30 +163,20 @@ export default function Portfolio({ isMobile, projects }) {
 
   return (
     <section className="px-5" id="portfolio">
-      <Header
-        title={'MY PROJECT'}
-        subTitle={'Featured Portfolio'}
-        position={'start'}
-      />
+      <Header title={'MY PROJECT'} subTitle={'Featured Portfolio'} position={'start'} />
 
       {/* Card Portofolio */}
       {/* Mobile */}
       {isMobile ? (
         <CustomSwiper
           data={projects}
-          style={
-            'w-[90%] flex flex-col justify-between mx-auto px-2 py-4 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full'
-          }
+          style={'w-[90%] flex flex-col justify-between mx-auto px-2 py-4 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full'}
           dotFor={'project'}
           dotStyle={'flex gap-x-3 justify-center items-center'}
           renderSlide={(project) => (
             <>
               <div>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className=" rounded-md  shadow-md"
-                />
+                <img src={project.image} alt={project.title} className="rounded-md shadow-md" />
 
                 {/* Container text */}
                 <div className="mx-2 mt-3 flex flex-col gap-y-4">
@@ -163,17 +203,11 @@ export default function Portfolio({ isMobile, projects }) {
           <div className="grid grid-rows-2 auto-cols-[minmax(290px,_1fr)] grid-flow-col gap-5 px-3">
             {projects.map((project, index) => {
               return (
-                <div
-                  key={index}
-                  className="flex flex-col justify-between mx-auto px-2 py-2 border border-slate-100 shadow-lg shadow-slate-300 rounded-lg">
+                <div key={index} className="flex flex-col justify-between mx-auto px-2 py-2 border border-slate-100 shadow-lg shadow-slate-300 rounded-lg">
                   {/* Image & Description */}
                   <div>
                     {/* Image */}
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className=" rounded-md  shadow-md"
-                    />
+                    <img src={project.image} alt={project.title} className=" rounded-md  shadow-md" />
 
                     {/* Title & Link */}
                     <div className="my-3 flex flex-col justify-between items-center">
@@ -204,6 +238,9 @@ export default function Portfolio({ isMobile, projects }) {
           url={selectedProject.url}
           tech={selectedProject.tech}
           youtube_url={selectedProject.youtube_url}
+          feature={selectedProject.feature}
+          issue={selectedProject.issue}
+          demoAccount={selectedProject.demoAccount}
         />
       )}
     </section>
