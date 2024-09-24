@@ -39,7 +39,7 @@ export const projects = [
     type: 'Slicing Frontend',
     url: 'https://pharmakey.vercel.app/',
     source_code: 'https://github.com/SetraNugraha/pharmakey',
-    youtube_url: 'https://www.youtube.com/embed/D1bskyV-4RU?si=DtJ3gyFb6aVoAX5c',
+    youtube_url: 'https://www.youtube.com/embed/Gp0VjN1yDrU?si=LHyVKFNz6rky9uN2',
     image: 'assets/pharmakey.png',
     description: 'Slicing a Figma design to code using React JS, from the Pharma, BuildWithAngga.com course. - Mobile Only',
     tech: ['React.svg', 'Tailwind-CSS.svg'],
