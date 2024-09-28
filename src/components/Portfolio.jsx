@@ -1,12 +1,12 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Header } from '../elements/Header'
-import { CustomSwiper } from '../elements/CustomSwiper'
-import { BiLinkExternal } from 'react-icons/bi'
-import { AiOutlineCode } from 'react-icons/ai'
-import { useState } from 'react'
-import { RiVideoLine } from 'react-icons/ri'
-import { useEffect } from 'react'
+import { Header } from "../elements/Header"
+import { CustomSwiper } from "../elements/CustomSwiper"
+import { BiLinkExternal } from "react-icons/bi"
+import { AiOutlineCode } from "react-icons/ai"
+import { useState } from "react"
+import { RiVideoLine } from "react-icons/ri"
+import { useEffect } from "react"
 
 export default function Portfolio({ isMobile, projects }) {
   const [openModal, setOpenModal] = useState(false)
@@ -15,13 +15,13 @@ export default function Portfolio({ isMobile, projects }) {
   // Disable Scroll Y
   useEffect(() => {
     if (openModal) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden"
     } else {
-      document.body.style.overflow = 'auto'
+      document.body.style.overflow = "auto"
     }
 
     return () => {
-      document.body.style.overflow = 'auto'
+      document.body.style.overflow = "auto"
     }
   }, [openModal])
 
@@ -30,7 +30,7 @@ export default function Portfolio({ isMobile, projects }) {
     setOpenModal(true)
   }
 
-  const ModalDetailProject = ({ title, type, description, youtube_url, tech, source_code, url, feature, issue, demoAccount }) => {
+  const ModalDetailProject = ({ title, type, description, note, youtube_url, tech, source_code, url, feature, issue, demoAccount }) => {
     return (
       <>
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 overflow-y-hidden">
@@ -61,6 +61,14 @@ export default function Portfolio({ isMobile, projects }) {
 
             {/* Detail Project */}
             <div className="flex flex-col gap-y-5 my-5 max-h-[250px] overflow-y-auto">
+              {/* Note */}
+              {note && (
+                <div className="mx-2">
+                  <h1 className="font-bold tracking-wider text-red-500">Note :</h1>
+                  <p className="text-justify font-semibold text-red-400 text-sm">{note}</p>
+                </div>
+              )}
+
               {/* Description */}
               <div className="mx-2">
                 <h1 className="font-semibold tracking-wider">Description :</h1>
@@ -106,7 +114,7 @@ export default function Portfolio({ isMobile, projects }) {
                   <div className="text-slate-400 font-semibold text-sm">
                     {demoAccount.map((item) => (
                       <>
-                        <div className=''>
+                        <div className="">
                           <div className="grid grid-cols-[70px_10px_auto]">
                             <p>Email</p>
                             <p>:</p>
@@ -163,16 +171,16 @@ export default function Portfolio({ isMobile, projects }) {
 
   return (
     <section className="px-5" id="portfolio">
-      <Header title={'MY PROJECT'} subTitle={'Featured Portfolio'} position={'start'} />
+      <Header title={"MY PROJECT"} subTitle={"Featured Portfolio"} position={"start"} />
 
       {/* Card Portofolio */}
       {/* Mobile */}
       {isMobile ? (
         <CustomSwiper
           data={projects}
-          style={'w-[90%] flex flex-col justify-between mx-auto px-2 py-4 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full'}
-          dotFor={'project'}
-          dotStyle={'flex gap-x-3 justify-center items-center'}
+          style={"w-[90%] flex flex-col justify-between mx-auto px-2 py-4 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full"}
+          dotFor={"project"}
+          dotStyle={"flex gap-x-3 justify-center items-center"}
           renderSlide={(project) => (
             <>
               <div>
@@ -234,6 +242,7 @@ export default function Portfolio({ isMobile, projects }) {
           title={selectedProject.title}
           type={selectedProject.type}
           description={selectedProject.description}
+          note={selectedProject.note}
           source_code={selectedProject.source_code}
           url={selectedProject.url}
           tech={selectedProject.tech}
