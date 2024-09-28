@@ -1,8 +1,4 @@
-import { IoMdCloudDownload } from "react-icons/io"
 import { PiCertificateFill } from "react-icons/pi"
-import { FaFilePdf } from "react-icons/fa";
-import { PiFilePdfFill } from "react-icons/pi";
-import { MdPictureAsPdf } from "react-icons/md";
 import { TbFileTypePdf } from "react-icons/tb";
 
 
