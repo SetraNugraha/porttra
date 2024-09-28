@@ -33,11 +33,11 @@ const Skills = () => {
       <div className="py-5 text-slate-700 || xl:text-[16px] ">
         <h3 className="font-bold">My Tech Proficiency - Junior Level, Commited to Evolve</h3>
 
-        <div className="flex justify-between items-start my-3">
+        <div className="flex items-start my-3">
           {/* DATABASE */}
-          <div className="w-1/2 flex flex-col justify-center items-center">
-            <h6 className="font-semibold text-[14px] text-secondary py-1 || xl:text-[16px]">Database : </h6>
-            <ul className="grid grid-cols-2 justify-center gap-3 py-4 px-4 || xl:justify-start">
+          <div className="w-1/2 xl:w-1/3 flex flex-col">
+            <h6 className="font-semibold text-[14px] tracking-wider text-secondary py-1 || xl:text-[16px]">Database : </h6>
+            <ul className="flex gap-5 py-4 || xl:justify-start">
               {database.map((item, index) => {
                 return (
                   <li key={index}>
@@ -53,9 +53,9 @@ const Skills = () => {
           </div>
 
           {/* CODE */}
-          <div className="w-1/2 flex flex-col justify-center items-center">
-            <h6 className="font-semibold text-[14px] text-secondary py-1 xl:text-[16px]">Code : </h6>
-            <ul className="grid grid-cols-3 gap-3 py-4 px-4 || xl:justify-start">
+          <div className="w-1/2 flex flex-col">
+            <h6 className="font-semibold text-[14px] tracking-wider text-secondary py-1 xl:text-[16px]">Code : </h6>
+            <ul className="flex flex-wrap gap-5 bsg-red-200 py-4 || xl:justify-start">
               {code.map((item, index) => {
                 return (
                   <li key={index}>
