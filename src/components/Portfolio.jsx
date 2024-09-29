@@ -5,7 +5,7 @@ import { CustomSwiper } from "../elements/CustomSwiper"
 import { BiLinkExternal } from "react-icons/bi"
 import { AiOutlineCode } from "react-icons/ai"
 import { useState } from "react"
-import { RiVideoLine } from "react-icons/ri"
+import { FaReact } from "react-icons/fa"
 import { useEffect } from "react"
 
 export default function Portfolio({ isMobile, projects }) {
@@ -30,7 +30,7 @@ export default function Portfolio({ isMobile, projects }) {
     setOpenModal(true)
   }
 
-  const ModalDetailProject = ({ title, type, description, note, youtube_url, tech, source_code, url, feature, issue, demoAccount }) => {
+  const ModalDetailProject = ({ title, type, ssr, description, note, youtube_url, tech, frontendCode, backendCode, url, feature, issue, demoAccount }) => {
     return (
       <>
         <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 overflow-y-hidden">
@@ -147,18 +147,32 @@ export default function Portfolio({ isMobile, projects }) {
             </div>
 
             {/* Link */}
-            <div className="mt-5 flex gap-x-2 items-center justify-between">
-              <a
-                href={source_code}
-                target="_blank"
-                className="py-2 px-3 w-1/2 flex items-center gap-x-2 justify-center text-center bg-gray-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
-                Source Code
-                <AiOutlineCode size={23} />
-              </a>
+            <div className="mt-5 flex flex-col gap-y-3 items-center">
+              <div className="flex items-center gap-x-3 w-full">
+                {/* Frontend */}
+                <a
+                  href={frontendCode}
+                  target="_blank"
+                  className="py-2 px-3 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center bg-gray-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
+                  {ssr ? "Source Code" : "Frontend"}
+                  {ssr ? <AiOutlineCode size={22} /> : <FaReact size={22} />}
+                </a>
+
+                {/* Backend */}
+                {backendCode && (
+                  <a
+                    href={backendCode}
+                    target="_blank"
+                    className="py-2 px-3 w-1/2 flex items-center gap-x-2 justify-center text-center bg-gray-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
+                    Backend
+                    <AiOutlineCode size={23} />
+                  </a>
+                )}
+              </div>
               <a
                 href={url}
                 target="_blank"
-                className="py-2 px-3 w-1/2 flex items-center gap-x-2 justify-center text-center bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
+                className="w-full py-2 px-3 flex items-center gap-x-2 justify-center text-center bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
                 Visit Website
                 <BiLinkExternal size={23} />
               </a>
@@ -241,9 +255,11 @@ export default function Portfolio({ isMobile, projects }) {
         <ModalDetailProject
           title={selectedProject.title}
           type={selectedProject.type}
+          ssr={selectedProject.ssr}
           description={selectedProject.description}
           note={selectedProject.note}
-          source_code={selectedProject.source_code}
+          frontendCode={selectedProject.frontendCode}
+          backendCode={selectedProject.backendCode}
           url={selectedProject.url}
           tech={selectedProject.tech}
           youtube_url={selectedProject.youtube_url}
