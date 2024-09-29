@@ -31,7 +31,7 @@ const Skills = () => {
       </p>
 
       <div className="py-5 text-slate-700 || xl:text-[16px] ">
-        <h3 className="font-bold">My Tech Proficiency - Junior Level, Commited to Evolve</h3>
+        <h3 className="font-bold tracking-wide">My Tech Stack - Junior Level, Committed to Growth</h3>
 
         <div className="flex items-start my-3">
           {/* DATABASE */}
