@@ -7,6 +7,8 @@ import { AiOutlineCode } from "react-icons/ai"
 import { useState } from "react"
 import { FaReact } from "react-icons/fa"
 import { useEffect } from "react"
+import { BiSolidRightArrowAlt } from "react-icons/bi"
+import { LuArrowRightSquare } from "react-icons/lu"
 
 export default function Portfolio({ isMobile, projects }) {
   const [openModal, setOpenModal] = useState(false)
@@ -187,11 +189,20 @@ export default function Portfolio({ isMobile, projects }) {
     <section className="px-5" id="portfolio">
       <Header title={"MY PROJECT"} subTitle={"Featured Portfolio"} position={"start"} />
 
+      {/* Swipe Info */}
+      <div className="hidden xl:flex gap-x-2 items-center justify-end w-[55%] mx-auto -mt-7 text-slate-400 tracking-widest">
+        <p className="font-semibold">Swipe</p>
+        <i>
+          <LuArrowRightSquare size={22} />
+        </i>
+      </div>
+
       {/* Card Portofolio */}
       {/* Mobile */}
       {isMobile ? (
         <CustomSwiper
           data={projects}
+          totalSlides={1}
           style={"w-[90%] flex flex-col justify-between mx-auto px-2 py-4 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full"}
           dotFor={"project"}
           dotStyle={"flex gap-x-3 justify-center items-center"}
@@ -221,10 +232,13 @@ export default function Portfolio({ isMobile, projects }) {
         />
       ) : (
         // Desktop
+        // Container
         <div className="mx-auto my-3 py-5 overflow-x-auto w-[55%]">
+          {/* Wrapper */}
           <div className="grid grid-rows-2 auto-cols-[minmax(290px,_1fr)] grid-flow-col gap-5 px-3">
             {projects.map((project, index) => {
               return (
+                // Card
                 <div key={index} className="flex flex-col justify-between mx-auto px-2 py-2 border border-slate-100 shadow-lg shadow-slate-300 rounded-lg">
                   {/* Image & Description */}
                   <div>
