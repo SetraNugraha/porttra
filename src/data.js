@@ -1,6 +1,7 @@
 export const projects = [
   // PostSpot
   {
+    id: 1,
     title: "PostSpot",
     type: "Fullstack",
     ssr: true,
@@ -21,6 +22,7 @@ export const projects = [
 
   // Facebook Clone
   {
+    id: 2,
     title: "Facebook Clone",
     type: "Fullstack",
     url: "https://client-fbclone.vercel.app/",
@@ -43,6 +45,7 @@ export const projects = [
 
   // SetraMovie TMDB
   {
+    id: 3,
     title: "SetraMovie",
     type: "Frontend - Integration TMdb API",
     url: "https://setramovie.vercel.app/",
@@ -56,6 +59,7 @@ export const projects = [
 
   // Pharmakey
   {
+    id: 4,
     title: "Pharmakey",
     type: "Slicing Frontend",
     url: "https://pharmakey.vercel.app/",
@@ -70,6 +74,7 @@ export const projects = [
 
   // NatureSpot
   {
+    id: 5,
     title: "NatureSpot",
     type: "Slicing - Landing Page",
     url: "https://nature-spot-id.vercel.app",
@@ -82,6 +87,7 @@ export const projects = [
 
   // Travel app Jadoo
   {
+    id: 6,
     title: "Travel App - Jadoo",
     type: "Slicing - Landing Page",
     url: "https://travel-app-jadoo.vercel.app/",
@@ -94,6 +100,7 @@ export const projects = [
 
   // Guess number
   {
+    id: 7,
     title: "Guess Number !",
     type: "Game",
     url: "https://guess-number-bysetra.vercel.app",
@@ -107,6 +114,7 @@ export const projects = [
 
   // Shopping List
   {
+    id: 8,
     title: "Shopping list",
     type: "Web App",
     url: "https://shoplist-setra.vercel.app",
