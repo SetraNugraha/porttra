@@ -41,6 +41,19 @@ export const projects = [
     ],
   },
 
+  // SetraMovie TMDB
+  {
+    title: "SetraMovie",
+    type: "Frontend - Integration TMdb API",
+    url: "https://setramovie.vercel.app/",
+    frontendCode: "https://github.com/SetraNugraha/setramovie",
+    youtube_url: "https://www.youtube.com/embed/1W6Ufd7AlfI?si=Fj7otrn_eR2jpeFR",
+    image: "assets/setramovie.png",
+    description: "Implementation some API from TMDB.",
+    feature: ["Login", "Login As Guest", "Logout", "Search Movie", "Add/Remove Favorite Movie"],
+    tech: ["React.svg", "Tailwind-CSS.svg"],
+  },
+
   // Pharmakey
   {
     title: "Pharmakey",
@@ -110,22 +123,19 @@ export const services = [
   {
     title: "Databases",
     icon: "database.svg",
-    description:
-      "Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data",
+    description: "Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data",
   },
 
   {
     title: "Backend Developer",
     icon: "backend.svg",
-    description:
-      "Membangun logika bisnis yang kuat untuk memproses data dan menjalankan operasi sebuah aplikasi, mengintegrasikan backend dengan database untuk menyimpan dan mengambil informasi secara efisien, serta mengimplementasikan API untuk berkomunikasi antara backend dan frontend",
+    description: "Membangun logika bisnis yang kuat untuk memproses data dan menjalankan operasi sebuah aplikasi, mengintegrasikan backend dengan database untuk menyimpan dan mengambil informasi secara efisien, serta mengimplementasikan API untuk berkomunikasi antara backend dan frontend",
   },
 
   {
     title: "Frontend Developer",
     icon: "frontend.svg",
-    description:
-      "Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web",
+    description: "Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web",
   },
 ]
 
