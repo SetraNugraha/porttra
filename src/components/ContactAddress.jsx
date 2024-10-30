@@ -131,7 +131,7 @@ export default function ContactAddress({ contactInfo }) {
         </div>
 
         {/* Address & Contact */}
-        <div className="py-5 flex flex-col gap-10 || xl: ">
+        <div className="py-5 flex flex-col gap-8 ">
           {contactInfo.map((contact, index) => (
             <div key={index} className="flex gap-5">
               {/* Icon */}

@@ -10,21 +10,8 @@ import ContactAddress from './components/ContactAddress'
 import Footer from './components/Footer'
 
 import { projects, services, contactInfo } from './data'
-import { useEffect } from 'react'
 
 export default function App() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const handleIsMobile = () => {
-      setIsMobile(window.innerWidth < 1280)
-    }
-
-    handleIsMobile()
-    window.addEventListener('resize', handleIsMobile)
-
-    return () => window.removeEventListener('resize', handleIsMobile)
-  }, [])
 
   return (
     <>
@@ -38,14 +25,12 @@ export default function App() {
 
       {/* START Services */}
       <Services
-        isMobile={isMobile}
         services={services}
       />
       {/* END Services */}
 
       {/* START Portfolio */}
       <Portfolio
-        isMobile={isMobile}
         projects={projects}
       />
       {/* END Portofolio */}

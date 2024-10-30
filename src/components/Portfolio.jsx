@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Header } from "../elements/Header"
-import { CustomSwiper } from "../elements/CustomSwiper"
 import { BiLinkExternal } from "react-icons/bi"
 import { AiOutlineCode } from "react-icons/ai"
 import { useState } from "react"
@@ -9,11 +8,18 @@ import { FaReact } from "react-icons/fa"
 import { useEffect } from "react"
 import { LuArrowRightSquare } from "react-icons/lu"
 
-export default function Portfolio({ isMobile, projects }) {
+import { Pagination, Autoplay, Grid } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
+// Import Swiper styles
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/grid"
+
+export default function Portfolio({ projects }) {
   const [openModal, setOpenModal] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
 
-  // Disable Scroll Y
+  // Disable Scroll if Modal Open
   useEffect(() => {
     if (openModal) {
       document.body.style.overflow = "hidden"
@@ -245,34 +251,35 @@ export default function Portfolio({ isMobile, projects }) {
       </div>
 
       {/* Card Portofolio */}
-      {/* Mobile */}
-      {isMobile && (
-        <CustomSwiper
-          data={projects}
-          totalSlides={1}
-          style={
-            "w-[90%] flex flex-col justify-between mx-auto px-2 py-4 border-[0.5px] border-slate-200 shadow-lg rounded-lg xl:w-full"
-          }
-          dotFor={"project"}
-          dotStyle={"flex gap-x-3 justify-center items-center"}
-          // Card Project Mobile
-          renderSlide={(project) => (
-            <RenderCardProject key={project.id} project={project} />
-          )}
-        />
-      )}
-
-      {/* Desktop */}
-      <div
-        className={`mx-auto my-3 py-5 overflow-x-auto w-[55%] ${
-          isMobile && "hidden"
-        }`}>
-        {/* Wrapper */}
-        <div className="grid grid-rows-2 auto-cols-[minmax(290px,_1fr)] grid-flow-col gap-5 px-3">
-          {projects.map((project) => {
-            return <RenderCardProject key={project.id} project={project} />
-          })}
-        </div>
+      <div className="xl:w-[55%] xl:mx-auto mt-5">
+        <Swiper
+          modules={[Pagination, Autoplay, Grid]}
+          breakpoints={{
+            340: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+              grid: { rows: 1 },
+            },
+          }}
+          autoplay={{ delay: 2500 }}
+          spaceBetween={20}
+          pagination={{
+            el: ".swipper-pagination",
+            type: "bullets",
+            clickable: true,
+          }}>
+          {projects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <RenderCardProject project={project} />
+            </SwiperSlide>
+          ))}
+          <div className="swipper-pagination mt-10 flex gap-x-5 items-center justify-center"></div>
+        </Swiper>
       </div>
 
       {openModal && <ModalDetailProject project={selectedProject} />}
