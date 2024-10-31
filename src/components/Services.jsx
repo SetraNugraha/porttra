@@ -34,35 +34,37 @@ export default function Services({ services }) {
       />
 
       {/* Container RenderServices */}
-      <div className="xl:w-[55%] xl:mx-auto">
-        <Swiper
-          modules={[Pagination, Autoplay, Grid]}
-          autoplay={{ delay: 2500 }}
-          breakpoints={{
-            340: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 3,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          pagination={{
-            clickable: true,
-            el: ".swiper-services",
-            type: "bullets",
-          }}
-          spaceBetween={20}>
-          {services.map((service, index) => (
-            <SwiperSlide key={index} className="xl:px-3">
-              <RenderServices service={service} />
-            </SwiperSlide>
-          ))}
-          <div className="swiper-services flex justify-center items-center gap-x-5"></div>
-        </Swiper>
-      </div>
+      <Swiper
+        modules={[Pagination, Autoplay, Grid]}
+        autoplay={{ delay: 2500 }}
+        breakpoints={{
+          340: {
+            slidesPerView: 1,
+            grid: { rows: 1, fill: "row" },
+          },
+          768: {
+            slidesPerView: 3,
+            grid: { rows: 1, fill: "row" },
+          },
+          1024: {
+            slidesPerView: 3,
+            grid: { rows: 1, fill: "row" },
+          },
+        }}
+        pagination={{
+          clickable: true,
+          el: ".swiper-services",
+          type: "bullets",
+        }}
+        spaceBetween={20}
+        className="xl:w-[55%] xl:mx-auto">
+        {services.map((service, index) => (
+          <SwiperSlide key={index} className="xl:px-3">
+            <RenderServices service={service} />
+          </SwiperSlide>
+        ))}
+        <div className="swiper-services flex justify-center items-center gap-x-5"></div>
+      </Swiper>
     </section>
   )
 }

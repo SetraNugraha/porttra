@@ -47,7 +47,7 @@ export default function Portfolio({ projects }) {
             <img
               src={project.image}
               alt={project.title}
-              className=" rounded-md  shadow-md"
+              className=" rounded-md  shadow-md max-h-[140px] mx-auto"
             />
 
             {/* Title & Link */}
@@ -251,36 +251,39 @@ export default function Portfolio({ projects }) {
       </div>
 
       {/* Card Portofolio */}
-      <div className="xl:w-[55%] xl:mx-auto mt-5">
-        <Swiper
-          modules={[Pagination, Autoplay, Grid]}
-          breakpoints={{
-            340: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-              grid: { rows: 1 },
-            },
-          }}
-          autoplay={{ delay: 2500 }}
-          spaceBetween={20}
-          pagination={{
-            el: ".swipper-pagination",
-            type: "bullets",
-            clickable: true,
-          }}>
-          {projects.map((project) => (
-            <SwiperSlide key={project.id}>
-              <RenderCardProject project={project} />
-            </SwiperSlide>
-          ))}
-          <div className="swipper-pagination mt-10 flex gap-x-5 items-center justify-center"></div>
-        </Swiper>
-      </div>
+
+      <Swiper
+        modules={[Pagination, Autoplay, Grid]}
+        breakpoints={{
+          340: {
+            slidesPerView: 1,
+            grid: { rows: 1, fill: "row" },
+          },
+          768: {
+            slidesPerView: 2,
+            grid: { rows: 1, fill: "row" },
+          },
+          1024: {
+            slidesPerView: 3,
+            grid: { rows: 2, fill: "row" },
+          },
+        }}
+        autoplay={{ delay: 2500 }}
+        spaceBetween={20}
+        pagination={{
+          el: ".swipper-projects",
+          type: "bullets",
+          clickable: true,
+        }}
+        className="xl:w-[55%] xl:mx-auto mt-5">
+        {projects.map((project) => (
+          <SwiperSlide key={project.id}>
+            <RenderCardProject project={project} />
+          </SwiperSlide>
+        ))}
+
+        <div className="swipper-projects mt-10 flex gap-x-5 items-center justify-center"></div>
+      </Swiper>
 
       {openModal && <ModalDetailProject project={selectedProject} />}
     </section>
