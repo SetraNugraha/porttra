@@ -6,9 +6,9 @@ import { AiOutlineCode } from "react-icons/ai"
 import { useState } from "react"
 import { FaReact } from "react-icons/fa"
 import { useEffect } from "react"
-import { LuArrowRightSquare } from "react-icons/lu"
+import { LuArrowRightSquare, LuArrowLeftSquare } from "react-icons/lu"
 
-import { Pagination, Autoplay, Grid } from "swiper/modules"
+import { Pagination, Autoplay, Grid, Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 // Import Swiper styles
 import "swiper/css"
@@ -73,7 +73,7 @@ export default function Portfolio({ projects }) {
       <div
         key={project.id}
         className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 overflow-y-hidden">
-        <div className="p-5 max-h-[850px] w-[95%] xl:w-[700px] bg-white rounded-xl">
+        <div className="p-5 max-h-[700px] w-[95%] xl:w-[700px] bg-white rounded-xl">
           {/* Header */}
           <div className="relative flex items-start justify-between">
             <div>
@@ -93,8 +93,8 @@ export default function Portfolio({ projects }) {
           {/* Demo Video */}
           <div className="flex items-center justify-center my-5 border-b-2 border-black">
             <iframe
+              className="h-[150px] xl:h-[200px]"
               width="650"
-              height="250"
               src={project.youtube_url}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -201,12 +201,12 @@ export default function Portfolio({ projects }) {
               <a
                 href={project.frontendCode}
                 target="_blank"
-                className="py-2 px-3 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center bg-gray-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
+                className="py-2 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center bg-gray-500 text-white text-sm xl:text-base rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
                 {project.ssr ? "Source Code" : "Frontend"}
                 {project.ssr ? (
-                  <AiOutlineCode size={22} />
+                  <AiOutlineCode className="size-4 xl:size-5" />
                 ) : (
-                  <FaReact size={22} />
+                  <FaReact className="size-4 xl:size-5" />
                 )}
               </a>
 
@@ -215,18 +215,18 @@ export default function Portfolio({ projects }) {
                 <a
                   href={project.backendCode}
                   target="_blank"
-                  className="py-2 px-3 w-1/2 flex items-center gap-x-2 justify-center text-center bg-gray-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
+                  className="py-2 w-1/2 flex items-center gap-x-2 justify-center text-center bg-gray-500 text-white text-sm xl:text-base rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
                   Backend
-                  <AiOutlineCode size={23} />
+                  <AiOutlineCode className="size-4 xl:size-5" />
                 </a>
               )}
             </div>
             <a
               href={project.url}
               target="_blank"
-              className="w-full py-2 px-3 flex items-center gap-x-2 justify-center text-center bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
+              className="w-full py-2 flex items-center gap-x-2 justify-center text-center text-sm xl:text-base bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
               Visit Website
-              <BiLinkExternal size={23} />
+              <BiLinkExternal className="size-4 xl:size-5" />
             </a>
           </div>
         </div>
@@ -242,18 +242,10 @@ export default function Portfolio({ projects }) {
         position={"start"}
       />
 
-      {/* Swipe Info */}
-      <div className="hidden xl:flex gap-x-2 items-center justify-end w-[55%] mx-auto -mt-7 text-slate-400 tracking-widest">
-        <p className="font-semibold">Swipe</p>
-        <i>
-          <LuArrowRightSquare size={22} />
-        </i>
-      </div>
-
       {/* Card Portofolio */}
 
       <Swiper
-        modules={[Pagination, Autoplay, Grid]}
+        modules={[Pagination, Autoplay, Grid, Navigation]}
         breakpoints={{
           340: {
             slidesPerView: 1,
@@ -270,6 +262,10 @@ export default function Portfolio({ projects }) {
         }}
         autoplay={{ delay: 2500 }}
         spaceBetween={20}
+        navigation={{
+          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-button-next",
+        }}
         pagination={{
           el: ".swipper-projects",
           type: "bullets",
@@ -282,7 +278,23 @@ export default function Portfolio({ projects }) {
           </SwiperSlide>
         ))}
 
-        <div className="swipper-projects mt-10 flex gap-x-5 items-center justify-center"></div>
+        {/* Pagination */}
+        <div className="relative xl:h-[70px] mt-10 w-[97%] mx-auto">
+          <div className="swipper-projects flex gap-x-5 items-center justify-center xl:justify-end xl:mr-10"></div>
+          {/* Navigation Swiper Projects */}
+          <div className="hidden xl:absolute xl:flex xl:items-center xl:justify-center xl:text-slate-400 xl:tracking-widest xl:-top-3 xl:left-1/2 xl:-translate-x-1/2">
+            <div className="xl:flex gap-x-5 items-center font-semibold">
+              <button className="swiper-button-prev flex items-center justify-center bg-slate-400 text-white gap-x-2 py-2 px-3 rounded-lg hover:outline-none  hover:ring-2 hover:ring-slate-400 hover:bg-white hover:text-slate-400 duration-300 shadow-lg shadow-slate-300">
+                Prev
+                <LuArrowLeftSquare size={23} />
+              </button>
+              <button className="swiper-button-next flex items-center justify-center bg-slate-400 text-white gap-x-2 py-2 px-3 rounded-lg hover:outline-none  hover:ring-2 hover:ring-slate-400 hover:bg-white hover:text-slate-400 duration-300 shadow-lg shadow-slate-300">
+                <LuArrowRightSquare size={23} />
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
       </Swiper>
 
       {openModal && <ModalDetailProject project={selectedProject} />}
