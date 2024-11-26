@@ -102,11 +102,11 @@ export const projects = [
     frontendCode: "https://github.com/SetraNugraha/pharmakey",
     backendCode: "https://github.com/SetraNugraha/backend-pharmakey",
     youtube_url:
-      "https://www.youtube.com/embed/Gp0VjN1yDrU?si=LHyVKFNz6rky9uN2",
+      "https://www.youtube.com/embed/qrSV_ARkBs4?si=PRCU_tocih86-lU6",
     image: "assets/pharmakey.png",
     description:
       "Slicing a Figma design to code using React JS, from the Pharma, BuildWithAngga.com course. - Mobile Only",
-    note: "Backend on progress",
+    note: "Backend & Cient Already finish, just add some pagination on admin pages and deploy.",
     tech: ["React.svg", "Tailwind-CSS.svg"],
   },
 
