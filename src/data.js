@@ -66,7 +66,7 @@ export const projects = [
     type: "Slicing Frontend",
     url: "https://pharmakey.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/pharmakey",
-    backendCode: "https://github.com/SetraNugraha/backend-pharmakey",
+    backendCode: "https://github.com/SetraNugraha/server-pharmakey",
     youtube_url: "https://www.youtube.com/embed/qrSV_ARkBs4?si=PRCU_tocih86-lU6",
     image: "assets/pharmakey.png",
     description:
