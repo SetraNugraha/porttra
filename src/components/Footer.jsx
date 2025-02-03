@@ -1,4 +1,4 @@
-import { SocialMediaLink } from '../elements/SocialMediaLink'
+import { SocialMediaLink } from "../elements/SocialMediaLink"
 
 export default function Footer() {
   return (
@@ -7,6 +7,12 @@ export default function Footer() {
       <p className="text-secondary text-[14px] font-semibold flex flex-col justify-center items-center">
         &copy; 2024 - Made By Setra <span>Vite - React JS - Tailwind CSS - Email JS</span>
       </p>
+      <a
+        href="https://youtu.be/kjdT_M2F9tc?si=PGh9mQLqP6jPYQBe"
+        target="_blank"
+        className="text-secondary text-[14px] font-semibold flex flex-col justify-center items-center underline hover:text-blue-500">
+        Source Design
+      </a>
     </footer>
   )
 }

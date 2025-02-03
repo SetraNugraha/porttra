@@ -44,11 +44,7 @@ export default function Portfolio({ projects }) {
           {/* Image & Description */}
           <div>
             {/* Image */}
-            <img
-              src={project.image}
-              alt={project.title}
-              className=" rounded-md  shadow-md max-h-[140px] mx-auto"
-            />
+            <img src={project.image} alt={project.title} className=" rounded-md  shadow-md max-h-[140px] mx-auto" />
 
             {/* Title & Link */}
             <div className="my-3 flex flex-col justify-between items-center">
@@ -78,9 +74,7 @@ export default function Portfolio({ projects }) {
           <div className="relative flex items-start justify-between">
             <div>
               <h1 className="font-bold tracking-widest">{project.title}</h1>
-              <h3 className="font-bold tracking-widest text-[#7e74f1] text-[14px] italic">
-                {project.type}
-              </h3>
+              <h3 className="font-bold tracking-widest text-[#7e74f1] text-[14px] italic">{project.type}</h3>
             </div>
             <button
               onClick={() => setOpenModal(false)}
@@ -107,21 +101,15 @@ export default function Portfolio({ projects }) {
             {/* Note */}
             {project.note && (
               <div className="mx-2">
-                <h1 className="font-bold tracking-wider text-red-500">
-                  Note :
-                </h1>
-                <p className="text-justify font-semibold text-red-400 text-sm">
-                  {project.note}
-                </p>
+                <h1 className="font-bold tracking-wider text-red-500">Note :</h1>
+                <p className="text-justify font-semibold text-red-400 text-sm">{project.note}</p>
               </div>
             )}
 
             {/* Description */}
             <div className="mx-2">
               <h1 className="font-semibold tracking-wider">Description :</h1>
-              <p className="text-justify font-semibold text-slate-400 text-sm">
-                {project.description}
-              </p>
+              <p className="text-justify font-semibold text-slate-400 text-sm">{project.description}</p>
             </div>
 
             {/* Feature */}
@@ -155,9 +143,7 @@ export default function Portfolio({ projects }) {
             {/* Demo Account */}
             {project.demoAccount && (
               <div className="mx-2">
-                <h1 className="font-semibold tracking-wider">
-                  Tester account :{" "}
-                </h1>
+                <h1 className="font-semibold tracking-wider">Tester account : </h1>
                 <div className="text-slate-400 font-semibold text-sm">
                   {project.demoAccount.map((item, index) => (
                     <div key={index}>
@@ -183,12 +169,7 @@ export default function Portfolio({ projects }) {
               <h1 className="font-semibold tracking-wider">Tech : </h1>
               <div className="flex items-center gap-x-2">
                 {project.tech.map((item, index) => (
-                  <img
-                    key={index}
-                    src={`assets/skills/${item}`}
-                    alt={item}
-                    className="size-[22px]"
-                  />
+                  <img key={index} src={`assets/skills/${item}`} alt={item} className="size-[22px]" />
                 ))}
               </div>
             </div>
@@ -221,13 +202,17 @@ export default function Portfolio({ projects }) {
                 </a>
               )}
             </div>
-            <a
-              href={project.url}
-              target="_blank"
-              className="w-full py-2 flex items-center gap-x-2 justify-center text-center text-sm xl:text-base bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
-              Visit Website
-              <BiLinkExternal className="size-4 xl:size-5" />
-            </a>
+
+            {/* Visit Website */}
+            {!project.isMaintenance && project.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                className="w-full py-2 flex items-center gap-x-2 justify-center text-center text-sm xl:text-base bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500">
+                Visit Website
+                <BiLinkExternal className="size-4 xl:size-5" />
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -236,14 +221,9 @@ export default function Portfolio({ projects }) {
 
   return (
     <section className="px-5" id="portfolio">
-      <Header
-        title={"MY PROJECT"}
-        subTitle={"Featured Portfolio"}
-        position={"start"}
-      />
+      <Header title={"MY PROJECT"} subTitle={"Featured Portfolio"} position={"start"} />
 
       {/* Card Portofolio */}
-
       <Swiper
         modules={[Pagination, Autoplay, Grid, Navigation]}
         breakpoints={{

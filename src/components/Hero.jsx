@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="px-5 || xl:pt-[100px] xl:w-[60%] xl:mx-auto xl:flex xl:gap-2" id="hero">
       {/* Image */}
       <div className="pt-20 flex justify-center || xl:w-1/2 xl:order-last xl:ml-[100px]">
-        <img src="assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />
+        <img src="assets/hero2.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />
       </div>
 
       <div className="flex flex-col justify-center items-center mt-5 || xl:w-1/2 xl:items-start">
