@@ -26,7 +26,8 @@ const Skills = () => {
     "CSS3.svg",
     "Tailwind-CSS.svg",
     "PHP.svg",
-    "JavaScript.svg",
+    "Javascript.svg",
+    "Typescript.svg",
     "React.svg",
     "Laravel.svg",
     "nodejs.svg",
@@ -45,7 +46,7 @@ const Skills = () => {
       <div className="py-5 text-slate-700 || xl:text-[16px] ">
         <h3 className="font-bold tracking-wide">My Tech Stack - Junior Level, Committed to Growth</h3>
 
-        <div className="flex items-start my-3">
+        <div className="flex flex-wrasp items-start my-3">
           {/* Office */}
           <div className="w-1/2 xl:w-1/3 flex flex-col">
             <h6 className="font-semibold text-[14px] tracking-wider text-secondary py-1 || xl:text-[16px]">
@@ -85,7 +86,7 @@ const Skills = () => {
               {code.map((item, index) => {
                 return (
                   <li key={index}>
-                    <img src={`assets/skills/${item}`} alt="logo code" className="size-9" />
+                    <img src={`assets/skills/${item}`} alt="logo code" className="size-9 xl:size-10" />
                   </li>
                 )
               })}
