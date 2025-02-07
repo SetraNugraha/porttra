@@ -26,7 +26,7 @@ const Skills = () => {
     "CSS3.svg",
     "Tailwind-CSS.svg",
     "PHP.svg",
-    "Javascript.svg",
+    "JavaScript.svg",
     "Typescript.svg",
     "React.svg",
     "Laravel.svg",
