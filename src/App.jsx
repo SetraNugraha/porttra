@@ -1,20 +1,18 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import Portfolio from './components/Portfolio'
-import EducationSkills from './components/EducationSkills'
-import ContactAddress from './components/ContactAddress'
-import Footer from './components/Footer'
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Services from "./components/Services"
+import Portfolio from "./components/Portfolio"
+import EducationSkills from "./components/EducationSkills"
+import ContactAddress from "./components/ContactAddress"
+import Footer from "./components/Footer"
 
-import { projects, services, contactInfo } from './data'
+import { projects, services, contactInfo } from "./data"
 
 export default function App() {
-
   return (
-    <>
+    <main>
       {/* START Navbar */}
       <Navbar />
       {/* END Navbar */}
@@ -24,15 +22,11 @@ export default function App() {
       {/* END Hero */}
 
       {/* START Services */}
-      <Services
-        services={services}
-      />
+      <Services services={services} />
       {/* END Services */}
 
       {/* START Portfolio */}
-      <Portfolio
-        projects={projects}
-      />
+      <Portfolio projects={projects} />
       {/* END Portofolio */}
 
       {/* START Education & Skills */}
@@ -46,6 +40,6 @@ export default function App() {
       {/* START Footer */}
       <Footer />
       {/* END Footer */}
-    </>
+    </main>
   )
 }

@@ -40,7 +40,7 @@ export default function Portfolio({ projects }) {
   const RenderCardProject = ({ project }) => {
     return (
       <>
-        <div className="flex flex-col justify-between mx-auto px-2 py-2 border border-slate-100 shadow-lg shadow-slate-300 rounded-lg">
+        <div className="flex flex-col justify-between mx-auto px-2 py-2 border border-slate-200 shadow-lg shadow-slate-300 rounded-lg">
           {/* Image & Description */}
           <div>
             {/* Image */}
@@ -50,6 +50,13 @@ export default function Portfolio({ projects }) {
             <div className="my-3 flex flex-col justify-between items-center">
               <h1 className="font-bold">{project.title}</h1>
               <h4 className="text-[#7e74f1] opacity-90 italic text-[14px] tracking-wider font-semibold">{`${project.type}`}</h4>
+              <span className="h-[2px] w-full bg-slate-200 mt-2"></span>
+              {/* Tech */}
+              <div className="flex items-center justify-center gap-x-2 mt-2">
+                {project.tech.map((item, index) => (
+                  <img key={index} src={`assets/skills/${item}`} alt={item} className="size-[22px]" />
+                ))}
+              </div>
             </div>
           </div>
 
