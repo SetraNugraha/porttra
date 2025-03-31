@@ -3,6 +3,7 @@
 import { Header } from "../elements/Header"
 import { BiLinkExternal } from "react-icons/bi"
 import { AiOutlineCode } from "react-icons/ai"
+import { IoMdArrowDropdown } from "react-icons/io"
 import { useState } from "react"
 import { FaReact } from "react-icons/fa"
 import { useEffect } from "react"
@@ -14,10 +15,23 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/pagination"
 import "swiper/css/grid"
+import { useRef } from "react"
 
 export default function Portfolio({ projects }) {
   const [openModal, setOpenModal] = useState(false)
   const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedType, setSelectedType] = useState("All")
+  const swiperRef = useRef(null)
+
+  const filteredProjects =
+    selectedType === "All" ? projects : projects.filter((project) => project.type === selectedType)
+
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.autoplay.stop()
+      swiperRef.current.swiper.autoplay.start()
+    }
+  }, [filteredProjects])
 
   // Disable Scroll if Modal Open
   useEffect(() => {
@@ -228,10 +242,34 @@ export default function Portfolio({ projects }) {
 
   return (
     <section className="px-5" id="portfolio">
-      <Header title={"MY PROJECT"} subTitle={"Featured Portfolio"} position={"start"} />
+      {/* Select Option Type */}
+      <div className="flex flex-col gap-y-3 xl:flex-row xl:justify-between xl:items-end xl:w-[55%] xl:mx-auto">
+        <Header title={"MY PROJECT"} subTitle={"Featured Portfolio"} position={"start"} />
+        <div className="relative flex items-center gap-x-5">
+          <h1 className="font-bold text-secondary tracking-wider">Type : </h1>
+          <select
+            name="selectType"
+            className="font-semibold text-secondary text-sm italic ring-2 ring-[#b3aeec] pl-3 pr-10 xl:appearance-none py-0.5 xl:py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7e74f1]"
+            onChange={(e) => setSelectedType(e.target.value)}>
+            <option value="All" className="font-semibold">
+              All
+            </option>
+            {/* to make type unique no duplicate */}
+            {[...new Set(projects.map((project) => project.type))].map((type, index) => (
+              <option key={index} value={type} className="font-semibold">
+                {type}
+              </option>
+            ))}
+          </select>
+          <span className="hidden xl:block absolute right-1 top-1/2 -translate-y-1/2">
+            <IoMdArrowDropdown size={28} color="#7e74f1" />
+          </span>
+        </div>
+      </div>
 
       {/* Card Portofolio */}
       <Swiper
+        ref={swiperRef}
         modules={[Pagination, Autoplay, Grid, Navigation]}
         breakpoints={{
           340: {
@@ -259,8 +297,8 @@ export default function Portfolio({ projects }) {
           clickable: true,
         }}
         className="xl:w-[55%] xl:mx-auto mt-5">
-        {projects.map((project) => (
-          <SwiperSlide key={project.id}>
+        {filteredProjects.map((project, index) => (
+          <SwiperSlide key={index}>
             <RenderCardProject project={project} />
           </SwiperSlide>
         ))}

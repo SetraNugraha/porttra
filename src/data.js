@@ -71,25 +71,25 @@ export const projects = [
     demoAccount: null,
   },
 
-    // Pokedex Vue PokeAPI
-    {
-      id: 3,
-      isMaintenance: false,
-      title: "Pokedex Vue",
-      type: "Frontend - Integration 3rd API",
-      ssr: false,
-      url: "https://pokedex-vue-setra.vercel.app/",
-      frontendCode: "https://github.com/SetraNugraha/pokedex-vue-setra",
-      backendCode: null,
-      youtube_url: "https://www.youtube.com/embed/d2hVNpReGQ4?si=KSq6gxxEQayJjOJo",
-      image: "assets/pokedex-vue.png",
-      description: "Implementation some API from PokeAPI.",
-      note: null,
-      feature: ["View All Pokemon", "Pagination", "Search", "Modal Detail"],
-      tech: ["vue.svg", "Tailwind-CSS.svg"],
-      issue: null,
-      demoAccount: null,
-    },
+  // Pokedex Vue PokeAPI
+  {
+    id: 3,
+    isMaintenance: false,
+    title: "Pokedex Vue",
+    type: "Frontend - Integration 3rd API",
+    ssr: false,
+    url: "https://pokedex-vue-setra.vercel.app/",
+    frontendCode: "https://github.com/SetraNugraha/pokedex-vue-setra",
+    backendCode: null,
+    youtube_url: "https://www.youtube.com/embed/d2hVNpReGQ4?si=KSq6gxxEQayJjOJo",
+    image: "assets/pokedex-vue.png",
+    description: "Implementation some API from PokeAPI.",
+    note: null,
+    feature: ["View All Pokemon", "Pagination", "Search", "Modal Detail"],
+    tech: ["vue.svg", "Tailwind-CSS.svg"],
+    issue: null,
+    demoAccount: null,
+  },
 
   // Pharmakey
   {
@@ -128,7 +128,7 @@ export const projects = [
     id: 5,
     isMaintenance: false,
     title: "X Clone",
-    type: "Slicing Frontend",
+    type: "Fullstack",
     ssr: false,
     url: "https://client-xclone-setra.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/client-Xclone-setra",

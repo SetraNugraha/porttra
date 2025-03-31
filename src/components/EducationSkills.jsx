@@ -101,7 +101,9 @@ const Skills = () => {
 export default function EducationSkills() {
   return (
     <section className="px-5 py-5 my-10 bg-stone-100" id="skills">
-      <Header title={"LEARNING PATH"} subTitle={"Education & Skills"} position={"start"} />
+      <div className="xl:w-[55%] xl:mx-auto">
+        <Header title={"LEARNING PATH"} subTitle={"Education & Skills"} position={"start"} />
+      </div>
 
       <div className="py-10 || xl:w-[55%] xl:mx-auto xl:flex xl:items-start xl:mt-5">
         {/* START Education */}

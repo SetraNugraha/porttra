@@ -18,20 +18,16 @@ export default function Services({ services }) {
         </div>
         <h4 className="font-semibold py-2">{service.title}</h4>
 
-        <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">
-          {service.description}
-        </p>
+        <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
       </div>
     )
   }
 
   return (
     <section className="py-10 my-10 px-5 bg-stone-100" id="services">
-      <Header
-        title={"SERVICES"}
-        subTitle={"Specialize In"}
-        position={"center"}
-      />
+      <div className="xl:w-[55%] xl:mx-auto">
+        <Header title={"SERVICES"} subTitle={"Specialize In"} position={"center"} />
+      </div>
 
       {/* Container RenderServices */}
       <Swiper
