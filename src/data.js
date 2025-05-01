@@ -86,7 +86,7 @@ export const projects = [
     description: "Implementation some API from PokeAPI.",
     note: null,
     feature: ["View All Pokemon", "Pagination", "Search", "Modal Detail"],
-    tech: ["vue.svg", "Tailwind-CSS.svg"],
+    tech: ["Vue.svg", "Tailwind-CSS.svg"],
     issue: null,
     demoAccount: null,
   },
