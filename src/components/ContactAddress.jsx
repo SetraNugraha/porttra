@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Header } from '../elements/Header'
-import emailjs from '@emailjs/browser'
-import Swal from 'sweetalert2'
-import { useState, useRef } from 'react'
+import { Header } from "../elements/Header"
+import emailjs from "@emailjs/browser"
+import Swal from "sweetalert2"
+import { useState, useRef } from "react"
 
 export default function ContactAddress({ contactInfo }) {
   const FormContact = () => {
@@ -14,7 +14,7 @@ export default function ContactAddress({ contactInfo }) {
     // Notif
     const Toast = Swal.mixin({
       toast: true,
-      position: 'center',
+      position: "center",
       showConfirmButton: false,
       timer: 3000,
       timerProgressBar: true,
@@ -37,21 +37,21 @@ export default function ContactAddress({ contactInfo }) {
         .then(
           () => {
             setTimeout(() => {
-              console.log('SUCCESS!')
+              console.log("SUCCESS!")
               Toast.fire({
-                icon: 'success',
-                title: 'Message sent successfully',
+                icon: "success",
+                title: "Message sent successfully",
               })
               setProcessSend(false)
             }, 1000)
           },
           (error) => {
-            console.log('FAILED...', error.text)
+            console.log("FAILED...", error.text)
             setTimeout(() => {
-              console.log('Error!')
+              console.log("Error!")
               Toast.fire({
-                icon: 'error',
-                title: 'Error while sending message !',
+                icon: "error",
+                title: "Error while sending message !",
               })
               setProcessSend(false)
             }, 1000)
@@ -74,24 +74,11 @@ export default function ContactAddress({ contactInfo }) {
     }
 
     return (
-      <form
-        ref={form}
-        onSubmit={sendEmail}
-        className="my-5 flex flex-col gap-5">
+      <form ref={form} onSubmit={sendEmail} className="my-5 flex flex-col gap-5">
         {/* Name */}
-        <InputForm
-          type={'text'}
-          id={'text'}
-          name={'user_name'}
-          placeholder={'Name'}
-        />
+        <InputForm type={"text"} id={"text"} name={"user_name"} placeholder={"Name"} />
         {/* Email */}
-        <InputForm
-          type={'email'}
-          id={'email'}
-          name={'user_email'}
-          placeholder={'Email'}
-        />
+        <InputForm type={"email"} id={"email"} name={"user_email"} placeholder={"Email"} />
         {/* User Message */}
         <textarea
           name="message"
@@ -107,10 +94,10 @@ export default function ContactAddress({ contactInfo }) {
           type="submit"
           value="Send"
           className={`text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg duration-300 tracking-wider shadow-lg shadow-gray-300 hover:bg-white hover:outline-none hover:ring-2 hover:ring-[#7e74f1] hover:text-[#7e74f1] ${
-            processSend ? 'disabled:opacity-50 disabled:cursor-not-allowed' : ''
+            processSend ? "disabled:opacity-50 disabled:cursor-not-allowed" : ""
           }`}
           disabled={processSend}>
-          {processSend ? 'Process Sending Message ...' : 'Submit'}
+          {processSend ? "Process Sending Message ..." : "Submit"}
         </button>
       </form>
     )
@@ -118,11 +105,7 @@ export default function ContactAddress({ contactInfo }) {
 
   return (
     <section className="px-5" id="contact">
-      <Header
-        title={'FIND ME'}
-        subTitle={'Contact & Address'}
-        position={'center'}
-      />
+      <Header title={"FIND ME"} subTitle={"Contact & Address"} position={"center"} />
 
       <div className="xl:w-[55%] xl:mx-auto xl:flex xl:justify-center xl:gap-10 xl:items-start xl:mt-10">
         {/* Form  */}
@@ -136,14 +119,12 @@ export default function ContactAddress({ contactInfo }) {
             <div key={index} className="flex gap-5">
               {/* Icon */}
               <div className="h-[55px] w-[55px] bg-slate-200 flex justify-center items-center rounded-lg">
-                <img src={`assets/${contact.icon}`} />
+                <img src={`assets/${contact.icon}.svg`} />
               </div>
               {/* Info */}
               <div>
                 <h4 className="font-bold text-stone-700">{contact.title}</h4>
-                <p className="text-[14px] text-secondary">
-                  {contact.description}
-                </p>
+                <p className="text-[14px] text-secondary">{contact.description}</p>
               </div>
             </div>
           ))}

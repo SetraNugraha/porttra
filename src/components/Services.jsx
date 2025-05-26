@@ -14,7 +14,7 @@ export default function Services({ services }) {
       <div className="bg-white my-5 h-full py-5 px-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-xl shadow-slate-200 transform transition duration-300 hover:scale-[105%]">
         {/* Icon */}
         <div className="bg-slate-200 p-4 rounded-xl">
-          <img src={`assets/${service.icon}`} alt={service.icon} />
+          <img src={`assets/${service.icon}.svg`} alt={service.icon} />
         </div>
         <h4 className="font-semibold py-2">{service.title}</h4>
 

@@ -23,8 +23,7 @@ export default function Portfolio({ projects }) {
   const [selectedType, setSelectedType] = useState("All")
   const swiperRef = useRef(null)
 
-  const filteredProjects =
-    selectedType === "All" ? projects : projects.filter((project) => project.type === selectedType)
+  const filteredProjects = selectedType === "All" ? projects : projects.filter((project) => project.type === selectedType)
 
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -68,7 +67,7 @@ export default function Portfolio({ projects }) {
               {/* Tech */}
               <div className="flex items-center justify-center gap-x-2 mt-2">
                 {project.tech.map((item, index) => (
-                  <img key={index} src={`assets/skills/${item}`} alt={item} className="size-[22px]" />
+                  <img key={index} src={`assets/skills/${item}.svg`} alt={item} className="size-[22px]" />
                 ))}
               </div>
             </div>
@@ -87,9 +86,7 @@ export default function Portfolio({ projects }) {
 
   const ModalDetailProject = ({ project }) => {
     return (
-      <div
-        key={project.id}
-        className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 overflow-y-hidden">
+      <div key={project.id} className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 overflow-y-hidden">
         <div className="p-5 max-h-[700px] w-[95%] xl:w-[700px] bg-white rounded-xl">
           {/* Header */}
           <div className="relative flex items-start justify-between">
@@ -190,7 +187,7 @@ export default function Portfolio({ projects }) {
               <h1 className="font-semibold tracking-wider">Tech : </h1>
               <div className="flex items-center gap-x-2">
                 {project.tech.map((item, index) => (
-                  <img key={index} src={`assets/skills/${item}`} alt={item} className="size-[22px]" />
+                  <img key={index} src={`assets/skills/${item}.svg`} alt={item} className="size-[22px]" />
                 ))}
               </div>
             </div>
@@ -205,11 +202,7 @@ export default function Portfolio({ projects }) {
                 target="_blank"
                 className="py-2 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center bg-gray-500 text-white text-sm xl:text-base rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-500">
                 {project.ssr ? "Source Code" : "Frontend"}
-                {project.ssr ? (
-                  <AiOutlineCode className="size-4 xl:size-5" />
-                ) : (
-                  <FaReact className="size-4 xl:size-5" />
-                )}
+                {project.ssr ? <AiOutlineCode className="size-4 xl:size-5" /> : <FaReact className="size-4 xl:size-5" />}
               </a>
 
               {/* Backend */}

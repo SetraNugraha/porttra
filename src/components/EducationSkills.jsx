@@ -19,28 +19,17 @@ const Education = ({ place, major, year }) => {
 }
 
 const Skills = () => {
-  const office = ["ms-word.svg", "ms-excel.svg", "google-docs.svg", "google-sheets.svg"]
-  const database = ["MySQL.svg", "PostgreSQL.svg"]
-  const code = [
-    "HTML5.svg",
-    "CSS3.svg",
-    "Tailwind-CSS.svg",
-    "PHP.svg",
-    "JavaScript.svg",
-    "Typescript.svg",
-    "React.svg",
-    "Laravel.svg",
-    "nodejs.svg",
-  ]
+  const office = ["ms-word", "ms-excel", "google-docs", "google-sheets"]
+  const database = ["mysql", "postgresql"]
+  const code = ["html5", "css3", "tailwind-css", "php", "javascript", "typescript", "react", "laravel", "nodejs"]
 
   return (
     <>
       <p className="text-slate-700 text-[14px] xl:text-[16px] text-justify">
-        Saya mempunyai antusias yang tinggi dengan dunia <i>Information Technoology </i>(IT), selama perkuliahan saya
-        banyak dibekali dengan pengetahuan seputar <i>Software Development</i>, seperti{" "}
-        <i>Project Management, Web Development, Database</i> dan sebagainya. Saya selalu siap untuk belajar dan
-        mengembangkan keterampilan saya di bidang IT ini. Saya percaya bahwa dengan dedikasi, kerja keras, konsistensi
-        dan kreativitas, saya dapat memberikan kontribusi yang berarti untuk diri saya dan masyarakat banyak.
+        Saya mempunyai antusias yang tinggi dengan dunia <i>Information Technoology </i>(IT), selama perkuliahan saya banyak dibekali dengan pengetahuan
+        seputar <i>Software Development</i>, seperti <i>Project Management, Web Development, Database</i> dan sebagainya. Saya selalu siap untuk belajar
+        dan mengembangkan keterampilan saya di bidang IT ini. Saya percaya bahwa dengan dedikasi, kerja keras, konsistensi dan kreativitas, saya dapat
+        memberikan kontribusi yang berarti untuk diri saya dan masyarakat banyak.
       </p>
 
       <div className="py-5 text-slate-700 || xl:text-[16px] ">
@@ -49,14 +38,12 @@ const Skills = () => {
         <div className="flex flex-wrasp items-start my-3">
           {/* Office */}
           <div className="w-1/2 xl:w-1/3 flex flex-col">
-            <h6 className="font-semibold text-[14px] tracking-wider text-secondary py-1 || xl:text-[16px]">
-              Office :{" "}
-            </h6>
+            <h6 className="font-semibold text-[14px] tracking-wider text-secondary py-1 || xl:text-[16px]">Office : </h6>
             <ul className="flex flex-wrap gap-5 py-4 || xl:justify-start">
               {office.map((item, index) => {
                 return (
                   <li key={index}>
-                    <img src={`assets/skills/${item}`} alt="logo database" className="size-9" />
+                    <img src={`assets/skills/${item}.svg`} alt="logo database" className="size-9" />
                   </li>
                 )
               })}
@@ -65,14 +52,12 @@ const Skills = () => {
 
           {/* DATABASE */}
           <div className="w-1/2 xl:w-1/3 flex flex-col">
-            <h6 className="font-semibold text-[14px] tracking-wider text-secondary py-1 || xl:text-[16px]">
-              Database :{" "}
-            </h6>
+            <h6 className="font-semibold text-[14px] tracking-wider text-secondary py-1 || xl:text-[16px]">Database : </h6>
             <ul className="flex gap-5 py-4 || xl:justify-start">
               {database.map((item, index) => {
                 return (
                   <li key={index}>
-                    <img src={`assets/skills/${item}`} alt="logo database" className="size-9" />
+                    <img src={`assets/skills/${item}.svg`} alt="logo database" className="size-9" />
                   </li>
                 )
               })}
@@ -86,7 +71,7 @@ const Skills = () => {
               {code.map((item, index) => {
                 return (
                   <li key={index}>
-                    <img src={`assets/skills/${item}`} alt="logo code" className="size-9 xl:size-10" />
+                    <img src={`assets/skills/${item}.svg`} alt="logo code" className="size-9 xl:size-10" />
                   </li>
                 )
               })}

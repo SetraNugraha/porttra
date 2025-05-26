@@ -15,7 +15,7 @@ export const projects = [
       "PostSpot is a web application that allows users to post content, such as articles and photos, which can be viewed by other users. - Desktop Only",
     note: "Already Finish the project (watch demo video), it just needs to be deployed.",
     feature: ["Login", "Register", "Logout", "Update Profile User", "CRUD Post with Image", "Dashboard"],
-    tech: ["Laravel.svg", "MySQL.svg", "Alpine-js.svg", "Tailwind-CSS.svg"],
+    tech: ["laravel", "mysql", "alpine-js", "tailwind-css"],
     issue: null,
     demoAccount: [
       {
@@ -37,11 +37,10 @@ export const projects = [
     backendCode: "https://github.com/SetraNugraha/server-fbclone",
     youtube_url: "https://www.youtube.com/embed/a0Zz0R11lSQ?si=yGTJvYZtM8j8OWa1",
     image: "assets/project-image/fbcln.png",
-    description:
-      "Simple Facebook Clone, features:  Register, Login, Logout, Post, Like, Comment & Profile Page - Desktop Only",
+    description: "Simple Facebook Clone, features:  Register, Login, Logout, Post, Like, Comment & Profile Page - Desktop Only",
     note: "If you receive a warning on Google Chrome, it's because Google has a safe browsing feature and detects this clone project as being very similar to the original Facebook. Click on 'Details' and 'Visit unsafe site', or use Guest mode or another browser.",
     feature: ["Login", "Register", "Logout", "Update Profile User", "CRUD Post", "Like & Unlike", "Comment Post"],
-    tech: ["React.svg", "Tailwind-CSS.svg", "nodejs.svg", "PostgreSQL.svg", "Prisma.svg"],
+    tech: ["react", "tailwind-css", "nodejs", "postgresql", "prisma"],
     issue: ["Upload Post with Image", "Update Profile Image", "Like & Unlike 9 Second"],
     demoAccount: [
       {
@@ -66,7 +65,7 @@ export const projects = [
     description: "Implementation some API from TMDB.",
     note: null,
     feature: ["Login", "Login As Guest", "Logout", "Search Movie", "Add/Remove Favorite Movie"],
-    tech: ["React.svg", "Tailwind-CSS.svg"],
+    tech: ["react", "tailwind-css"],
     issue: null,
     demoAccount: null,
   },
@@ -86,7 +85,7 @@ export const projects = [
     description: "Implementation some API from PokeAPI.",
     note: null,
     feature: ["View All Pokemon", "Pagination", "Search", "Modal Detail"],
-    tech: ["Vue.svg", "Tailwind-CSS.svg"],
+    tech: ["vue", "tailwind-css"],
     issue: null,
     demoAccount: null,
   },
@@ -118,7 +117,7 @@ export const projects = [
       "Approve/Cancel Transaction",
       "Profile",
     ],
-    tech: ["React.svg", "Tailwind-CSS.svg", "Typescript.svg", "nodejs.svg", "PostgreSQL.svg", "Prisma.svg"],
+    tech: ["react", "tailwind-css", "typescript", "nodejs", "postgresql", "prisma"],
     issue: null,
     demoAccount: null,
   },
@@ -137,14 +136,8 @@ export const projects = [
     image: "assets/project-image/xclone.png",
     description: "Simple clone social media X with Express, React, Typescript, PostgreSQL & Prisma - Desktop Only",
     note: "Already Finish the project (watch demo video), it just needs to be deployed.",
-    feature: [
-      "Login, Logout & Register",
-      "Create & Delete Post with Image",
-      "Like & Unlike Post",
-      "Create Comment",
-      "Update & Delete Profile Image",
-    ],
-    tech: ["React.svg", "Tailwind-CSS.svg", "Typescript.svg", "nodejs.svg", "PostgreSQL.svg", "Prisma.svg"],
+    feature: ["Login, Logout & Register", "Create & Delete Post with Image", "Like & Unlike Post", "Create Comment", "Update & Delete Profile Image"],
+    tech: ["react", "tailwind-css", "typescript", "nodejs", "postgresql", "prisma"],
     issue: null,
     demoAccount: null,
   },
@@ -164,7 +157,7 @@ export const projects = [
     description: "Slicing Figma design to code use Vue and TailwindCSS - Desktop & Mobile.",
     note: null,
     feature: null,
-    tech: ["Vue.svg", "Tailwind-CSS.svg"],
+    tech: ["vue", "tailwind-css"],
     issue: null,
     demoAccount: null,
   },
@@ -184,7 +177,7 @@ export const projects = [
     description: "Slicing Figma design to code for e-commerce website that sell various plants - Desktop Only.",
     note: null,
     feature: null,
-    tech: ["React.svg", "Tailwind-CSS.svg"],
+    tech: ["react", "tailwind-css"],
     issue: null,
     demoAccount: null,
   },
@@ -201,11 +194,10 @@ export const projects = [
     backendCode: null,
     youtube_url: "https://www.youtube.com/embed/8dc3dZqGMAo?si=6jZKWgVmmoGwnaQS",
     image: "assets/project-image/jadoo.png",
-    description:
-      "Slicing Figma design to code for Travel website that offers services for booking hotels, flights, and destinations - Desktop Only.",
+    description: "Slicing Figma design to code for Travel website that offers services for booking hotels, flights, and destinations - Desktop Only.",
     note: null,
     feature: null,
-    tech: ["React.svg", "Tailwind-CSS.svg"],
+    tech: ["react", "tailwind-css"],
     issue: null,
     demoAccount: null,
   },
@@ -225,7 +217,7 @@ export const projects = [
     description: "Simple game to predict the number based on difficulty",
     note: null,
     feature: ["Select Difficulty", "Input Number", "Submit Guess"],
-    tech: ["React.svg", "Tailwind-CSS.svg"],
+    tech: ["react", "tailwind-css"],
     issue: null,
     demoAccount: null,
   },
@@ -245,7 +237,7 @@ export const projects = [
     description: "A simple web app for managing and recording shopping expenses.",
     note: null,
     feature: ["CRUD List", "Finish Buying", "Estimated Total Price"],
-    tech: ["React.svg", "Tailwind-CSS.svg"],
+    tech: ["react", "tailwind-css"],
     issue: null,
     demoAccount: null,
   },
@@ -254,21 +246,21 @@ export const projects = [
 export const services = [
   {
     title: "Databases",
-    icon: "database.svg",
+    icon: "database",
     description:
       "Merancang struktur basis data yang optimal, melakukan optimasi database untuk meningkatkan kinerja dan efisiensi penyimpanan dan akses data, serta normalisasi tabel untuk mengurangi redudansi data dan meningkatkan integritas data",
   },
 
   {
     title: "Backend Developer",
-    icon: "backend.svg",
+    icon: "backend",
     description:
       "Membangun logika bisnis yang kuat untuk memproses data dan menjalankan operasi sebuah aplikasi, mengintegrasikan backend dengan database untuk menyimpan dan mengambil informasi secara efisien, serta mengimplementasikan API untuk berkomunikasi antara backend dan frontend",
   },
 
   {
     title: "Frontend Developer",
-    icon: "frontend.svg",
+    icon: "frontend",
     description:
       "Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web",
   },
@@ -278,16 +270,16 @@ export const contactInfo = [
   {
     title: "Phone",
     description: "+62 812-8321-4126",
-    icon: "phone.svg",
+    icon: "phone",
   },
   {
     title: "Email",
     description: "setranugraha75@gmail.com",
-    icon: "email.svg",
+    icon: "email",
   },
   {
     title: "Address",
     description: "Cibinong, Kab. Bogor, Jawa Barat",
-    icon: "address.svg",
+    icon: "address",
   },
 ]
