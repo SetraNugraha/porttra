@@ -67,7 +67,7 @@ export default function Portfolio({ projects }) {
               {/* Tech */}
               <div className="flex items-center justify-center gap-x-2 mt-2">
                 {project.tech.map((item, index) => (
-                  <img key={index} src={`/assets/skills/${item}.svg`} alt={item} className="size-[22px]" />
+                  <img key={index} src={`./assets/skills/${item}.svg`} alt={item} className="size-[22px]" />
                 ))}
               </div>
             </div>
@@ -187,7 +187,7 @@ export default function Portfolio({ projects }) {
               <h1 className="font-semibold tracking-wider">Tech : </h1>
               <div className="flex items-center gap-x-2">
                 {project.tech.map((item, index) => (
-                  <img key={index} src={`/assets/skills/${item}.svg`} alt={item} className="size-[22px]" />
+                  <img key={index} src={`./assets/skills/${item}.svg`} alt={item} className="size-[22px]" />
                 ))}
               </div>
             </div>
