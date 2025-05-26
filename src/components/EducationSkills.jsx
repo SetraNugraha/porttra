@@ -43,7 +43,7 @@ const Skills = () => {
               {office.map((item, index) => {
                 return (
                   <li key={index}>
-                    <img src={`assets/skills/${item}.svg`} alt="logo database" className="size-9" />
+                    <img src={`/assets/skills/${item}.svg`} alt="logo database" className="size-9" />
                   </li>
                 )
               })}
@@ -57,7 +57,7 @@ const Skills = () => {
               {database.map((item, index) => {
                 return (
                   <li key={index}>
-                    <img src={`assets/skills/${item}.svg`} alt="logo database" className="size-9" />
+                    <img src={`/assets/skills/${item}.svg`} alt="logo database" className="size-9" />
                   </li>
                 )
               })}
@@ -71,7 +71,7 @@ const Skills = () => {
               {code.map((item, index) => {
                 return (
                   <li key={index}>
-                    <img src={`assets/skills/${item}.svg`} alt="logo code" className="size-9 xl:size-10" />
+                    <img src={`/assets/skills/${item}.svg`} alt="logo code" className="size-9 xl:size-10" />
                   </li>
                 )
               })}
