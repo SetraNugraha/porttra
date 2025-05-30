@@ -1,7 +1,6 @@
 export const projects = [
   // PostSpot
   {
-    id: 1,
     isMaintenance: true,
     title: "PostSpot",
     type: "Fullstack",
@@ -27,7 +26,6 @@ export const projects = [
 
   // Facebook Clone
   {
-    id: 2,
     isMaintenance: false,
     title: "Facebook Clone",
     type: "Fullstack",
@@ -52,7 +50,6 @@ export const projects = [
 
   // SetraMovie TMDB
   {
-    id: 3,
     isMaintenance: false,
     title: "SetraMovie",
     type: "Frontend - Integration 3rd API",
@@ -72,7 +69,6 @@ export const projects = [
 
   // Pokedex Vue PokeAPI
   {
-    id: 3,
     isMaintenance: false,
     title: "Pokedex Vue",
     type: "Frontend - Integration 3rd API",
@@ -92,7 +88,6 @@ export const projects = [
 
   // Pharmakey
   {
-    id: 4,
     isMaintenance: false,
     title: "Pharmakey",
     type: "Fullstack",
@@ -124,7 +119,6 @@ export const projects = [
 
   // X Clone
   {
-    id: 5,
     isMaintenance: false,
     title: "X Clone",
     type: "Fullstack",
@@ -144,7 +138,6 @@ export const projects = [
 
   // Real Estate Rezilla
   {
-    id: 10,
     isMaintenance: false,
     title: "Real Estate Rezilla",
     type: "Slicing - Landing Page",
@@ -162,9 +155,27 @@ export const projects = [
     demoAccount: null,
   },
 
+  // Quick Trivia Open Trivia DB
+  {
+    isMaintenance: false,
+    title: "Quick Trivia",
+    type: "Frontend - Integration 3rd API",
+    ssr: false,
+    url: "https://quick-trivia-eta.vercel.app/",
+    frontendCode: "https://github.com/SetraNugraha/Quick-Trivia",
+    backendCode: null,
+    youtube_url: "https://www.youtube.com/embed/fP5vw9mmbaE?si=FBr4mzfbnI2Ou-vi",
+    image: "assets/project-image/quick-trivia.png",
+    description: "Quick Quiz app built with Vite, React, and TypeScript, integrating the Open Trivia DB API.",
+    note: null,
+    feature: ["Simple Login & Register", "Login As Guest", "Logout", "Custom Category, Total, Timer Questions", "Resume quiz if browser closed"],
+    tech: ["react", "typescript", "tailwind-css"],
+    issue: null,
+    demoAccount: null,
+  },
+
   // NatureSpot
   {
-    id: 6,
     isMaintenance: false,
     title: "NatureSpot",
     type: "Slicing - Landing Page",
@@ -184,7 +195,6 @@ export const projects = [
 
   // Travel app Jadoo
   {
-    id: 7,
     isMaintenance: false,
     title: "Travel App - Jadoo",
     type: "Slicing - Landing Page",
@@ -204,7 +214,6 @@ export const projects = [
 
   // Guess number
   {
-    id: 8,
     isMaintenance: false,
     title: "Guess Number !",
     type: "Game",
@@ -224,7 +233,6 @@ export const projects = [
 
   // Shopping List
   {
-    id: 9,
     isMaintenance: false,
     title: "Shopping list",
     type: "Web App",
