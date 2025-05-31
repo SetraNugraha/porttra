@@ -298,7 +298,7 @@ export default function Portfolio({ projects }) {
 
         {/* Pagination */}
         <div className="relative xl:h-[70px] mt-10 w-[97%] mx-auto">
-          <div className="swipper-projects flex gap-x-5 items-center justify-center xl:justify-end xl:mr-10"></div>
+          <div className="swipper-projects flex flex-wrap gap-5 items-center justify-start xl:justify-end xl:mr-10"></div>
           {/* Navigation Swiper Projects */}
           <div className="hidden xl:absolute xl:flex xl:items-center xl:justify-center xl:text-slate-400 xl:tracking-widest xl:-top-3 xl:left-1/2 xl:-translate-x-1/2">
             <div className="xl:flex gap-x-5 items-center font-semibold">

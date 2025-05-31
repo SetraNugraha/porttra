@@ -232,23 +232,23 @@ export const projects = [
   },
 
   // Shopping List
-  {
-    isMaintenance: false,
-    title: "Shopping list",
-    type: "Web App",
-    ssr: false,
-    url: "https://shoplist-setra.vercel.app",
-    frontendCode: "https://github.com/SetraNugraha/shopping-list",
-    backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/SiOnL3bq2pI?si=QZV0wy88Zznfh2KH",
-    image: "assets/project-image/shoplist.png",
-    description: "A simple web app for managing and recording shopping expenses.",
-    note: null,
-    feature: ["CRUD List", "Finish Buying", "Estimated Total Price"],
-    tech: ["react", "tailwind-css"],
-    issue: null,
-    demoAccount: null,
-  },
+  // {
+  //   isMaintenance: false,
+  //   title: "Shopping list",
+  //   type: "Web App",
+  //   ssr: false,
+  //   url: "https://shoplist-setra.vercel.app",
+  //   frontendCode: "https://github.com/SetraNugraha/shopping-list",
+  //   backendCode: null,
+  //   youtube_url: "https://www.youtube.com/embed/SiOnL3bq2pI?si=QZV0wy88Zznfh2KH",
+  //   image: "assets/project-image/shoplist.png",
+  //   description: "A simple web app for managing and recording shopping expenses.",
+  //   note: null,
+  //   feature: ["CRUD List", "Finish Buying", "Estimated Total Price"],
+  //   tech: ["react", "tailwind-css"],
+  //   issue: null,
+  //   demoAccount: null,
+  // },
 ]
 
 export const services = [
