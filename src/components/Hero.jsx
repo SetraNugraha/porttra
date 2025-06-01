@@ -22,16 +22,16 @@ export default function Hero() {
             <a
               href="resume-setra.pdf"
               target="_blank"
-              className="text-[14px] font-semibold text-white bg-stone-500 py-1 px-3 rounded-lg flex gap-x-2 items-center hover:bg-white hover:outline-none hover:ring-2 hover:ring-stone-500 hover:text-stone-500 duration-300 shadow-lg shadow-gray-300 || xl:text-lg">
+              className="text-[14px] font-medium text-white bg-stone-500 py-1 px-3 rounded-lg flex gap-x-2 items-center hover:bg-white hover:outline-none hover:ring-2 hover:ring-stone-500 hover:text-stone-500 duration-300 shadow-lg shadow-gray-300 || xl:text-lg">
               <TbFileTypePdf size={22} />
-              <span className="tracking-wider">Resume</span>
+              <span className="tracking-wide">Resume</span>
             </a>
             <a
               href="sertifikasi-setra.pdf"
               target="_blank"
-              className="text-[14px] font-semibold text-white bg-[#455a64] py-1 px-3 rounded-lg flex gap-x-2 items-center hover:bg-white hover:outline-none hover:ring-2 hover:ring-[#455a64] hover:text-[#455a64] duration-300 shadow-lg shadow-gray-300 || xl:text-lg">
+              className="text-[14px] font-medium text-white bg-[#455a64] py-1 px-3 rounded-lg flex gap-x-2 items-center hover:bg-white hover:outline-none hover:ring-2 hover:ring-[#455a64] hover:text-[#455a64] duration-300 shadow-lg shadow-gray-300 || xl:text-lg">
               <PiCertificateFill size={22} />
-              <span className="tracking-wider">Certification</span>
+              <span className="tracking-wide">Certification</span>
             </a>
            
           </div>

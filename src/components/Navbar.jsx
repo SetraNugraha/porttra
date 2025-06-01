@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* Title */}
         <div>
           <Link to="hero" spy={true} smooth={true} offset={-70} duration={1000} className={"flex items-center gap-x-2 cursor-pointer"}>
-            <img src="/gray-pixel-owl.png" alt="logo" className="size-12" />
+            <img src="/gray-powl.png" alt="logo" className="size-12" />
             <h1 className="text-lg font-semibold || xl:text-2xl xl:font-bold xl:-ml-2">Porttra</h1>
           </Link>
         </div>

@@ -127,14 +127,14 @@ export default function Portfolio({ projects }) {
             {/* Description */}
             <div className="mx-2">
               <h1 className="font-semibold tracking-wider">Description :</h1>
-              <p className="text-justify font-semibold text-slate-400 text-sm">{project.description}</p>
+              <p className="text-justify font-medium text-slate-400 text-sm">{project.description}</p>
             </div>
 
             {/* Feature */}
             {project.feature && (
               <div className="mx-2">
                 <h1 className="font-semibold tracking-wider">Feature : </h1>
-                <div className="grid grid-cols-2 gap-x-3 text-slate-400 font-semibold text-sm">
+                <div className="grid grid-cols-2 gap-x-3 text-slate-400 font-medium text-sm">
                   {project.feature.map((item, index) => (
                     <ul key={index} className="list-disc ml-5">
                       <li className="">{item}</li>
@@ -148,7 +148,7 @@ export default function Portfolio({ projects }) {
             {project.issue && (
               <div className="mx-2">
                 <h1 className="font-semibold tracking-wider">Issue : </h1>
-                <div className="text-slate-400 font-semibold text-sm">
+                <div className="text-slate-400 font-medium text-sm">
                   {project.issue.map((item, index) => (
                     <ul key={index} className="list-disc ml-5">
                       <li className="">{item}</li>
@@ -162,7 +162,7 @@ export default function Portfolio({ projects }) {
             {project.demoAccount && (
               <div className="mx-2">
                 <h1 className="font-semibold tracking-wider">Tester account : </h1>
-                <div className="text-slate-400 font-semibold text-sm">
+                <div className="text-slate-400 font-medium text-sm">
                   {project.demoAccount.map((item, index) => (
                     <div key={index}>
                       <div className="grid grid-cols-[70px_10px_auto]">
@@ -239,17 +239,17 @@ export default function Portfolio({ projects }) {
       <div className="flex flex-col gap-y-3 xl:flex-row xl:justify-between xl:items-end xl:w-[55%] xl:mx-auto">
         <Header title={"MY PROJECT"} subTitle={"Featured Portfolio"} position={"start"} />
         <div className="relative flex items-center gap-x-5">
-          <h1 className="font-bold text-secondary tracking-wider">Type : </h1>
+          <h1 className="font-bold text-secondary tracking-wide">Type : </h1>
           <select
             name="selectType"
-            className="font-semibold text-secondary text-sm italic ring-2 ring-[#b3aeec] pl-3 pr-10 xl:appearance-none py-0.5 xl:py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7e74f1]"
+            className="font-semibold text-secondary text-sm italic ring-2 ring-[#b3aeec] pl-3 w-[80%] xl:w-[260px] xl:appearance-none py-0.5 xl:py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7e74f1]"
             onChange={(e) => setSelectedType(e.target.value)}>
             <option value="All" className="font-semibold">
               All
             </option>
             {/* to make type unique no duplicate */}
             {[...new Set(projects.map((project) => project.type))].map((type, index) => (
-              <option key={index} value={type} className="font-semibold">
+              <option key={index} value={type} className="font-medium">
                 {type}
               </option>
             ))}
