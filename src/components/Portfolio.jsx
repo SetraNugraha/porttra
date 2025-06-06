@@ -238,11 +238,11 @@ export default function Portfolio({ projects }) {
       {/* Select Option Type */}
       <div className="flex flex-col gap-y-3 xl:flex-row xl:justify-between xl:items-end xl:w-[55%] xl:mx-auto">
         <Header title={"MY PROJECT"} subTitle={"Featured Portfolio"} position={"start"} />
-        <div className="relative flex items-center gap-x-5">
-          <h1 className="font-bold text-secondary tracking-wide">Type : </h1>
+        <div className="relative flex items-center justify-between gap-x-3">
+          <h1 className="font-bold text-secondary tracking-wide w-[20%] ">Type : </h1>
           <select
             name="selectType"
-            className="font-semibold text-secondary text-sm italic ring-2 ring-[#b3aeec] pl-3 w-[80%] xl:w-[260px] xl:appearance-none py-0.5 xl:py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7e74f1]"
+            className="font-semibold text-secondary text-sm italic ring-2 ring-[#b3aeec] pl-3 w-[80%] xl:w-[280px] xl:appearance-none py-0.5 xl:py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-[#7e74f1]"
             onChange={(e) => setSelectedType(e.target.value)}>
             <option value="All" className="font-semibold">
               All
