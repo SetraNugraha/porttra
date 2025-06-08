@@ -7,7 +7,7 @@ import { IoMdArrowDropdown } from "react-icons/io"
 import { useState } from "react"
 import { FaReact } from "react-icons/fa"
 import { useEffect } from "react"
-import { LuArrowRightSquare, LuArrowLeftSquare } from "react-icons/lu"
+import { LuSquareArrowRight, LuSquareArrowLeft } from "react-icons/lu"
 
 import { Pagination, Autoplay, Grid, Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -304,10 +304,10 @@ export default function Portfolio({ projects }) {
             <div className="xl:flex gap-x-5 items-center font-semibold">
               <button className="swiper-button-prev flex items-center justify-center bg-slate-400 text-white gap-x-2 py-2 px-3 rounded-lg hover:outline-none  hover:ring-2 hover:ring-slate-400 hover:bg-white hover:text-slate-400 duration-300 shadow-lg shadow-slate-300">
                 Prev
-                <LuArrowLeftSquare size={23} />
+                <LuSquareArrowLeft size={23} />
               </button>
               <button className="swiper-button-next flex items-center justify-center bg-slate-400 text-white gap-x-2 py-2 px-3 rounded-lg hover:outline-none  hover:ring-2 hover:ring-slate-400 hover:bg-white hover:text-slate-400 duration-300 shadow-lg shadow-slate-300">
-                <LuArrowRightSquare size={23} />
+                <LuSquareArrowRight size={23} />
                 Next
               </button>
             </div>
