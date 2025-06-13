@@ -8,12 +8,20 @@ export const projects = [
     url: null,
     frontendCode: "https://github.com/SetraNugraha/PostSpot",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/qbEcfXLnVts?si=f7vsZs58JGWneBo3",
+    youtube_url:
+      "https://www.youtube.com/embed/qbEcfXLnVts?si=f7vsZs58JGWneBo3",
     image: "assets/project-image/postspot.png",
     description:
       "PostSpot is a web application that allows users to post content, such as articles and photos, which can be viewed by other users. - Desktop Only",
     note: "Already Finish the project (watch demo video), it just needs to be deployed.",
-    feature: ["Login", "Register", "Logout", "Update Profile User", "CRUD Post with Image", "Dashboard"],
+    feature: [
+      "Login",
+      "Register",
+      "Logout",
+      "Update Profile User",
+      "CRUD Post with Image",
+      "Dashboard",
+    ],
     tech: ["laravel", "mysql", "alpine-js", "tailwind-css"],
     issue: null,
     demoAccount: [
@@ -30,22 +38,27 @@ export const projects = [
     title: "Facebook Clone",
     type: "Fullstack",
     ssr: false,
-    url: "https://client-fbclone.vercel.app/",
+    url: null,
     frontendCode: "https://github.com/SetraNugraha/client-fbclone",
     backendCode: "https://github.com/SetraNugraha/server-fbclone",
-    youtube_url: "https://www.youtube.com/embed/a0Zz0R11lSQ?si=yGTJvYZtM8j8OWa1",
+    youtube_url:
+      "https://www.youtube.com/embed/a0Zz0R11lSQ?si=yGTJvYZtM8j8OWa1",
     image: "assets/project-image/fbcln.png",
-    description: "Simple Facebook Clone, features:  Register, Login, Logout, Post, Like, Comment & Profile Page - Desktop Only",
-    note: "If you receive a warning on Google Chrome, it's because Google has a safe browsing feature and detects this clone project as being very similar to the original Facebook. Click on 'Details' and 'Visit unsafe site', or use Guest mode or another browser.",
-    feature: ["Login", "Register", "Logout", "Update Profile User", "CRUD Post", "Like & Unlike", "Comment Post"],
-    tech: ["react", "tailwind-css", "nodejs", "postgresql", "prisma"],
-    issue: ["Upload Post with Image", "Update Profile Image", "Like & Unlike 9 Second"],
-    demoAccount: [
-      {
-        email: "demoaccount@gmail.com",
-        password: "demoaccount",
-      },
+    description:
+      "Simple Facebook Clone, features:  Register, Login, Logout, Post, Like, Comment & Profile Page - Desktop Only",
+    note: null,
+    feature: [
+      "Login",
+      "Register",
+      "Logout",
+      "Update Profile User",
+      "CRUD Post",
+      "Like & Unlike",
+      "Comment Post",
     ],
+    tech: ["react", "tailwind-css", "nodejs", "postgresql", "prisma"],
+    issue: null,
+    demoAccount: null,
   },
 
   // SetraMovie TMDB
@@ -57,11 +70,18 @@ export const projects = [
     url: "https://setramovie.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/setramovie",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/1W6Ufd7AlfI?si=Fj7otrn_eR2jpeFR",
+    youtube_url:
+      "https://www.youtube.com/embed/1W6Ufd7AlfI?si=Fj7otrn_eR2jpeFR",
     image: "assets/project-image/setramovie.png",
     description: "Implementation some API from TMDB.",
     note: null,
-    feature: ["Login", "Login As Guest", "Logout", "Search Movie", "Add/Remove Favorite Movie"],
+    feature: [
+      "Login",
+      "Login As Guest",
+      "Logout",
+      "Search Movie",
+      "Add/Remove Favorite Movie",
+    ],
     tech: ["react", "tailwind-css"],
     issue: null,
     demoAccount: null,
@@ -76,7 +96,8 @@ export const projects = [
     url: "https://pokedex-vue-setra.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/pokedex-vue-setra",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/d2hVNpReGQ4?si=KSq6gxxEQayJjOJo",
+    youtube_url:
+      "https://www.youtube.com/embed/d2hVNpReGQ4?si=KSq6gxxEQayJjOJo",
     image: "assets/project-image/pokedex-vue.png",
     description: "Implementation some API from PokeAPI.",
     note: null,
@@ -95,7 +116,8 @@ export const projects = [
     url: null,
     frontendCode: "https://github.com/SetraNugraha/client-pharmakey",
     backendCode: "https://github.com/SetraNugraha/server-pharmakey",
-    youtube_url: "https://www.youtube.com/embed/18EoSZ6pTNw?si=iZHeXCLn8ufL8Qm3",
+    youtube_url:
+      "https://www.youtube.com/embed/18EoSZ6pTNw?si=iZHeXCLn8ufL8Qm3",
     image: "assets/project-image/pharmakey.png",
     description:
       "This project is a course available on BuildWithAngga.com. However, the course originally develops the project using Laravel. To enhance my programming skills, I decided to recreate the project using Express and React JS. This web app is a simple e-commerce platform for selling pharmaceuticals on a small scale, designed to serve a specific local area.",
@@ -112,7 +134,14 @@ export const projects = [
       "Approve/Cancel Transaction",
       "Profile",
     ],
-    tech: ["react", "tailwind-css", "typescript", "nodejs", "postgresql", "prisma"],
+    tech: [
+      "react",
+      "tailwind-css",
+      "typescript",
+      "nodejs",
+      "postgresql",
+      "prisma",
+    ],
     issue: null,
     demoAccount: null,
   },
@@ -126,12 +155,27 @@ export const projects = [
     url: null,
     frontendCode: "https://github.com/SetraNugraha/client-Xclone-setra",
     backendCode: "https://github.com/SetraNugraha/server-Xclone-setra",
-    youtube_url: "https://www.youtube.com/embed/km4XwILaHIA?si=mFgA9S9ybphC-Nc9",
+    youtube_url:
+      "https://www.youtube.com/embed/km4XwILaHIA?si=mFgA9S9ybphC-Nc9",
     image: "assets/project-image/xclone.png",
-    description: "Simple clone social media X with Express, React, Typescript, PostgreSQL & Prisma - Desktop Only",
+    description:
+      "Simple clone social media X with Express, React, Typescript, PostgreSQL & Prisma - Desktop Only",
     note: "Already Finish the project (watch demo video), it just needs to be deployed.",
-    feature: ["Login, Logout & Register", "Create & Delete Post with Image", "Like & Unlike Post", "Create Comment", "Update & Delete Profile Image"],
-    tech: ["react", "tailwind-css", "typescript", "nodejs", "postgresql", "prisma"],
+    feature: [
+      "Login, Logout & Register",
+      "Create & Delete Post with Image",
+      "Like & Unlike Post",
+      "Create Comment",
+      "Update & Delete Profile Image",
+    ],
+    tech: [
+      "react",
+      "tailwind-css",
+      "typescript",
+      "nodejs",
+      "postgresql",
+      "prisma",
+    ],
     issue: null,
     demoAccount: null,
   },
@@ -145,9 +189,11 @@ export const projects = [
     url: "https://real-estate-setra.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/real-estate-setra",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/1bgh0uEa2lA?si=XslhilCd4LI2qIlc",
+    youtube_url:
+      "https://www.youtube.com/embed/1bgh0uEa2lA?si=XslhilCd4LI2qIlc",
     image: "assets/project-image/real-estate-rezilla.png",
-    description: "Slicing Figma design to code use Vue and TailwindCSS - Desktop & Mobile.",
+    description:
+      "Slicing Figma design to code use Vue and TailwindCSS - Desktop & Mobile.",
     note: null,
     feature: null,
     tech: ["vue", "tailwind-css"],
@@ -164,11 +210,19 @@ export const projects = [
     url: "https://quick-trivia-eta.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/Quick-Trivia",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/fP5vw9mmbaE?si=FBr4mzfbnI2Ou-vi",
+    youtube_url:
+      "https://www.youtube.com/embed/fP5vw9mmbaE?si=FBr4mzfbnI2Ou-vi",
     image: "assets/project-image/quick-trivia.png",
-    description: "Quick Quiz app built with Vite, React, and TypeScript, integrating the Open Trivia DB API.",
+    description:
+      "Quick Quiz app built with Vite, React, and TypeScript, integrating the Open Trivia DB API.",
     note: null,
-    feature: ["Simple Login & Register", "Login As Guest", "Logout", "Custom Category, Total, Timer Questions", "Resume quiz if browser closed"],
+    feature: [
+      "Simple Login & Register",
+      "Login As Guest",
+      "Logout",
+      "Custom Category, Total, Timer Questions",
+      "Resume quiz if browser closed",
+    ],
     tech: ["react", "typescript", "tailwind-css"],
     issue: null,
     demoAccount: null,
@@ -183,9 +237,11 @@ export const projects = [
     url: "https://nature-spot-id.vercel.app",
     frontendCode: "https://github.com/SetraNugraha/NatureSpot",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/SQcbSVrx24U?si=Twyej16_lxB1yF-j",
+    youtube_url:
+      "https://www.youtube.com/embed/SQcbSVrx24U?si=Twyej16_lxB1yF-j",
     image: "assets/project-image/naturespot.png",
-    description: "Slicing Figma design to code for e-commerce website that sell various plants - Desktop Only.",
+    description:
+      "Slicing Figma design to code for e-commerce website that sell various plants - Desktop Only.",
     note: null,
     feature: null,
     tech: ["react", "tailwind-css"],
@@ -202,9 +258,11 @@ export const projects = [
     url: "https://travel-app-jadoo.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/travel-app-jadoo",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/8dc3dZqGMAo?si=6jZKWgVmmoGwnaQS",
+    youtube_url:
+      "https://www.youtube.com/embed/8dc3dZqGMAo?si=6jZKWgVmmoGwnaQS",
     image: "assets/project-image/jadoo.png",
-    description: "Slicing Figma design to code for Travel website that offers services for booking hotels, flights, and destinations - Desktop Only.",
+    description:
+      "Slicing Figma design to code for Travel website that offers services for booking hotels, flights, and destinations - Desktop Only.",
     note: null,
     feature: null,
     tech: ["react", "tailwind-css"],
@@ -221,7 +279,8 @@ export const projects = [
     url: "https://guess-number-bysetra.vercel.app",
     frontendCode: "https://github.com/SetraNugraha/guess-number",
     backendCode: null,
-    youtube_url: "https://www.youtube.com/embed/4-pdQEvTNqE?si=n_2u-eXzMAkK_NBj",
+    youtube_url:
+      "https://www.youtube.com/embed/4-pdQEvTNqE?si=n_2u-eXzMAkK_NBj",
     image: "assets/project-image/guessnumber.png",
     description: "Simple game to predict the number based on difficulty",
     note: null,
@@ -249,7 +308,7 @@ export const projects = [
   //   issue: null,
   //   demoAccount: null,
   // },
-]
+];
 
 export const services = [
   {
@@ -272,7 +331,7 @@ export const services = [
     description:
       "Slicing antarmuka yang interaktif dan menarik menggunakan HTML, CSS, Javascript dan framework React JS dari design yang ada, mengoptimalkan kinerja frontend untuk memastikan kecepatan dan keterjangkauan aplikasi web",
   },
-]
+];
 
 export const contactInfo = [
   {
@@ -290,4 +349,4 @@ export const contactInfo = [
     description: "Cibinong, Kab. Bogor, Jawa Barat",
     icon: "address",
   },
-]
+];
