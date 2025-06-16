@@ -42,7 +42,7 @@ export const projects = [
     frontendCode: "https://github.com/SetraNugraha/client-fbclone",
     backendCode: "https://github.com/SetraNugraha/server-fbclone",
     youtube_url:
-      "https://www.youtube.com/embed/a0Zz0R11lSQ?si=yGTJvYZtM8j8OWa1",
+      "https://www.youtube.com/embed/TSGewQS7h1c?si=SCPpMj3sO58EUqxE",
     image: "assets/project-image/fbcln.png",
     description:
       "Simple Facebook Clone, features:  Register, Login, Logout, Post, Like, Comment & Profile Page - Desktop Only",
