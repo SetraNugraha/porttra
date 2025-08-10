@@ -1,7 +1,7 @@
 export const projects = [
   // PostSpot
   {
-    isMaintenance: true,
+    isMaintenance: false,
     title: "PostSpot",
     type: "Fullstack",
     ssr: true,
@@ -24,12 +24,43 @@ export const projects = [
     ],
     tech: ["laravel", "mysql", "alpine-js", "tailwind-css"],
     issue: null,
-    demoAccount: [
-      {
-        email: "demoaccount@gmail.com",
-        password: "demoaccount",
-      },
+    demoAccount: null,
+  },
+
+  // Chattra
+  {
+    isMaintenance: false,
+    title: "Chattra",
+    type: "Fullstack",
+    ssr: false,
+    url: null,
+    frontendCode: "https://github.com/SetraNugraha/frontend-chattra",
+    backendCode: "https://github.com/SetraNugraha/backend-chattra",
+    youtube_url:
+      "https://www.youtube.com/embed/TcckpDhDSyg?si=NfvDzGrcJdMTHqqf",
+    image: "assets/project-image/chattra.png",
+    description:
+      "Chattra is a simple web-based chat application that enables users to send and receive messages in real-time. Built with NestJS, TypeScript, Prisma, and PostgreSQL on the backend, and NextJS, TypeScript, Shadcn, TailwindCSS, and TanStack Query on the frontend, Chattra delivers a fast, responsive, and modern communication experience powered by WebSocket. - Desktop Only",
+    note: "Already Finish the project (watch demo video), it just needs to be deployed.",
+    feature: [
+      "Login",
+      "Register",
+      "Logout",
+      "Update Profile User",
+      "Add New Contact",
+      "Send & Receiver Message Realtime with WebSocket",
     ],
+    tech: [
+      "nestjs",
+      "nextjs",
+      "postgresql",
+      "prisma",
+      "typescript",
+      "tailwind-css",
+      "socketio",
+    ],
+    issue: null,
+    demoAccount: null,
   },
 
   // Facebook Clone
