@@ -46,7 +46,7 @@ export default function ContactAddress({ contactInfo }) {
             }, 1000)
           },
           (error) => {
-            console.log("FAILED...", error.text)
+            console.log("FAILED...", error)
             setTimeout(() => {
               console.log("Error!")
               Toast.fire({
