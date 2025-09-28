@@ -327,7 +327,7 @@ export default function Portfolio({ projects }) {
           type: "bullets",
           clickable: true,
         }}
-        className="xl:w-[55%] xl:mx-auto mt-5"
+        className="xl:w-[55%] xl:mx-auto mt-5 p-3"
       >
         {filteredProjects.map((project, index) => (
           <SwiperSlide key={index}>
