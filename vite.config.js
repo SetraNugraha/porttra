@@ -10,6 +10,5 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react()],
-  base: "/porttra/",
+  plugins: [react()]
 });
