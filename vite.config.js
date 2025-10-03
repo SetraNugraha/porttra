@@ -11,5 +11,5 @@ export default defineConfig({
     },
   },
   plugins: [react()],
-  base: "/porttra/",
+  // base: "/porttra/", // for github.io
 });
