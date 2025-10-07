@@ -45,14 +45,14 @@ export const projects = [
     title: "Pharmakey",
     type: "Fullstack",
     ssr: false,
-    url: null,
+    url: "https://pharmakey.vercel.app/",
     frontendCode: "https://github.com/SetraNugraha/client-pharmakey-ts",
     backendCode: "https://github.com/SetraNugraha/server-pharmakey-ts",
     youtube_url: "https://www.youtube.com/embed/gy_y3fKbrHc?si=qkqYLMXDTr4hSbWC",
     image: "assets/project-image/pharmakey.png",
     description:
       "This project is a course available on BuildWithAngga.com. However, the course originally develops the project using Laravel. To enhance my programming skills, I decided to recreate the project using ExpressJS, ReactJS, Typescript, Cloudinary, PostgreSQL & Prisma. This web app is a simple e-commerce platform for selling pharmaceuticals on a small scale, designed to serve a specific local area.",
-    note: "Already Finish the project (watch demo video), it just needs to be deployed.",
+    note: "admin route: /admin/login",
     feature: [
       "Role Admin & Customer",
       "Private Route",
@@ -69,7 +69,20 @@ export const projects = [
     ],
     tech: ["react", "tailwind-css", "typescript", "nodejs", "cloudinary", "postgresql", "prisma"],
     issue: null,
-    demoAccount: null,
+    demoAccount: [
+      {
+        admin: {
+          isAdmin: true,
+          email: "admin@gmail.com",
+          password: "admin",
+        },
+        customer: {
+          isCustomer: true,
+          email: "customer@gmail.com",
+          password: "customer",
+        },
+      },
+    ],
   },
 
   // SetraMovie TMDB

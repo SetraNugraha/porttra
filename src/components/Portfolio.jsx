@@ -16,6 +16,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/grid";
 import { useRef } from "react";
+import { DemoAccount } from "./DemoAccount";
 
 export default function Portfolio({ projects }) {
   const [openModal, setOpenModal] = useState(false);
@@ -58,11 +59,14 @@ export default function Portfolio({ projects }) {
               {project.featured && (
                 <FaStar className="text-yellow-100 absolute top-2 left-2 size-8 p-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg" />
               )}
+
+              {project.url && <p className="absolute top-2 right-2 text-white px-2 py-0.5 bg-green-500 text-xs rounded-xl">online</p>}
             </div>
 
             {/* Title & Link */}
             <div className="my-3 flex flex-col justify-between items-center">
               <h1 className={`font-bold tracking-wider ${project.featured && "text-white"}`}>{project.title}</h1>
+
               <h4
                 className={` opacity-90 italic text-[14px] tracking-wider font-semibold ${project.featured ? "text-white" : "text-[#7e74f1]"}`}
               >{`${project.type}`}</h4>
@@ -192,18 +196,10 @@ export default function Portfolio({ projects }) {
                 <h1 className={`font-semibold tracking-wider ${project.featured && "text-white"}`}>Tester account : </h1>
                 <div className="text-slate-400 font-medium text-sm">
                   {project.demoAccount.map((item, index) => (
-                    <div key={index}>
-                      <div className="grid grid-cols-[70px_10px_auto]">
-                        <p>Email</p>
-                        <p>:</p>
-                        <p>{item.email}</p>
-                      </div>
+                    <div key={index} className="flex flex-col gap-y-5">
+                      <DemoAccount key={`admin-${index}`} account={item.admin} />
 
-                      <div className="grid grid-cols-[70px_10px_auto]">
-                        <p>Password</p>
-                        <p>:</p>
-                        <p>{item.password}</p>
-                      </div>
+                      <DemoAccount key={`customer-${index}`} account={item.customer} />
                     </div>
                   ))}
                 </div>
@@ -260,7 +256,11 @@ export default function Portfolio({ projects }) {
               <a
                 href={project.url}
                 target="_blank"
-                className="w-full py-2 flex items-center gap-x-2 justify-center text-center text-sm xl:text-base bg-blue-500 text-white rounded-lg font-semibold tracking-wider duration-300 hover:bg-white hover:text-blue-500 hover:outline-none hover:ring-2 hover:ring-blue-500"
+                className={`w-full py-2 flex items-center gap-x-2 justify-center text-center text-sm xl:text-base text-white rounded-lg font-semibold tracking-wider  hover:outline-none hover:ring-2  ${
+                  project.featured
+                    ? "bg-gradient-to-r from-cyan-500 to-fuchsia-700 shadow-md shadow-cyan-400 hover:ring-white"
+                    : "bg-blue-500 hover:bg-white  hover:text-blue-500 hover:ring-blue-500 duration-300"
+                }`}
               >
                 Visit Website
                 <BiLinkExternal className="size-4 xl:size-5" />
