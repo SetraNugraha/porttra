@@ -52,7 +52,7 @@ export const projects = [
     image: "assets/project-image/pharmakey.png",
     description:
       "This project is a course available on BuildWithAngga.com. However, the course originally develops the project using Laravel. To enhance my programming skills, I decided to recreate the project using ExpressJS, ReactJS, Typescript, Cloudinary, PostgreSQL & Prisma. This web app is a simple e-commerce platform for selling pharmaceuticals on a small scale, designed to serve a specific local area.",
-    note: "admin route: /admin/login",
+    note: "admin panel: https://pharmakey.vercel.app/admin/dashboard",
     feature: [
       "Role Admin & Customer",
       "Private Route",

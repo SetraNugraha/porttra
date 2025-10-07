@@ -152,7 +152,9 @@ export default function Portfolio({ projects }) {
             {project.note && (
               <div className="mx-2">
                 <h1 className={`font-bold tracking-wider ${project.featured ? "text-red-800" : "text-red-500"}`}>Note :</h1>
-                <p className={`text-justify font-semibold  text-sm ${project.featured ? "text-orange-800" : "text-red-400"}`}>{project.note}</p>
+                <p className={`lg:text-justify max-w-full font-semibold  text-sm ${project.featured ? "text-orange-800" : "text-red-400"}`}>
+                  {project.note}
+                </p>
               </div>
             )}
 
@@ -224,10 +226,10 @@ export default function Portfolio({ projects }) {
               <a
                 href={project.frontendCode}
                 target="_blank"
-                className={`py-2 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center  text-white text-sm xl:text-base rounded-lg font-semibold tracking-wider 0 ${
+                className={`py-2 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center  text-white text-sm xl:text-base rounded-lg font-semibold tracking-wider hover:outline-none hover:ring-2 ${
                   project.featured
-                    ? "bg-gradient-to-r from-cyan-500 to-fuchsia-700 shadow-md shadow-cyan-400 hover:text-white hover:outline-none hover:ring-2 hover:ring-white"
-                    : "bg-gray-500 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-50"
+                    ? "bg-gradient-to-r from-cyan-500 to-fuchsia-700 shadow-md shadow-cyan-400 hover:text-white hover:ring-white"
+                    : "bg-gray-500 hover:bg-white hover:text-gray-500 hover:ring-gray-500 duration-200"
                 }`}
               >
                 {project.ssr ? "Source Code" : "Frontend"}
@@ -239,10 +241,10 @@ export default function Portfolio({ projects }) {
                 <a
                   href={project.backendCode}
                   target="_blank"
-                  className={`py-2 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center  text-white text-sm xl:text-base rounded-lg font-semibold tracking-wider 0 ${
+                  className={`py-2 w-1/2 flex items-center flex-grow  gap-x-2 justify-center text-center  text-white text-sm xl:text-base rounded-lg font-semibold tracking-wider hover:outline-none hover:ring-2 ${
                     project.featured
-                      ? "bg-gradient-to-r from-cyan-500 to-fuchsia-700 shadow-md shadow-cyan-400 hover:text-white hover:outline-none hover:ring-2 hover:ring-white"
-                      : "bg-gray-500 hover:bg-white hover:text-gray-500 hover:outline-none hover:ring-2 hover:ring-gray-50"
+                      ? "bg-gradient-to-r from-cyan-500 to-fuchsia-700 shadow-md shadow-cyan-400 hover:text-white hover:ring-white"
+                      : "bg-gray-500 hover:bg-white hover:text-gray-500 hover:ring-gray-500 duration-200"
                   }`}
                 >
                   Backend
