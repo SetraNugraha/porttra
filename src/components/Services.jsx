@@ -1,27 +1,27 @@
 /* eslint-disable react/prop-types */
-import { Header } from "../elements/Header"
+import { Header } from "../elements/Header";
 
-import { Pagination, Autoplay, Grid } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/react"
+import { Pagination, Autoplay, Grid } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import "swiper/css"
-import "swiper/css/pagination"
-import "swiper/css/grid"
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/grid";
 
 export default function Services({ services }) {
   const RenderServices = ({ service }) => {
     return (
-      <div className="bg-white my-5 h-full py-5 px-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-xl shadow-slate-200 transform transition duration-300 hover:scale-[105%]">
+      <div className="bg-white my-5 h-[320px] xl:h-[350px] py-5 px-5 rounded-lg flex flex-col items-center border border-slate-100 shadow-xl shadow-slate-200 transform transition duration-300 hover:scale-[105%]">
         {/* Icon */}
         <div className="bg-slate-200 p-4 rounded-xl">
           <img src={`assets/${service.icon}.svg`} alt={service.icon} />
         </div>
         <h4 className="font-semibold py-2">{service.title}</h4>
 
-        <p className="text-[12px] text-justify text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
+        <p className="text-[12px] text-center text-slate-500 leading-loose || xl:text-[12px]">{service.description}</p>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <section className="py-10 my-10 px-5 bg-stone-100" id="services">
@@ -53,7 +53,8 @@ export default function Services({ services }) {
           type: "bullets",
         }}
         spaceBetween={20}
-        className="xl:w-[55%] xl:mx-auto">
+        className="xl:w-[55%] xl:mx-auto p-5"
+      >
         {services.map((service, index) => (
           <SwiperSlide key={index} className="xl:px-3">
             <RenderServices service={service} />
@@ -62,5 +63,5 @@ export default function Services({ services }) {
         <div className="swiper-services flex justify-center items-center gap-x-5"></div>
       </Swiper>
     </section>
-  )
+  );
 }

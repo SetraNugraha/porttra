@@ -47,8 +47,10 @@ export default function Portfolio({ projects }) {
     return (
       <>
         <div
-          className={`flex flex-col justify-between mx-auto px-2 py-2 ring-2 ring-slate-200 shadow-lg rounded-lg ${
-            project.featured ? "bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-fuchsia-500/70" : "bg-white shadow-slate-300"
+          className={`flex flex-col justify-between mx-auto px-2 py-2 ring-2 shadow-lg rounded-lg ${
+            project.featured
+              ? "bg-gradient-to-r from-fuchsia-500 to-cyan-500 shadow-fuchsia-500/70 ring-fuchsia-500"
+              : "bg-white shadow-slate-300 ring-slate-200"
           }`}
         >
           {/* Image & Description */}
@@ -85,7 +87,7 @@ export default function Portfolio({ projects }) {
             onClick={() => handleOpenModal(project)}
             className={`group py-1 mb-3 mx-3 tracking-wider rounded-lg font-semibold duration-300 transform hover:scale-105 hover:outline-none hover:ring-2 ${
               project?.featured
-                ? "bg-gradient-to-r from-blue-500 to-fuchsia-500 shadow-md shadow-slate-300 hover:bg-none hover:bg-white hover:ring-fuchsia-500"
+                ? "bg-gradient-to-r from-blue-500 to-fuchsia-500 shadow-md shadow-cyan-500 hover:bg-none hover:bg-white hover:ring-fuchsia-500"
                 : "bg-[#7e74f1] hover:bg-white hover:ring-[#7e74f1] shadow-lg shadow-gray-300"
             } `}
           >
