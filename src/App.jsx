@@ -1,14 +1,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import Services from "./components/Services"
-import Portfolio from "./components/Portfolio"
-import EducationSkills from "./components/EducationSkills"
-import ContactAddress from "./components/ContactAddress"
-import Footer from "./components/Footer"
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Services from "./components/Services";
+import Portfolio from "./components/Portfolio";
+import EducationSkills from "./components/EducationSkills";
+import ContactAddress from "./components/ContactAddress";
+import Footer from "./components/Footer";
 
-import { projects, services, contactInfo } from "./data"
+import { projects, services, contactInfo } from "./data";
+import Experience from "./components/Experience";
 
 export default function App() {
   return (
@@ -22,7 +23,8 @@ export default function App() {
       {/* END Hero */}
 
       {/* START Services */}
-      <Services services={services} />
+      {/* <Services services={services} /> */}
+      <Experience />
       {/* END Services */}
 
       {/* START Portfolio */}
@@ -41,5 +43,5 @@ export default function App() {
       <Footer />
       {/* END Footer */}
     </main>
-  )
+  );
 }

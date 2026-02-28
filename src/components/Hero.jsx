@@ -4,7 +4,7 @@ import { TbFileTypePdf } from "react-icons/tb";
 
 export default function Hero() {
   return (
-    <section className="px-5 || xl:pt-[100px] xl:w-[60%] xl:mx-auto xl:flex xl:gap-2" id="hero">
+    <section className="px-5 lg:px-0 max-w-5xl mx-auto xl:flex xl:gap-2" id="hero">
       {/* Image */}
       <div className="pt-20 flex justify-center || xl:w-1/2 xl:order-last xl:ml-[100px]">
         <img src="assets/hero.svg" alt="Person Standing" className="h-[250px] w-[250px] || xl:h-[500px] xl:w-[500px]" />

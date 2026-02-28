@@ -26,8 +26,8 @@ const Skills = () => {
   return (
     <>
       <p className="text-slate-700 text-[14px] xl:text-[16px] text-justify font-medium flex flex-col">
-        <span className="italic">"First Learn ... then remove the L"</span>
-        Tech Enthusiast, Code, Web Development, RDBMS. That's it.
+        <span className="italic">&quot;First Learn ... then remove the L&quot;</span>
+        Tech Enthusiast, Code, Web Development, RDBMS. That&apos;s it.
       </p>
 
       <div className="py-5 text-slate-700 || xl:text-[16px] ">
@@ -84,11 +84,11 @@ const Skills = () => {
 export default function EducationSkills() {
   return (
     <section className="px-5 py-5 my-10 bg-stone-100" id="skills">
-      <div className="xl:w-[55%] xl:mx-auto">
+      <div className="max-w-5xl mx-auto">
         <Header title={"LEARNING PATH"} subTitle={"Education & Skills"} position={"start"} />
       </div>
 
-      <div className="py-10 || xl:w-[55%] xl:mx-auto xl:flex xl:items-start xl:mt-5">
+      <div className="py-10 max-w-5xl mx-auto xl:flex xl:items-start xl:mt-5">
         {/* START Education */}
         <div className="flex flex-col || xl:w-1/2">
           {/* Education 1 */}

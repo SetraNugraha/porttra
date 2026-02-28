@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
-import { Header } from "../elements/Header"
-import emailjs from "@emailjs/browser"
-import Swal from "sweetalert2"
-import { useState, useRef } from "react"
+import { Header } from "../elements/Header";
+import emailjs from "@emailjs/browser";
+import Swal from "sweetalert2";
+import { useState, useRef } from "react";
 
 export default function ContactAddress({ contactInfo }) {
   const FormContact = () => {
-    const serviceID = import.meta.env.VITE_SERVICE_ID
-    const templateID = import.meta.env.VITE_TEMPLATE_ID
-    const publicKEY = import.meta.env.VITE_PUBLIC_KEY
-    const [processSend, setProcessSend] = useState(false)
+    const serviceID = import.meta.env.VITE_SERVICE_ID;
+    const templateID = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKEY = import.meta.env.VITE_PUBLIC_KEY;
+    const [processSend, setProcessSend] = useState(false);
 
     // Notif
     const Toast = Swal.mixin({
@@ -19,15 +19,15 @@ export default function ContactAddress({ contactInfo }) {
       timer: 3000,
       timerProgressBar: true,
       didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer
-        toast.onmouseleave = Swal.resumeTimer
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
       },
-    })
+    });
 
-    const form = useRef()
+    const form = useRef();
 
     const sendEmail = (e) => {
-      e.preventDefault()
+      e.preventDefault();
 
       emailjs
         .sendForm(serviceID, templateID, form.current, {
@@ -37,41 +37,32 @@ export default function ContactAddress({ contactInfo }) {
         .then(
           () => {
             setTimeout(() => {
-              console.log("SUCCESS!")
+              console.log("SUCCESS!");
               Toast.fire({
                 icon: "success",
                 title: "Message sent successfully",
-              })
-              setProcessSend(false)
-            }, 1000)
+              });
+              setProcessSend(false);
+            }, 1000);
           },
           (error) => {
-            console.log("FAILED...", error)
+            console.log("FAILED...", error);
             setTimeout(() => {
-              console.log("Error!")
+              console.log("Error!");
               Toast.fire({
                 icon: "error",
                 title: "Error while sending message !",
-              })
-              setProcessSend(false)
-            }, 1000)
+              });
+              setProcessSend(false);
+            }, 1000);
           },
         )
-        .then(form.current.reset())
-    }
+        .then(form.current.reset());
+    };
 
     const InputForm = ({ type, id, name, placeholder }) => {
-      return (
-        <input
-          type={type}
-          id={id}
-          name={name}
-          className="h-[35px] w-full border border-slate-500 rounded-md px-5 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]"
-          placeholder={placeholder}
-          required
-        />
-      )
-    }
+      return <input type={type} id={id} name={name} className="h-[35px] w-full border border-slate-500 rounded-md px-5 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]" placeholder={placeholder} required />;
+    };
 
     return (
       <form ref={form} onSubmit={sendEmail} className="my-5 flex flex-col gap-5">
@@ -80,41 +71,27 @@ export default function ContactAddress({ contactInfo }) {
         {/* Email */}
         <InputForm type={"email"} id={"email"} name={"user_email"} placeholder={"Email"} />
         {/* User Message */}
-        <textarea
-          name="message"
-          id="message"
-          cols="30"
-          rows="10"
-          className="h-[120px] w-full border border-slate-500 rounded-md px-4 py-2 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]"
-          placeholder="Write a message"
-          required
-        />
+        <textarea name="message" id="message" cols="30" rows="10" className="h-[120px] w-full border border-slate-500 rounded-md px-4 py-2 placeholder:font-semibold placeholder:text-[14px] focus:outline-none focus:border-[1px] focus:border-[#453ACE]" placeholder="Write a message" required />
         {/* Button */}
-        <button
-          type="submit"
-          value="Send"
-          className={`text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg duration-300 tracking-wider shadow-lg shadow-gray-300 hover:bg-white hover:outline-none hover:ring-2 hover:ring-[#7e74f1] hover:text-[#7e74f1] ${
-            processSend ? "disabled:opacity-50 disabled:cursor-not-allowed" : ""
-          }`}
-          disabled={processSend}>
+        <button type="submit" value="Send" className={`text-white text-[14px] font-semibold h-[35px] w-full bg-[#7e74f1] rounded-lg duration-300 tracking-wider shadow-lg shadow-gray-300 hover:bg-white hover:outline-none hover:ring-2 hover:ring-[#7e74f1] hover:text-[#7e74f1] ${processSend ? "disabled:opacity-50 disabled:cursor-not-allowed" : ""}`} disabled={processSend}>
           {processSend ? "Process Sending Message ..." : "Submit"}
         </button>
       </form>
-    )
-  }
+    );
+  };
 
   return (
-    <section className="px-5" id="contact">
-      <Header title={"FIND ME"} subTitle={"Contact & Address"} position={"center"} />
+    <section className="px-5 lg:px-0 max-w-5xl mx-auto " id="contact">
+      <Header title={"FIND ME"} subTitle={"Contact & Address"} position={"start"} />
 
-      <div className="xl:w-[55%] xl:mx-auto xl:flex xl:justify-center xl:gap-10 xl:items-start xl:mt-10">
+      <div className="grid md:grid-cols-5 gap-5">
         {/* Form  */}
-        <div className="xl:w-[45%]">
+        <div className="col-span-3 ">
           <FormContact />
         </div>
 
         {/* Address & Contact */}
-        <div className="py-5 flex flex-col gap-8 ">
+        <div className="md:col-span-2 py-5 flex flex-col gap-8 ">
           {contactInfo.map((contact, index) => (
             <div key={index} className="flex gap-5">
               {/* Icon */}
@@ -131,5 +108,5 @@ export default function ContactAddress({ contactInfo }) {
         </div>
       </div>
     </section>
-  )
+  );
 }
