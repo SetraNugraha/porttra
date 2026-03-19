@@ -20,18 +20,29 @@ const RenderCardProject = ({ project, onOpen }) => {
     <div className="group flex flex-col justify-between bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
       {/* Image */}
       <div className="relative h-[160px] overflow-hidden">
-        <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
 
         {/* Badges */}
         <div className="absolute top-3 left-3 right-3 flex justify-between items-start">
           {project.featured && (
-            <span className="flex items-center gap-1 text-[10px] font-bold tracking-wider px-2 py-1 rounded-full text-white" style={{ background: "#7e74f1" }}>
+            <span
+              className="flex items-center gap-1 text-[10px] font-bold tracking-wider px-2 py-1 rounded-full text-white"
+              style={{ background: "#7e74f1" }}
+            >
               <FaStar className="w-2.5 h-2.5" />
               FEATURED
             </span>
           )}
-          {project.url && <span className="ml-auto text-[10px] font-semibold px-2 py-1 rounded-full bg-emerald-500 text-white tracking-wider">LIVE</span>}
+          {project.url && (
+            <span className="ml-auto text-[10px] font-semibold px-2 py-1 rounded-full bg-emerald-500 text-white tracking-wider">
+              LIVE
+            </span>
+          )}
         </div>
       </div>
 
@@ -54,7 +65,11 @@ const RenderCardProject = ({ project, onOpen }) => {
         </div>
 
         {/* CTA */}
-        <button onClick={() => onOpen(project)} className="mt-auto w-full py-2 rounded-xl text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-80" style={{ background: "#7e74f1" }}>
+        <button
+          onClick={() => onOpen(project)}
+          className="mt-auto w-full py-2 rounded-xl text-sm font-semibold text-white transition-opacity duration-200 hover:opacity-80"
+          style={{ background: "#7e74f1" }}
+        >
           View Details
         </button>
       </div>
@@ -75,7 +90,10 @@ const ModalDetailProject = ({ project, onClose }) => {
               {project.type}
             </p>
           </div>
-          <button onClick={onClose} className="ml-4 mt-0.5 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-100 hover:text-red-500 text-gray-500 font-bold text-sm transition-colors duration-200 flex-shrink-0">
+          <button
+            onClick={onClose}
+            className="ml-4 mt-0.5 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-red-100 hover:text-red-500 text-gray-500 font-bold text-sm transition-colors duration-200 flex-shrink-0"
+          >
             ✕
           </button>
         </div>
@@ -84,8 +102,14 @@ const ModalDetailProject = ({ project, onClose }) => {
         <div className="overflow-y-auto flex-1 px-6 py-5 flex flex-col gap-5">
           {/* Video */}
           {project.youtube_url && (
-            <div className="rounded-xl overflow-hidden bg-gray-50 aspect-video">
-              <iframe className="w-full h-full" src={project.youtube_url} title="Project demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+            <div className="rounded-xl aspect-video h-52">
+              <iframe
+                className="w-full h-full rounded-xl"
+                src={project.youtube_url}
+                title="Project demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           )}
 
@@ -110,7 +134,10 @@ const ModalDetailProject = ({ project, onClose }) => {
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
                 {project.feature.map((item, index) => (
                   <li key={index} className="flex items-start gap-2 text-sm text-gray-500">
-                    <span className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "#7e74f1" }} />
+                    <span
+                      className="mt-[6px] w-1.5 h-1.5 rounded-full flex-shrink-0"
+                      style={{ background: "#7e74f1" }}
+                    />
                     {item}
                   </li>
                 ))}
@@ -162,19 +189,35 @@ const ModalDetailProject = ({ project, onClose }) => {
         {/* Footer actions */}
         <div className="px-6 py-4 border-t border-gray-100 flex flex-col gap-2">
           <div className="flex gap-2">
-            <a href={project.frontendCode} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors duration-200">
+            <a
+              href={project.frontendCode}
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors duration-200"
+            >
               {project.ssr ? "Source Code" : "Frontend"}
               {project.ssr ? <AiOutlineCode className="w-4 h-4" /> : <FaReact className="w-4 h-4" />}
             </a>
             {project.backendCode && (
-              <a href={project.backendCode} target="_blank" rel="noreferrer" className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors duration-200">
+              <a
+                href={project.backendCode}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors duration-200"
+              >
                 Backend
                 <AiOutlineCode className="w-4 h-4" />
               </a>
             )}
           </div>
           {!project.isMaintenance && project.url && (
-            <a href={project.url} target="_blank" rel="noreferrer" className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold text-white hover:opacity-80 transition-opacity duration-200" style={{ background: "#7e74f1" }}>
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold text-white hover:opacity-80 transition-opacity duration-200"
+              style={{ background: "#7e74f1" }}
+            >
               Visit Website
               <BiLinkExternal className="w-4 h-4" />
             </a>
@@ -217,7 +260,12 @@ export default function Portfolio({ projects }) {
           {/* Filter tabs */}
           <div className="flex flex-wrap gap-2">
             {types.map((type) => (
-              <button key={type} onClick={() => setSelectedType(type)} className={`text-xs font-semibold px-4 py-1.5 rounded-full border transition-all duration-200 ${selectedType === type ? "text-white border-transparent" : "text-gray-500 border-gray-200 hover:border-[#7e74f1] hover:text-[#7e74f1]"}`} style={selectedType === type ? { background: "#7e74f1" } : {}}>
+              <button
+                key={type}
+                onClick={() => setSelectedType(type)}
+                className={`text-xs font-semibold px-4 py-1.5 rounded-full border transition-all duration-200 ${selectedType === type ? "text-white border-transparent" : "text-gray-500 border-gray-200 hover:border-[#7e74f1] hover:text-[#7e74f1]"}`}
+                style={selectedType === type ? { background: "#7e74f1" } : {}}
+              >
                 {type}
               </button>
             ))}
@@ -261,7 +309,9 @@ export default function Portfolio({ projects }) {
       </div>
 
       {/* Modal */}
-      {openModal && selectedProject && <ModalDetailProject project={selectedProject} onClose={() => setOpenModal(false)} />}
+      {openModal && selectedProject && (
+        <ModalDetailProject project={selectedProject} onClose={() => setOpenModal(false)} />
+      )}
     </section>
   );
 }
